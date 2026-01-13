@@ -1,6 +1,6 @@
 .wrrcm-unique {
   padding: 100px 20px;
-  background: #fff7ef;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   text-align: center;
   font-family: "Segoe UI", sans-serif;
 }
@@ -8,40 +8,42 @@
 .wrrcm-unique h2 {
   font-size: 36px;
   margin-bottom: 10px;
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
 .wrrcm-tag {
   display: inline-block;
-  background: #ffe5d1;
-  padding: 6px 14px;
+  background: rgba(255, 153, 51, 0.2);
+  padding: 8px 18px;
   border-radius: 20px;
   font-size: 12px;
-  color: #1a1a1a;
+  color: #ff9933;
+  border: 1px solid rgba(255, 153, 51, 0.3);
 }
 
 .wrrcm-sub {
   max-width: 700px;
   margin: 20px auto 50px;
-  color: #666;
+  color: #b8c0d0;
 }
 
 .wrrcm-highlight {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.05);
   max-width: 700px;
   margin: auto;
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 153, 51, 0.1);
 }
 
 .wrrcm-highlight h3 {
-  color: #1a1a1a;
+  color: #ff9933;
   margin-bottom: 12px;
 }
 
 .wrrcm-highlight p {
-  color: #666;
+  color: #b8c0d0;
   line-height: 1.7;
 }
 
@@ -54,12 +56,20 @@
 }
 
 .wrrcm-feature {
-  background: #fff;
+  background: rgba(255, 153, 51, 0.08);
   padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  color: #1a1a1a;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
   font-weight: 600;
+  border: 1px solid rgba(255, 153, 51, 0.2);
+  transition: all 0.3s ease;
+}
+
+.wrrcm-feature:hover {
+  background: rgba(255, 153, 51, 0.15);
+  border-color: rgba(255, 153, 51, 0.4);
+  transform: translateY(-5px);
 }
 
 @media(max-width:768px){

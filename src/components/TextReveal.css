@@ -1,0 +1,10 @@
+.text-reveal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+
+.text-reveal .word {
+  display: inline-block;
+  opacity: 0;
+}

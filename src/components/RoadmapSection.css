@@ -1,14 +1,15 @@
 .roadmap-section {
   padding: 100px 80px;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  background: #1a1a1a;
+  border-top: 1px solid rgba(255, 153, 51, 0.1);
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
 }
 
 .roadmap-section h2 {
   font-size: 42px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   letter-spacing: -0.5px;
   color: #ffffff;
+  text-align: center;
 }
 
 .roadmap {
@@ -19,15 +20,24 @@
 }
 
 .step {
-  background: #1f1f1f;
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(255, 153, 51, 0.02) 100%);
   padding: 30px;
   border-radius: 20px;
+  border: 1px solid rgba(255, 153, 51, 0.15);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  border-color: rgba(255, 153, 51, 0.4);
+  background: linear-gradient(135deg, rgba(255, 153, 51, 0.1) 0%, rgba(255, 153, 51, 0.05) 100%);
+  transform: translateY(-5px);
 }
 
 .step h3 {
   font-size: 16px;
   margin-bottom: 12px;
-  color: #ffffff;
+  color: #ff9933;
+  font-weight: 600;
 }
 
 .step p {

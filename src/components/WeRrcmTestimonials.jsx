@@ -1,17 +1,29 @@
 import React from 'react';
+import ScrollFloat from './ScrollFloat';
+import InfiniteMovingCards from './InfiniteMovingCards';
 import './WeRrcmTestimonials.css';
 
 function WeRrcmTestimonials() {
+  const testimonials = [
+    '"I built my first robot in 3 weeks!" – Arjun Sharma',
+    '"Represented India in Russia!" – Janithaa M',
+    '"Won engineering scholarship!" – Rohan Kumar',
+    '"Now I teach my friends!" – Ananya Reddy'
+  ];
+
   return (
     <section className="wrrcm-testimonials">
-      <h2>What Our Students Say</h2>
+      <ScrollFloat
+        animationDuration={1}
+        ease="back.inOut(2)"
+        scrollStart="center bottom+=50%"
+        scrollEnd="bottom bottom-=40%"
+        stagger={0.03}
+      >
+        What Our Students Say
+      </ScrollFloat>
 
-      <div className="wrrcm-test-grid">
-        <div className="wrrcm-test">"I built my first robot in 3 weeks!" – Arjun Sharma</div>
-        <div className="wrrcm-test">"Represented India in Russia!" – Janithaa M</div>
-        <div className="wrrcm-test">"Won engineering scholarship!" – Rohan Kumar</div>
-        <div className="wrrcm-test">"Now I teach my friends!" – Ananya Reddy</div>
-      </div>
+      <InfiniteMovingCards items={testimonials} speed={30} />
     </section>
   );
 }

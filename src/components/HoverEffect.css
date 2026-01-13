@@ -1,0 +1,20 @@
+.hover-effect {
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.hover-effect::before {
+  content: '';
+  position: absolute;
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 153, 51, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  filter: blur(20px);
+}

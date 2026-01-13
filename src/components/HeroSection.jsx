@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Aurora from './Aurora';
 import './HeroSection.css';
 
 function HeroSection() {
@@ -59,6 +60,15 @@ function HeroSection() {
             <spline-viewer url="https://prod.spline.design/2U23PaGiIpgFhZLX/scene.splinecode"></spline-viewer>
           </div>
         </div>
+      </div>
+
+      <div className="aurora-section">
+        <Aurora
+          colorStops={["#1a1a2e", "#16213e", "#0f3460"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
       </div>
 
       <section className="hero">

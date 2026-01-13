@@ -11,6 +11,33 @@
   color: #1a1a1a;
 }
 
+.contact-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 60px auto;
+}
+
+.stat {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.stat h3 {
+  font-size: 32px;
+  color: #f4a261;
+  margin: 0 0 8px 0;
+}
+
+.stat p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
 .wrrcm-form {
   max-width: 600px;
   margin: 60px auto 0;
@@ -33,19 +60,7 @@
 }
 
 .wrrcm-form button {
-  padding: 14px;
-  border-radius: 30px;
-  background: #f4a261;
-  border: none;
-  font-weight: bold;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 14px;
-}
-
-.wrrcm-form button:hover {
-  background: #e89450;
+  margin-top: 10px;
 }
 
 @media(max-width:768px){
