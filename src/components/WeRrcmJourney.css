@@ -1,0 +1,55 @@
+.wrrcm-journey {
+  padding: 100px 20px;
+  background: #fff7ef;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.wrrcm-journey h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.wrrcm-journey .wrrcm-sub {
+  max-width: 700px;
+  margin: 20px auto 50px;
+  color: #666;
+}
+
+.wrrcm-steps {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.wrrcm-step {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  color: #1a1a1a;
+  font-weight: 600;
+  min-width: 200px;
+}
+
+.wrrcm-step span {
+  display: block;
+  background: #1a2a44;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  line-height: 40px;
+  margin: auto auto 10px;
+}
+
+@media(max-width:768px){
+  .wrrcm-journey { 
+    padding: 60px 30px; 
+  }
+  .wrrcm-journey h2 { 
+    font-size: 32px; 
+  }
+}
