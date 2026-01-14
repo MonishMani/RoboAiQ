@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import LightRays from './LightRays';
 import Orb from './Orb';
-import Prism from './Prism';
 import './HeroSection.css';
 
 function HeroSection() {
@@ -57,9 +56,10 @@ function HeroSection() {
     <>
       <div className="hero-right">
         <div className="robot-container">
+         {/*
           <div className="robot-viewer">
             <spline-viewer url="https://prod.spline.design/2U23PaGiIpgFhZLX/scene.splinecode"></spline-viewer>
-          </div>
+          </div>*/}
         </div>
       </div>
 
@@ -87,7 +87,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="light-rays-model">
-          <spline-viewer url="https://prod.spline.design/BYIS8yoHE3GglSRS/scene.splinecode"></spline-viewer>
+          <img src="https://images.unsplash.com/photo-1677442d019cecf8d5a594b4e1d0b5c5?w=600&h=600&fit=crop" alt="AI Robot" className="robot-image" />
         </div>
       </div>
 
@@ -179,20 +179,6 @@ function HeroSection() {
           </div>
         </div>
       </section>
-
-      <div style={{ width: '100%', height: '600px', position: 'relative' }}>
-        <Prism
-          animationType="rotate"
-          timeScale={0.5}
-          height={3.5}
-          baseWidth={5.5}
-          scale={3.6}
-          hueShift={0}
-          colorFrequency={1}
-          noise={0.5}
-          glow={1}
-        />
-      </div>
     </>
   );
 }

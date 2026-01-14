@@ -1,0 +1,91 @@
+.success-stories {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #0a0e1a 0%, #050814 100%);
+  text-align: center;
+}
+
+.success-stories-header {
+  margin-bottom: 60px;
+}
+
+.success-stories-header h2 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.success-stories-header p {
+  color: #b8c0d0;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.success-stories-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.success-stories-intro {
+  margin-bottom: 60px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+.prestige-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.success-stories-intro h3 {
+  font-size: 28px;
+  color: #ffffff;
+  margin: 16px 0;
+  font-weight: 700;
+}
+
+.success-stories-intro p {
+  color: #b8c0d0;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.card-grid {
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .success-stories {
+    padding: 60px 20px;
+  }
+
+  .success-stories-header h2 {
+    font-size: 28px;
+  }
+
+  .success-stories-intro {
+    padding: 30px 20px;
+    margin-bottom: 40px;
+  }
+
+  .success-stories-intro h3 {
+    font-size: 22px;
+  }
+
+  .success-stories-intro p {
+    font-size: 14px;
+  }
+}
