@@ -1,18 +1,19 @@
-import React, { useEffect } from 'react';
-import Aurora from './Aurora';
+import { useEffect } from 'react';
+import LightRays from './LightRays';
+import Orb from './Orb';
 import './HeroSection.css';
 
 function HeroSection() {
   useEffect(() => {
     const heroLeft = document.querySelector('.hero-left');
     const heroRight = document.querySelector('.hero-right');
-    
+
     if (heroLeft && heroRight) {
       heroLeft.style.opacity = '0';
       heroLeft.style.transform = 'translateX(-20px)';
       heroRight.style.opacity = '0';
       heroRight.style.transform = 'translateX(20px)';
-      
+
       setTimeout(() => {
         heroLeft.style.transition = 'all 0.8s ease';
         heroRight.style.transition = 'all 0.8s ease';
@@ -23,10 +24,13 @@ function HeroSection() {
       }, 100);
     }
 
-    // Loop 3D model animation
+    // Loop 3D model animation with increased speed
     const splineViewers = document.querySelectorAll('spline-viewer');
     splineViewers.forEach(viewer => {
       viewer.addEventListener('load', () => {
+        if (viewer.setPlaybackRate) {
+          viewer.setPlaybackRate(2.5);
+        }
         if (viewer.setLoop) {
           viewer.setLoop(true);
         }
@@ -48,10 +52,6 @@ function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
-  const handlePlayClick = () => {
-    console.log('Play video');
-  };
-
   return (
     <>
       <div className="hero-right">
@@ -62,57 +62,44 @@ function HeroSection() {
         </div>
       </div>
 
-      <div className="aurora-section">
-        <Aurora
-          colorStops={["#1a1a2e", "#16213e", "#0f3460"]}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
+      <div className="light-rays-section">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#ffffff"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
         />
+        <div className="light-rays-content">
+          <div className='lignt-rays-texts'>
+            <h2>Build Your First Robot!</h2>
+            <p>From basic electronics to advanced mechatronics – join WeRrcm and master robotics through hands-on projects.<br></br> Perfect for students aged 10-18!</p>
+            <div className="light-rays-buttons">
+              <a href="#" className="btn primary">Book a Free Demo Class</a>
+              <a href="#" className="btn secondary">Download Sample Project</a>
+            </div>
+          </div>
+        </div>
+        <div className="light-rays-model">
+          <spline-viewer url="https://prod.spline.design/BYIS8yoHE3GglSRS/scene.splinecode"></spline-viewer>
+        </div>
       </div>
 
-      <section className="hero">
-        <div className="hero-content">
-          <span className="badge">🌍 World-Class Robotics Education</span>
-
-          <h1>
-            Build Your First <br />
-            <span>Robot!</span>
-          </h1>
-
-          <p>
-            From basic electronics to advanced mechatronics – join
-            WeRrcm and master robotics through hands-on projects.
-            Perfect for students aged 10–18!
-          </p>
-
-          <div className="cta">
-            <a href="#" className="btn primary">⚡ Book a Free Demo Class</a>
-            <a href="#" className="btn secondary">Download Sample Project</a>
-          </div>
-
-          <div className="stats">
-            <div>
-              <h3>500+</h3>
-              <span>Students Trained</span>
-            </div>
-            <div>
-              <h3>100%</h3>
-              <span>Hands-On Learning</span>
-            </div>
-            <div>
-              <h3>10+</h3>
-              <span>Global Competitions</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="hero-image">
-          <img src="robot-kit.png" alt="Robotics Kit" />
-        </div>
-      </section>
-
       <section className="hero hero-second">
+        <div className="orb-background">
+          <Orb 
+            hue={260}
+            hoverIntensity={0.2}
+            rotateOnHover={true}
+            backgroundColor="#0b1020"
+          />
+        </div>
+        
         <span className="eyebrow">NEXT GENERATION EDUCATION</span>
 
         <h1>
