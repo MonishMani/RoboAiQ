@@ -3,12 +3,18 @@
   background: linear-gradient(180deg, rgba(10, 10, 20, 1) 0%, rgba(8, 8, 16, 0.98) 100%);
   text-align: center;
   font-family: "Segoe UI", sans-serif;
+  position: relative;
+  z-index: 5;
+  margin-top: 250px;
 }
 
 .wrrcm-testimonials h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 42px;
+  margin-bottom: 60px;
   color: #ffffff;
+  position: relative;
+  z-index: 10;
+  letter-spacing: -0.5px;
 }
 
 .wrrcm-test-grid {

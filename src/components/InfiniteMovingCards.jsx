@@ -9,7 +9,6 @@ export default function InfiniteMovingCards({ items = [], speed = 50 }) {
     if (!container) return;
 
     const scrollWidth = container.scrollWidth;
-    const clientWidth = container.clientWidth;
 
     container.style.setProperty('--scroll-width', `${scrollWidth}px`);
     container.style.setProperty('--animation-duration', `${speed}s`);
@@ -20,12 +19,20 @@ export default function InfiniteMovingCards({ items = [], speed = 50 }) {
       <div ref={containerRef} className="infinite-moving-cards">
         {items.map((item, i) => (
           <div key={i} className="moving-card">
-            {item}
+            {typeof item === 'string' ? (
+              <p>{item}</p>
+            ) : (
+              item
+            )}
           </div>
         ))}
         {items.map((item, i) => (
           <div key={`clone-${i}`} className="moving-card">
-            {item}
+            {typeof item === 'string' ? (
+              <p>{item}</p>
+            ) : (
+              item
+            )}
           </div>
         ))}
       </div>

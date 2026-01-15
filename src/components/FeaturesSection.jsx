@@ -1,49 +1,52 @@
 import React from 'react';
-import ScrollFloat from './ScrollFloat';
-import TiltedCard from './TiltedCard';
-import HoverEffect from './HoverEffect';
 import './FeaturesSection.css';
 
 function FeaturesSection() {
+  const features = [
+    {
+      title: "AI LEARNING CORE",
+      desc: "Adaptive intelligence-driven robotics training",
+      percent: "92%"
+    },
+    {
+      title: "ROBOTICS LAB SIMULATION",
+      desc: "Build, program, and test real robots",
+      percent: "88%"
+    },
+    {
+      title: "GLOBAL COMPETITION NETWORK",
+      desc: "International exposure & robotics leagues",
+      percent: "64%"
+    },
+    {
+      title: "STEM EXCELLENCE PATH",
+      desc: "Structured progression from basics → mastery",
+      percent: "74%"
+    }
+  ];
+
   return (
     <section className="features-section">
-      <ScrollFloat
-        animationDuration={1}
-        ease="back.inOut(2)"
-        scrollStart="center bottom+=50%"
-        scrollEnd="bottom bottom-=40%"
-        stagger={0.03}
-      >
-        Why Choose WeRrcm?
-      </ScrollFloat>
+      {/* STARFIELD */}
+      <div className="stars" />
+      <div className="stars stars2" />
+      <div className="stars stars3" />
 
+      {/* GLOBAL GLOW */}
+      <div className="global-glow" />
+
+      {/* FEATURES GRID */}
       <div className="features-grid">
-        <TiltedCard>
-          <HoverEffect>
-            <div className="feature">
-              <h3>AI-Powered Learning</h3>
-              <p>Advanced robotics curriculum integrated with artificial intelligence.</p>
+        {features.map((f, i) => (
+          <div key={i} className="feature-hud">
+            <h4>{f.title}</h4>
+            <p>{f.desc}</p>
+            <div className="hud-bar">
+              <span style={{ width: f.percent }} />
+              <label>{f.percent}</label>
             </div>
-          </HoverEffect>
-        </TiltedCard>
-
-        <TiltedCard>
-          <HoverEffect>
-            <div className="feature">
-              <h3>Competition Ready</h3>
-              <p>Prepare for international robotics competitions and global challenges.</p>
-            </div>
-          </HoverEffect>
-        </TiltedCard>
-
-        <TiltedCard>
-          <HoverEffect>
-            <div className="feature">
-              <h3>STEM Excellence</h3>
-              <p>Comprehensive Science, Technology, Engineering & Mathematics training.</p>
-            </div>
-          </HoverEffect>
-        </TiltedCard>
+          </div>
+        ))}
       </div>
     </section>
   );

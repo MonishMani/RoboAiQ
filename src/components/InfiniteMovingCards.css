@@ -1,6 +1,7 @@
 .infinite-moving-cards-wrapper {
   overflow: hidden;
   width: 100%;
+  padding: 20px 0;
 }
 
 .infinite-moving-cards {
@@ -18,11 +19,34 @@
 .moving-card {
   flex-shrink: 0;
   min-width: 300px;
+  height: 400px;
   padding: 20px;
   background: #242424;
   border-radius: 12px;
   border: 1px solid rgba(255, 153, 51, 0.2);
   color: #bcbcbc;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden;
+}
+
+.moving-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.moving-card p {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
 }
 
 @keyframes scroll {
