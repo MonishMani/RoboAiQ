@@ -1,73 +1,54 @@
+import Particles from './Particles';
 import "./WeRrcmJourney.css";
 
 export default function WeRrcmJourney() {
   const checkpoints = [
-    {
-      id: 1,
-      title: "Electronics Basics",
-      desc: "Understand circuits, components, breadboards, and electrical fundamentals",
-      position: "top-left"
-    },
-    {
-      id: 2,
-      title: "Sensors & Coding",
-      desc: "Learn Arduino programming and integrate sensors to make intelligent decisions",
-      position: "left"
-    },
-    {
-      id: 3,
-      title: "Motors & Actuators",
-      desc: "Control motors, servos, and mechanical motion systems used in real robots",
-      position: "bottom-left"
-    },
-    {
-      id: 4,
-      title: "Complete Robot Build",
-      desc: "Design, assemble, and program a fully functional robot from start to finish",
-      position: "bottom-center"
-    },
-    {
-      id: 5,
-      title: "Competition Ready",
-      desc: "Prepare for international robotics competitions with advanced strategies",
-      position: "right"
-    },
-    {
-      id: 6,
-      title: "Small Batch Sizes",
-      desc: "Personalized mentorship and individualized attention for every student",
-      position: "bottom-right"
-    }
+    { id: 1, title: "Electronics Basics", desc: "Circuits, components & fundamentals", side: "left" },
+    { id: 2, title: "Sensors & Coding", desc: "Arduino & sensor intelligence", side: "right" },
+    { id: 3, title: "Motors & Actuators", desc: "Motion control & mechanics", side: "left" },
+    { id: 4, title: "Complete Robot Build", desc: "End-to-end robot development", side: "right" },
+    { id: 5, title: "Competition Ready", desc: "International robotics exposure", side: "left" },
+    { id: 6, title: "Small Batch Mentorship", desc: "Personalized expert guidance", side: "right" }
   ];
 
   return (
-    <section className="wrrcm-journey">
-      <div className="journey-header">
-        <h2>The WeRrcm Learning Highway</h2>
+    <section className="neural-journey">
+      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 1 }}>
+        <Particles
+          particleColors={['#ffffff', '#ffffff']}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
       </div>
+      
+      <h2 className="journey-title">Your Robotics Journey</h2>
 
-      <div className="journey-container">
-        <div className="journey-grid">
-          {checkpoints.map((checkpoint) => (
-            <div
-              key={checkpoint.id}
-              className={`checkpoint-card ${checkpoint.position}`}
-            >
-              <div className="checkpoint-marker">
-                <div className="checkpoint-dot">{checkpoint.id}</div>
-              </div>
-              <div className="checkpoint-info">
-                <h3>{checkpoint.title}</h3>
-                <p>{checkpoint.desc}</p>
-              </div>
-            </div>
-          ))}
-
-          <div className="center-visual">
-            <div className="center-circle"></div>
-            <div className="center-text">World-Class Education</div>
-          </div>
+      <div className="neural-system">
+        {/* CENTRAL CORE */}
+        <div className="neural-core">
+          <div className="core-ring" />
+          <span>RoboAiq</span>
         </div>
+
+        {/* NEURAL PATH */}
+        <div className="neural-line" />
+
+        {/* CHECKPOINTS */}
+        {checkpoints.map((cp, index) => (
+          <div key={cp.id} className={`neural-node ${cp.side}`} style={{ top: `${15 + index * 12}%` }}>
+            <div className="node-dot">{cp.id}</div>
+            <div className="node-connector" />
+            <div className="node-content">
+              <h4>{cp.title}</h4>
+              <p>{cp.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
