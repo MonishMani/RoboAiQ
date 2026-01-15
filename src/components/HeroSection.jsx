@@ -81,7 +81,7 @@ function HeroSection() {
 
   return (
     <>
-    
+
       <div className="hero-right">
         <div className="robot-container">
           <div className="robot-viewer">
@@ -89,7 +89,7 @@ function HeroSection() {
           </div>
         </div>
       </div>
-*
+      *
 
       <section className="hero hero-second">
         <div className="orb-background">
