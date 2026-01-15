@@ -3,7 +3,7 @@ import "./WeRrcmUnique.css";
 export default function Unique() {
   return (
     <section className="unique-section">
-      <h2 className="unique-title">What Makes WeRcm Unique?</h2>
+      <h2 className="unique-title">What Makes RoboAIQ Unique?</h2>
 
       <div className="unique-wrapper">
         {/* Galaxy glow */}
@@ -15,8 +15,8 @@ export default function Unique() {
 
         {/* Center */}
         <div className="unique-center">
-          <h3>WeRcm</h3>
-          <p>Medical Billing Excellence</p>
+          <h3>RoboAIQ</h3>
+          <p>Robotics Education Excellence</p>
         </div>
 
         {/* Orbit items */}
