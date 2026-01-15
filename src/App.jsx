@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import FeaturesSection from './components/FeaturesSection';
 import WeRrcmUnique from './components/WeRrcmUnique';
 import WeRrcmJourney from './components/WeRrcmJourney';
 import WeRrcmCurriculum from './components/WeRrcmCurriculum';
@@ -18,7 +17,6 @@ function App() {
     <div className="app">
       <Navbar />
       <HeroSection />
-      <FeaturesSection />
       <WeRrcmUnique />
       <WeRrcmJourney />
       <WeRrcmCurriculum />
