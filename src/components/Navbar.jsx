@@ -8,24 +8,34 @@ function Navbar() {
 
         {/* Logo */}
         <div className="logo">
-          Robo<span>AI</span>Q
+          <div className="logo-text">Robo<span>AI</span>Q</div>
+          <div className="logo-subtext">powered by WeRrcm</div>
         </div>
 
         {/* Navigation */}
         <div className="nav-links">
           <a href="#home" className="nav-item">
-         
             <span className="text">Home</span>
           </a>
 
-          <a href="#about" className="nav-item">
-      
-            <span className="text">About</span>
+          <a href="#program" className="nav-item">
+            <span className="text">Program</span>
           </a>
 
-          <a href="#products" className="nav-item">
-          
-            <span className="text">Products</span>
+          <a href="#modules" className="nav-item">
+            <span className="text">Modules</span>
+          </a>
+
+          <a href="#success-stories" className="nav-item">
+            <span className="text">Success Stories</span>
+          </a>
+
+          <a href="#student-photos" className="nav-item">
+            <span className="text">Student Photos</span>
+          </a>
+
+          <a href="#register" className="nav-item nav-register">
+            <span className="text">Register</span>
           </a>
 
           <a href="#contact" className="nav-item nav-cta">

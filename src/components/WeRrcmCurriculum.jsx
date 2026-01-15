@@ -1,54 +1,64 @@
-import React from "react";
 import "./WeRrcmCurriculum.css";
 
 const curriculum = [
-  { step: "01", title: "Electronics Fundamentals", icon: "⚡", desc: "Understand circuits, components, and power systems." },
-  { step: "02", title: "Sensor Integration", icon: "🧠", desc: "Work with real-world sensors and data acquisition." },
-  { step: "03", title: "Motor Control Systems", icon: "⚙️", desc: "Control DC, Servo, and Stepper motors precisely." },
-  { step: "04", title: "IoT Communication", icon: "🌐", desc: "Connect robots to the cloud and remote systems." },
-  { step: "05", title: "Arduino Programming", icon: "💻", desc: "Code logic, automation, and hardware interaction." },
-  { step: "06", title: "Competition Preparation", icon: "🏆", desc: "Build, test, and compete like industry teams." }
+  {
+    step: "01",
+    title: "Electronics Fundamentals",
+    desc: "Core understanding of circuits, components, signal flow, and power systems used in robotics."
+  },
+  {
+    step: "02",
+    title: "Sensor Integration",
+    desc: "Interfacing real-world sensors, data acquisition, calibration, and interpretation."
+  },
+  {
+    step: "03",
+    title: "Motor Control Systems",
+    desc: "Precise control of DC, servo, and stepper motors with feedback mechanisms."
+  },
+  {
+    step: "04",
+    title: "IoT & Communication Systems",
+    desc: "Wireless communication, cloud connectivity, and remote robotic control."
+  },
+  {
+    step: "05",
+    title: "Embedded Programming",
+    desc: "Programming microcontrollers for automation, logic execution, and hardware interaction."
+  },
+  {
+    step: "06",
+    title: "Competition & System Integration",
+    desc: "End-to-end system building, testing, optimization, and competitive deployment."
+  }
 ];
 
 function WeRrcmCurriculum() {
   return (
     <section className="wrrcm-curriculum">
+      {/* Background effects */}
+      <div className="curriculum-glow" />
+
       <div className="curriculum-container">
-
-        {/* LEFT – INFO */}
-        <div className="curriculum-left">
-          <span className="curriculum-badge">Structured Learning Path</span>
-          <h2>Robotics Curriculum Journey</h2>
+        <div className="curriculum-header">
+          <h2>Robotics Programme Curriculum</h2>
           <p>
-            A carefully engineered roadmap that transforms beginners into
-            confident robotics engineers through hands-on learning,
-            real-world systems, and competition exposure.
+            A structured progression from foundational engineering concepts
+            to advanced competitive robotics systems
           </p>
-
-          <ul className="curriculum-points">
-            <li>Industry-aligned skill progression</li>
-            <li>Hands-on hardware mastery</li>
-            <li>Competition & project-based learning</li>
-          </ul>
         </div>
 
-        {/* RIGHT – TIMELINE */}
-        <div className="curriculum-right">
-          <div className="timeline-line"></div>
-
-          {curriculum.map((item, index) => (
-            <div className="timeline-card" key={index}>
-              <div className="timeline-step">{item.step}</div>
-
-              <div className="timeline-content">
-                <div className="timeline-icon">{item.icon}</div>
-                <h4>{item.title}</h4>
+        <div className="curriculum-network">
+          <div className="curriculum-grid">
+            {curriculum.map((item, index) => (
+              <div className="curriculum-card" key={index}>
+                <div className="card-index">{item.step}</div>
+                <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-
       </div>
     </section>
   );
