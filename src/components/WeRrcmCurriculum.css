@@ -1,135 +1,111 @@
+/* ================= SECTION ================= */
 .wrrcm-curriculum {
   padding: 120px 80px;
-  background: #050505;
+  background: linear-gradient(180deg, #06070b 0%, #02040a 100%);
   color: #ffffff;
-  font-family: "Segoe UI", sans-serif;
   position: relative;
   overflow: hidden;
-}
-
-/* ================= STARFIELD ================= */
-.curriculum-stars {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(1px 1px at 20% 30%, white, transparent),
-    radial-gradient(1px 1px at 80% 70%, white, transparent),
-    radial-gradient(1px 1px at 50% 50%, white, transparent);
-  background-size: 150px 150px;
-  animation: drift 160s linear infinite;
-  opacity: 0.3;
-  z-index: 0;
-}
-
-.curriculum-stars.stars2 {
-  background-size: 220px 220px;
-  opacity: 0.15;
-  animation-duration: 220s;
-}
-
-@keyframes drift {
-  from { transform: translateY(0); }
-  to { transform: translateY(-2000px); }
+  font-family: "Segoe UI", system-ui, sans-serif;
 }
 
 /* ================= GLOW ================= */
 .curriculum-glow {
   position: absolute;
-  inset: -25%;
+  inset: -20%;
   background:
-    radial-gradient(circle at center, rgba(255,255,255,0.06), transparent 35%),
-    radial-gradient(circle at top left, rgba(255,255,255,0.03), transparent 45%);
-  filter: blur(60px);
-  z-index: 1;
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.06), transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04), transparent 45%);
+  filter: blur(80px);
   pointer-events: none;
 }
 
+/* ================= CONTAINER ================= */
 .curriculum-container {
   max-width: 1400px;
-  margin: auto;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .curriculum-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 90px;
 }
 
 .curriculum-header h2 {
   font-size: 48px;
   font-weight: 600;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.6px;
+  margin-bottom: 14px;
 }
 
 .curriculum-header p {
   font-size: 16px;
-  color: #a0a0a0;
+  color: #9ca3af;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* GRID */
+/* ================= GRID ================= */
 .curriculum-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  gap: 28px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .curriculum-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  padding: 32px;
-  backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.02)
+  );
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 36px 32px;
+  transition: all 0.35s ease;
   position: relative;
-  overflow: hidden;
 }
 
+/* Subtle tech highlight */
 .curriculum-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.08),
+    transparent 60%
+  );
   opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+  transition: opacity 0.35s ease;
 }
 
+/* Hover */
 .curriculum-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.25);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
 .curriculum-card:hover::before {
   opacity: 1;
 }
 
-/* CARD HEADER */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.card-step {
-  font-size: 14px;
+/* ================= STEP INDEX ================= */
+.card-index {
+  font-size: 13px;
   font-weight: 600;
-  color: #a0a0a0;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  color: #d1d5db;
+  margin-bottom: 18px;
 }
 
-.card-icon {
-  font-size: 32px;
-}
-
-/* CARD CONTENT */
+/* ================= TEXT ================= */
 .curriculum-card h3 {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 600;
   margin-bottom: 12px;
   color: #ffffff;
@@ -137,32 +113,28 @@
 
 .curriculum-card p {
   font-size: 14px;
-  color: #b0b0b0;
-  line-height: 1.6;
+  line-height: 1.65;
+  color: #b6bcc8;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .wrrcm-curriculum {
-    padding: 80px 40px;
+    padding: 90px 40px;
   }
 
   .curriculum-header h2 {
-    font-size: 36px;
-  }
-
-  .curriculum-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    font-size: 38px;
   }
 }
 
 @media (max-width: 768px) {
   .wrrcm-curriculum {
-    padding: 60px 20px;
+    padding: 70px 24px;
   }
 
   .curriculum-header h2 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .curriculum-grid {
