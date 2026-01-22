@@ -435,12 +435,12 @@ class App {
 
   update() {
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
-    
-    // Auto-scroll when user is not interacting - very smooth and slow
+
+    // Auto-scroll when user is not interacting
     if (this.autoScroll && !this.isUserInteracting) {
-      this.scroll.target += this.autoScrollSpeed * 0.02; // Much much slower auto-scroll
+      this.scroll.target += this.autoScrollSpeed;
     }
-    
+
     const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
     if (this.medias) {
       this.medias.forEach(media => media.update(this.scroll, direction));
@@ -458,7 +458,7 @@ class App {
     this.boundOnTouchUp = this.onTouchUp.bind(this);
     this.boundOnHoverStart = this.onHoverStart.bind(this);
     this.boundOnHoverEnd = this.onHoverEnd.bind(this);
-    
+
     window.addEventListener('resize', this.boundOnResize);
     window.addEventListener('mousewheel', this.boundOnWheel);
     window.addEventListener('wheel', this.boundOnWheel);
@@ -468,7 +468,7 @@ class App {
     window.addEventListener('touchstart', this.boundOnTouchDown);
     window.addEventListener('touchmove', this.boundOnTouchMove);
     window.addEventListener('touchend', this.boundOnTouchUp);
-    
+
     // Add hover events to canvas
     this.gl.canvas.addEventListener('mouseenter', this.boundOnHoverStart);
     this.gl.canvas.addEventListener('mouseleave', this.boundOnHoverEnd);
@@ -485,13 +485,13 @@ class App {
     window.removeEventListener('touchstart', this.boundOnTouchDown);
     window.removeEventListener('touchmove', this.boundOnTouchMove);
     window.removeEventListener('touchend', this.boundOnTouchUp);
-    
+
     // Remove hover listeners
     if (this.gl && this.gl.canvas) {
       this.gl.canvas.removeEventListener('mouseenter', this.boundOnHoverStart);
       this.gl.canvas.removeEventListener('mouseleave', this.boundOnHoverEnd);
     }
-    
+
     if (this.renderer && this.renderer.gl && this.renderer.gl.canvas.parentNode) {
       this.renderer.gl.canvas.parentNode.removeChild(this.renderer.gl.canvas);
     }

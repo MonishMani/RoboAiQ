@@ -31,6 +31,11 @@ function Navbar() {
             <span className="text">Robotics Kit</span>
           </Link>
 
+          <Link to="/mentors" className="nav-item">
+            <span className="text">Our Mentors</span>
+          </Link>
+
+
           <a href="/#success-stories" className="nav-item">
             <span className="text">Success Stories</span>
           </a>
