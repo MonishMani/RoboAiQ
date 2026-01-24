@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import RoboticsKitPage from './pages/RoboticsKitPage';
 import MentorsPage from './pages/MentorsPage';
 import ProgramCurriculumPage from './pages/ProgramCurriculumPage';
+import RiaChatbot from './components/RiaChatbot/RiaChatbot';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/mentors" element={<MentorsPage />} />
         <Route path="/programs" element={<ProgramCurriculumPage />} />
       </Routes>
+      <RiaChatbot />
     </div>
   );
 }

@@ -1,0 +1,542 @@
+/* Ria Premium Chatbot Styles - Large Scale Avatar */
+:root {
+    --ria-primary: #3b82f6;
+    --ria-bg: rgba(255, 255, 255, 0.85);
+    --ria-text: #1e293b;
+    --ria-user-bg: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    --ria-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --ria-border: 1px solid rgba(255, 255, 255, 0.18);
+    --ria-z-index: 9999;
+}
+
+/* --- Backdrop Overlay (Dims background when open) --- */
+.ria-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.ria-backdrop.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* --- Main Container --- */
+.ria-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: var(--ria-z-index);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    /* Ensure flush with viewport edges */
+    margin: 0;
+    padding: 0;
+    /* Children will have pointer-events */
+}
+
+.ria-container.hidden {
+    opacity: 0;
+}
+
+/* --- Avatar Container (Large Scale) --- */
+.ria-avatar-container {
+    position: relative;
+    width: 480px;
+    height: 680px;
+    pointer-events: auto;
+
+    /* REVERTED: Standard Soft Masking for Transparent PNG */
+    mask-image: radial-gradient(ellipse 90% 85% at center bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.95) 75%,
+            rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 85% at center bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.95) 75%,
+            rgba(0, 0, 0, 0) 100%);
+
+    /* Standard Composite */
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+
+    /* No Blend Mode - Keeps original colors */
+    mix-blend-mode: normal;
+
+    filter: drop-shadow(0 10px 40px rgba(59, 130, 246, 0.15));
+
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Restore Ground Shadow for depth */
+.ria-avatar-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 20px;
+    background: radial-gradient(ellipse 100% 100% at center,
+            rgba(14, 165, 233, 0.2) 0%,
+            rgba(14, 165, 233, 0) 100%);
+    filter: blur(8px);
+    z-index: -1;
+    display: block;
+}
+
+/* --- Avatar Image --- */
+.ria-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+
+    /* Double-ensure transparency */
+    background: transparent !important;
+
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Idle Animations */
+    animation: riaFloat 4.5s ease-in-out infinite,
+        riaBreathe 3.2s ease-in-out infinite;
+    transform-origin: center 85%;
+}
+
+/* Robot leans forward when chat is open */
+.ria-avatar-img.chat-open {
+    transform: perspective(1000px) rotateX(3deg);
+}
+
+/* Hover effect */
+.ria-avatar-container:hover .ria-avatar-img {
+    animation: riaFloat 4.5s ease-in-out infinite,
+        riaBreathe 3.2s ease-in-out infinite,
+        riaHeadTilt 0.6s ease-out forwards;
+}
+
+/* Idle Animations */
+@keyframes riaFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes riaBreathe {
+
+    0%,
+    100% {
+        transform: scaleY(1.0) scaleX(1.0);
+    }
+
+    50% {
+        transform: scaleY(1.015) scaleX(1.005);
+    }
+}
+
+@keyframes riaHeadTilt {
+    to {
+        transform: rotate(-2deg) translateY(-5px);
+    }
+}
+
+/* --- Hand-Held Section Tab Styles Removed --- */
+
+/* --- Chat Panel (Emerges from hand) --- */
+.ria-chat-panel {
+    position: absolute;
+
+    /* Positioned to emerge from hand/tab area */
+    bottom: 280px;
+    right: -20px;
+
+    width: 360px;
+    max-height: 520px;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(59, 130, 246, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    opacity: 0;
+    transform: scale(0.3) translateY(100px);
+    transform-origin: bottom left;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 11;
+}
+
+.ria-chat-panel.open {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: all;
+}
+
+/* --- Header --- */
+.ria-header {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.ria-title h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.ria-context {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.ria-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    color: #64748b;
+    transition: background 0.2s;
+    font-size: 18px;
+    line-height: 1;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ria-close-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #ef4444;
+}
+
+/* --- Messages Area --- */
+.ria-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scroll-behavior: smooth;
+}
+
+.message {
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    word-wrap: break-word;
+    animation: msgSlideIn 0.3s ease-out;
+}
+
+@keyframes msgSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.bot {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--ria-text);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.message.user {
+    align-self: flex-end;
+    background: var(--ria-user-bg);
+    color: white;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* --- Speaking Highlight --- */
+.speaking-word {
+    background: linear-gradient(135deg,
+            rgba(59, 130, 246, 0.25) 0%,
+            rgba(147, 197, 253, 0.2) 100%);
+    color: #1e40af;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 600;
+    border-bottom: 2px solid #3b82f6;
+    animation: wordPulse 0.3s ease;
+}
+
+@keyframes wordPulse {
+    0% {
+        background: rgba(59, 130, 246, 0.4);
+    }
+
+    100% {
+        background: rgba(59, 130, 246, 0.25);
+    }
+}
+
+/* --- FAQ Buttons --- */
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.faq-btn {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 13px;
+    color: var(--ria-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.faq-btn:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--ria-primary);
+    transform: translateX(4px);
+}
+
+/* --- Input Area --- */
+.ria-input-area {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.ria-input {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.ria-input:focus {
+    border-color: var(--ria-primary);
+}
+
+/* --- Mic Button --- */
+.ria-mic-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #f1f5f9;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.ria-mic-btn:hover {
+    background: #e2e8f0;
+}
+
+.ria-mic-btn.listening {
+    background: #ef4444;
+    color: white;
+    animation: micPulse 1.5s infinite;
+}
+
+.ria-mic-btn.speaking {
+    background: var(--ria-primary);
+    color: white;
+}
+
+@keyframes micPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+/* --- Contextual Tip --- */
+.context-tip {
+    margin: 10px 0;
+    padding: 10px;
+    background: #eff6ff;
+    border-left: 3px solid var(--ria-primary);
+    font-size: 12px;
+    color: #334155;
+    border-radius: 4px;
+}
+
+/* --- Typing Indicator --- */
+.typing-indicator span {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #94a3b8;
+    border-radius: 50%;
+    animation: typing 1s infinite ease-in-out both;
+    margin: 0 2px;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes typing {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 1023px) {
+    .ria-avatar-container {
+        width: 288px;
+        /* 60% scale */
+        height: 408px;
+    }
+
+    .ria-section-tab {
+        width: 108px;
+        height: 36px;
+        bottom: 190px;
+        left: 30px;
+    }
+
+    .section-name {
+        font-size: 13px;
+    }
+
+    .tab-icon {
+        font-size: 14px;
+    }
+
+    .ria-chat-panel {
+        width: 320px;
+        bottom: 170px;
+    }
+}
+
+@media (max-width: 767px) {
+    .ria-container {
+        right: 8px;
+        bottom: 60px;
+        /* Move up to avoid browser UI */
+    }
+
+    .ria-avatar-container {
+        width: 192px;
+        /* 40% scale */
+        height: 272px;
+    }
+
+    .ria-section-tab {
+        width: 72px;
+        height: 28px;
+        bottom: 130px;
+        left: 20px;
+    }
+
+    .section-name {
+        font-size: 10px;
+    }
+
+    .tab-icon {
+        font-size: 12px;
+    }
+
+    .ria-chat-panel {
+        width: calc(100vw - 16px);
+        max-width: 360px;
+        bottom: 120px;
+        right: 8px;
+    }
+}
+
+/* --- Reduced Motion Support --- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .ria-avatar-img {
+        animation: none !important;
+    }
+}
