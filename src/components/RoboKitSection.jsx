@@ -4,46 +4,63 @@ export default function RoboKitSection() {
   return (
     <section className="kit-section">
 
-      {/* TITLE */}
+      {/* HEADER */}
       <div className="kit-header">
-        <h2>Complete Robotics Kit Included</h2>
-        <p>Everything you need to start building intelligent robots — no extras required</p>
+        <span className="kit-eyebrow">HARDWARE INCLUDED</span>
+        <h2>Industry-Grade Robotics Kit  Included with Your Program</h2>
+        <p>
+          Every RoboAIQ student receives a complete, reusable robotics kit designed
+          for hands-on learning, experimentation, and long-term use.
+        </p>
       </div>
 
-      {/* KIT GRID */}
+      {/* GRID */}
       <div className="kit-grid">
 
         {/* IMAGE */}
         <div className="kit-image">
-          <img src="/robokit.png" alt="Robotics Kit" />
+          <img src="/robokit.png" alt="RoboAIQ Robotics Kit" />
+          <div className="kit-image-badge">₹15,000+ VALUE</div>
         </div>
 
         {/* CONTENT */}
         <div className="kit-content">
-          <h3>Your Complete Kit Includes</h3>
+          <h3>What’s Inside the RoboAIQ Robotics Kit</h3>
 
           <ul className="kit-list">
-            <li>Arduino Uno Microcontroller</li>
-            <li>ESP32 Microcontroller</li>
-            <li>DC Motors & Motor Drivers</li>
-            <li>Servo Motors</li>
-            <li>Ultrasonic & IR Sensors</li>
-            <li>Temperature Sensors</li>
-            <li>LED Displays</li>
-            <li>Breadboard & Jumper Wires</li>
+            <li>Arduino Uno & ESP32 Microcontrollers</li>
+            <li>DC Motors, Servo Motors & Motor Drivers</li>
+            <li>Ultrasonic, IR & Temperature Sensors</li>
+            <li>LED Displays & Output Modules</li>
+            <li>Breadboard, Jumper Wires & Connectors</li>
             <li>Wheels, Chassis & Battery Pack</li>
-            <li>USB Cable, Resistors & Capacitors</li>
+            <li>USB Cables, Resistors & Capacitors</li>
+            <li>Expansion-ready components for future projects</li>
           </ul>
 
+          {/* VALUE STRIPS */}
+          <div className="kit-highlights">
+            <div>
+              <strong>No Hidden Costs</strong>
+              <span>Everything required is included</span>
+            </div>
+            <div>
+              <strong>Reusable & Durable</strong>
+              <span>Use across multiple courses</span>
+            </div>
+            <div>
+              <strong>Yours to Keep</strong>
+              <span>Learn, build & experiment anytime</span>
+            </div>
+          </div>
+
+          {/* FINAL BADGE */}
           <div className="kit-badge">
-            Worth ₹15,000+ · Yours to Keep Forever
+            Included at No Extra Cost · Worth ₹15,000+
           </div>
         </div>
 
       </div>
-
-
-
     </section>
   );
 }

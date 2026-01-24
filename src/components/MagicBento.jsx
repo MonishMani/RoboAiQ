@@ -481,11 +481,13 @@ const MagicBento = ({
   enableTilt = false,
   glowColor = DEFAULT_GLOW_COLOR,
   clickEffect = true,
-  enableMagnetism = true
+  enableMagnetism = true,
+  cardData: customCardData = null
 }) => {
   const gridRef = useRef(null);
   const isMobile = useMobileDetection();
   const shouldDisableAnimations = disableAnimations || isMobile;
+  const displayCardData = customCardData || cardData;
 
   return (
     <>
@@ -500,15 +502,51 @@ const MagicBento = ({
       )}
 
       <BentoCardGrid gridRef={gridRef}>
-        {cardData.map((card, index) => {
-          const baseClassName = `magic-bento-card ${textAutoHide ? 'magic-bento-card--text-autohide' : ''} ${enableBorderGlow ? 'magic-bento-card--border-glow' : ''}`;
+        {displayCardData.map((card, index) => {
+          const isImageCard = card.src || card.image;
+          const baseClassName = `magic-bento-card ${textAutoHide && !isImageCard ? 'magic-bento-card--text-autohide' : ''} ${enableBorderGlow ? 'magic-bento-card--border-glow' : ''}`;
           const cardProps = {
             className: baseClassName,
             style: {
-              backgroundColor: card.color,
+              backgroundColor: isImageCard ? 'transparent' : card.color,
               '--glow-color': glowColor
             }
           };
+
+          if (isImageCard) {
+            const imageSrc = card.src || card.image;
+            return (
+              <ParticleCard
+                key={index}
+                {...cardProps}
+                disableAnimations={shouldDisableAnimations}
+                particleCount={particleCount}
+                glowColor={glowColor}
+                enableTilt={enableTilt}
+                clickEffect={clickEffect}
+                enableMagnetism={enableMagnetism}
+              >
+                <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                  <img
+                    src={imageSrc}
+                    alt={card.alt || `Card ${index + 1}`}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: 'inherit'
+                    }}
+                  />
+                  {(card.title || card.description) && (
+                    <div className="image-card-overlay">
+                      {card.title && <h3 className="image-card-title">{card.title}</h3>}
+                      {card.description && <p className="image-card-description">{card.description}</p>}
+                    </div>
+                  )}
+                </div>
+              </ParticleCard>
+            );
+          }
 
           if (enableStars) {
             return (

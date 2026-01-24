@@ -12,9 +12,10 @@
 
 .card-grid {
   display: grid;
-  gap: 0.5em;
-  padding: 0.75em;
+  gap: 1em;
+  padding: 0;
   max-width: 54em;
+  margin: 0 auto;
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
 }
 
@@ -27,9 +28,9 @@
   min-height: 200px;
   width: 100%;
   max-width: 100%;
-  padding: 1.25em;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
+  padding: 0;
+  border-radius: 16px;
+  border: none;
   background: var(--background-dark);
   font-weight: 300;
   overflow: hidden;
@@ -214,4 +215,74 @@
 .bento-section {
   position: relative;
   user-select: none;
+}
+
+/* Image card overlay styles */
+.image-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 1em;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.magic-bento-card:hover .image-card-overlay {
+  opacity: 1;
+}
+
+.image-card-title {
+  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  margin: 0 0 0.3em 0;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.image-card-description {
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  margin: 0;
+  opacity: 1;
+  line-height: 1.3;
+  color: #e0e0e0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive overlay adjustments */
+@media (max-width: 599px) {
+  .image-card-overlay {
+    padding: 0.75em;
+  }
+
+  .magic-bento-card {
+    min-height: 160px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .image-card-overlay {
+    padding: 0.9em;
+  }
+
+  .magic-bento-card {
+    min-height: 180px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-card-overlay {
+    padding: 1.2em;
+  }
+
+  .magic-bento-card {
+    min-height: 200px;
+  }
 }

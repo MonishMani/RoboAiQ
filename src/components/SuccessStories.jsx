@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import MagicBento from './MagicBento';
 import './SuccessStories.css';
 
 function SuccessStories() {
@@ -9,12 +10,42 @@ function SuccessStories() {
   const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.3 });
 
   const successImages = [
-    { src: '/assets/1.jpeg', alt: 'Success Story 1' },
-    { src: '/assets/2.jpeg', alt: 'Success Story 2' },
-    { src: '/assets/3.jpeg', alt: 'Success Story 3' },
-    { src: '/assets/4.jpeg', alt: 'Success Story 4' },
-    { src: '/assets/5.jpeg', alt: 'Success Story 5' },
-    { src: '/assets/6.jpeg', alt: 'Success Story 6' }
+    {
+      src: '/assets/1.jpeg',
+      alt: 'Deputy CM Recognition',
+      title: 'State-Level Recognition',
+      description: 'Honored by the Deputy Chief Minister of Tamil Nadu'
+    },
+    {
+      src: '/assets/2.jpeg',
+      alt: 'CM Puducherry Recognition',
+      title: 'National Excellence',
+      description: 'Recognized by the Chief Minister of Puducherry'
+    },
+    {
+      src: '/assets/3.jpeg',
+      alt: 'District Collector Award',
+      title: 'District Achievement',
+      description: 'Awarded by the Dindigul District Collector'
+    },
+    {
+      src: '/assets/4.jpeg',
+      alt: 'Robotics Competition',
+      title: 'Robotics Championship',
+      description: 'Outstanding performance in robotics competitions'
+    },
+    {
+      src: '/assets/5.jpeg',
+      alt: 'Innovation Award',
+      title: 'Innovation Award',
+      description: 'Recognized for innovation and technical excellence'
+    },
+    {
+      src: '/assets/6.jpeg',
+      alt: 'Student Excellence',
+      title: 'Student Excellence',
+      description: 'Demonstrating leadership and technical skill'
+    }
   ];
 
   useEffect(() => {
@@ -50,45 +81,43 @@ function SuccessStories() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="success-stories section-parallax" id="success-stories">
+    <section
+      ref={sectionRef}
+      className="success-stories section-parallax"
+      id="success-stories"
+    >
       <div
         ref={headerRef}
-        className={`success-stories-header scroll-reveal ${headerVisible ? 'visible' : ''}`}
+        className={`success-stories-header scroll-reveal ${
+          headerVisible ? 'visible' : ''
+        }`}
       >
         <h2>Competition Success Stories</h2>
-        <p>Our students compete and win at international robotics competitions</p>
+        <p>
+          Celebrating student excellence through national and international
+          recognition
+        </p>
       </div>
 
       <div className="success-stories-content">
-        <div className={`success-stories-intro card-premium glass-premium scroll-reveal stagger-1 ${sectionVisible ? 'visible' : ''}`}>
-          <div className="prestige-badge">PRESTIGIOUS RECOGNITION</div>
-          <h3>Student Honored by Deputy Chief Minister of Tamil Nadu</h3>
-          <p>Mr. Yogesh Poornachandran receives prestigious award from the Deputy Chief Minister of Tamil Nadu, recognizing excellence in robotics and academic achievement</p>
-        </div>
 
-        <div className={`success-stories-intro card-premium glass-premium scroll-reveal stagger-2 ${sectionVisible ? 'visible' : ''}`}>
-          <div className="prestige-badge">PRESTIGIOUS RECOGNITION</div>
-          <h3>Student Honored by Chief Minister of Puducherry</h3>
-          <p>Mr. Yogesh Poornachandran receives prestigious award from the Chief Minister of Puducherry, recognizing excellence in robotics and academic achievement</p>
-        </div>
 
-        <div className={`success-stories-intro card-premium glass-premium scroll-reveal stagger-3 ${sectionVisible ? 'visible' : ''}`}>
-          <div className="prestige-badge">PRESTIGIOUS RECOGNITION</div>
-          <h3>Student Honored by Dindigul District Collector</h3>
-          <p>Mr. Yogesh Poornachandran receives prestigious award from the District Collector of Dindigul, Tamil Nadu, recognizing excellence in robotics and academic achievement</p>
-        </div>
-
-        <div className="success-image-grid" ref={gridRef}>
-          {successImages.map((image, index) => (
-            <div
-              key={index}
-              className={`success-image-card card-premium scroll-scale stagger-${index + 1} ${sectionVisible ? 'visible' : ''}`}
-            >
-              <div className="success-image-wrapper">
-                <img src={image.src} alt={image.alt} className="success-image" />
-              </div>
-            </div>
-          ))}
+        {/* Magic Bento */}
+        <div className="magic-bento-wrapper">
+          <MagicBento
+            textAutoHide={true}
+            enableStars={false}
+            enableSpotlight={false}
+            enableBorderGlow={true}
+            enableTilt={false}
+            enableMagnetism={false}
+            clickEffect={false}
+            spotlightRadius={50}
+            particleCount={12}
+            glowColor="132, 0, 255"
+            disableAnimations={false}
+            cardData={successImages}
+          />
         </div>
       </div>
     </section>
@@ -96,4 +125,3 @@ function SuccessStories() {
 }
 
 export default SuccessStories;
-

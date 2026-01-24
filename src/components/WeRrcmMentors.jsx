@@ -1,5 +1,4 @@
 import React from 'react';
-import ChromaGrid from './ChromaGrid';
 import './WeRrcmMentors.css';
 
 import mentorNarsing from '../assets/mentors/mentor_narsing.png';
@@ -18,13 +17,14 @@ function WeRrcmMentors() {
       handle: 'IIT Bombay',
       borderColor: '#ff9933',
       gradient: 'linear-gradient(145deg, #ff9933, #000)',
-      url: 'https://github.com/'
+      url: 'https://github.com/',
+      featured: true
     },
     {
       image: mentorTamizharasan,
       title: 'Tamizharasan K',
       subtitle: 'Robotics & Programming Specialist',
-      handle: '@tamizharasan',
+      handle: 'Robotics Engineer',
       borderColor: '#3B82F6',
       gradient: 'linear-gradient(180deg, #3B82F6, #000)',
       url: 'https://linkedin.com/'
@@ -33,7 +33,7 @@ function WeRrcmMentors() {
       image: mentorSarah,
       title: 'Sarah Johnson',
       subtitle: 'AI & Computer Vision Specialist',
-      handle: '@sarah_ai',
+      handle: 'AI Research Mentor',
       borderColor: '#10B981',
       gradient: 'linear-gradient(145deg, #10B981, #000)',
       url: 'https://github.com/'
@@ -42,7 +42,7 @@ function WeRrcmMentors() {
       image: mentorMike,
       title: 'Mike Chen',
       subtitle: 'Embedded Systems Architect',
-      handle: '@mike_embed',
+      handle: 'Industry Practitioner',
       borderColor: '#8B5CF6',
       gradient: 'linear-gradient(180deg, #8B5CF6, #000)',
       url: 'https://linkedin.com/'
@@ -51,35 +51,94 @@ function WeRrcmMentors() {
       image: mentorAlex,
       title: 'Alex Rivera',
       subtitle: 'Mechatronics Engineer',
-      handle: '@alex_mech',
+      handle: 'Product & Systems',
       borderColor: '#F59E0B',
       gradient: 'linear-gradient(145deg, #F59E0B, #000)',
       url: 'https://github.com/'
-    },
-    {
-      image: mentorJordan,
-      title: 'Jordan Chen',
-      subtitle: 'ROS2 Framework Expert',
-      handle: '@jordan_ros',
-      borderColor: '#06B6D4',
-      gradient: 'linear-gradient(210deg, #06B6D4, #000)',
-      url: 'https://linkedin.com/'
     }
   ];
 
+  const featuredMentor = mentors.find(m => m.featured);
+  const otherMentors = mentors.filter(m => !m.featured);
+
+  const topMentors = [mentors[0], mentors[1]];
+  const bottomMentors = mentors.slice(2);
+
+  const MentorCard = ({ mentor, isFeatured = false }) => (
+    <div className={`mentor-card ${isFeatured ? 'mentor-card--featured' : ''}`}>
+      <div className="mentor-card-inner">
+        <div
+          className="mentor-card-image"
+          style={{
+            backgroundImage: `url(${mentor.image})`,
+            borderColor: mentor.borderColor
+          }}
+        >
+          <div className="mentor-name-badge">{mentor.title}</div>
+          <div className="mentor-card-overlay">
+            <div className="mentor-info">
+              <h3>{mentor.title}</h3>
+              <p className="mentor-subtitle">{mentor.subtitle}</p>
+              <p className="mentor-handle">📍 {mentor.handle}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <section className="wrrcm-mentors">
-      <h2>Meet Our Expert Mentors</h2>
-      <p className="mentors-subtitle">Learn from industry experts and experienced robotics professionals</p>
+      {/* Badge */}
+      <span className="mentors-badge">EXPERT MENTORS</span>
 
-      <div style={{ height: '900px', position: 'relative' }}>
-        <ChromaGrid
-          items={mentors}
-          radius={300}
-          damping={0.45}
-          fadeOut={0.6}
-          ease="power3.out"
-        />
+      {/* Heading */}
+      <h2>Learn from Industry-Leading Robotics Mentors</h2>
+
+      {/* Subtitle */}
+      <p className="mentors-subtitle">
+        Our mentors are engineers, researchers, and educators who bring real-world
+        robotics experience into every learning session.
+      </p>
+
+      {/* Trust Metrics */}
+      <div className="mentors-stats">
+        <div>
+          <strong>10+</strong>
+          <span>Expert Mentors</span>
+        </div>
+        <div>
+          <strong>8+ Years</strong>
+          <span>Avg. Experience</span>
+        </div>
+        <div>
+          <strong>Global</strong>
+          <span>Industry Exposure</span>
+        </div>
+        <div>
+          <strong>1000+</strong>
+          <span>Students Mentored</span>
+        </div>
+      </div>
+
+      <h3>Meet Our Expert Mentors</h3>
+      <p className="mentors-subtitle">Learn from industry professionals with real-world experience</p>
+      {/* Unique Mentor Grid */}
+      <div className="mentors-grid-container">
+
+
+        {/* Top 2 Cards */}
+        <div className="mentors-grid-top">
+          {topMentors.map((mentor, index) => (
+            <MentorCard key={index} mentor={mentor} />
+          ))}
+        </div>
+        <h4>Meet Our Expert Instructors</h4>
+        <div className="mentors-grid-bottom">
+          {bottomMentors.map((mentor, index) => (
+            <MentorCard key={index} mentor={mentor} />
+          ))}
+        </div>
       </div>
     </section>
   );
