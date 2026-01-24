@@ -88,21 +88,7 @@ function HeroSection() {
         </div>
       </section>
 
-      {/* Secondary Section - Additional Promo */}
-      <section className="hero hero-second">
-        <section className="promo-hero glass-premium">
-          <div className="promo-hero-left">
-            <h2>Master Robotics Through Projects</h2>
-            <p>From basic electronics to advanced mechatronics – join RoboAiQ and master robotics through hands-on projects. Perfect for students aged 10-18!</p>
-            <div className="promo-hero-buttons">
-              <a href="#" className="promo-hero-btn secondary btn-premium">Download Sample Project</a>
-            </div>
-          </div>
-          <div className="promo-hero-right">
-            <img src="/robo-white-removebg-preview.png" alt="Robot" />
-          </div>
-        </section>
-      </section>
+
 
       <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>

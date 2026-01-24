@@ -36,14 +36,6 @@ function Navbar() {
           </Link>
 
 
-          <a href="/#success-stories" className="nav-item">
-            <span className="text">Success Stories</span>
-          </a>
-
-          <a href="/#student-photos" className="nav-item">
-            <span className="text">Student Photos</span>
-          </a>
-
           <a href="/#contact" className="nav-item nav-register">
             <span className="text">Register</span>
           </a>
