@@ -226,18 +226,28 @@ const RiaChatbot = () => {
 
             <div className={`ria-container ${isOpen ? 'open' : ''} ${isHidden ? 'hidden' : ''}`}>
 
-                {/* Avatar Container with Section Tab */}
-                <div className="ria-avatar-container">
-                    {/* Avatar Image */}
-                    <img
-                        src={RIA_AVATAR_SRC}
-                        alt="Ria AI Assistant"
-                        className={`ria-avatar-img ${isOpen ? 'chat-open' : ''}`}
+                {/* Chatbot Icon Button - Visible when closed */}
+                {!isOpen && (
+                    <button 
+                        className="ria-icon-button"
                         onClick={toggleChat}
-                    />
-
-                    {/* Hand-Held Section Tab Removed */}\n
-                </div>
+                        title="Ask help with Ria"
+                    >
+                        💬
+                    </button>
+                )}
+                
+                {isOpen && (
+                    <div className="ria-avatar-container">
+                        {/* Avatar Image */}
+                        <img
+                            src={RIA_AVATAR_SRC}
+                            alt="Ria AI Assistant"
+                            className={`ria-avatar-img ${isOpen ? 'chat-open' : ''}`}
+                            onClick={toggleChat}
+                        />
+                    </div>
+                )}
 
                 {/* Chat Panel */}
                 <div className={`ria-chat-panel ${isOpen ? 'open' : ''}`}>

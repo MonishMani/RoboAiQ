@@ -36,7 +36,7 @@
     right: 0;
     z-index: var(--ria-z-index);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     transition: opacity 0.3s ease;
@@ -44,6 +44,7 @@
     /* Ensure flush with viewport edges */
     margin: 0;
     padding: 0;
+    gap: 0;
     /* Children will have pointer-events */
 }
 
@@ -57,6 +58,7 @@
     width: 480px;
     height: 680px;
     pointer-events: auto;
+    flex-shrink: 0;
 
     /* REVERTED: Standard Soft Masking for Transparent PNG */
     mask-image: radial-gradient(ellipse 90% 85% at center bottom,
@@ -79,6 +81,18 @@
 
     will-change: transform;
     transform: translate3d(0, 0, 0);
+    animation: avatarSlideIn 0.5s ease-out;
+}
+
+@keyframes avatarSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 /* Restore Ground Shadow for depth */
@@ -163,11 +177,7 @@
 
 /* --- Chat Panel (Emerges from hand) --- */
 .ria-chat-panel {
-    position: absolute;
-
-    /* Positioned to emerge from hand/tab area */
-    bottom: 280px;
-    right: -20px;
+    position: relative;
 
     width: 360px;
     max-height: 520px;
@@ -189,10 +199,11 @@
 
     opacity: 0;
     transform: scale(0.3) translateY(100px);
-    transform-origin: bottom left;
+    transform-origin: bottom right;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
     z-index: 11;
+    flex-shrink: 0;
 }
 
 .ria-chat-panel.open {
@@ -336,7 +347,7 @@
     border-radius: 8px;
     text-align: left;
     font-size: 13px;
-    color: var(--ria-primary);
+    color:var(--ria-primary);
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -417,6 +428,88 @@
     }
 }
 
+/* --- Chatbot Icon Button --- */
+.ria-icon-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background:#06BFFF;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    z-index: var(--ria-z-index);
+    animation: iconBounce 2s ease-in-out infinite;
+}
+
+.ria-icon-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(59, 130, 246, 0.6);
+}
+
+.ria-icon-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* --- Icon Button Tooltip --- */
+.ria-icon-button::before {
+    content: attr(title);
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.ria-icon-button::after {
+    content: '';
+    position: absolute;
+    bottom: 65px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(15, 23, 42, 0.95);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.ria-icon-button:hover::before,
+.ria-icon-button:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* --- Contextual Tip --- */
 .context-tip {
     margin: 10px 0;
@@ -468,24 +561,8 @@
         height: 408px;
     }
 
-    .ria-section-tab {
-        width: 108px;
-        height: 36px;
-        bottom: 190px;
-        left: 30px;
-    }
-
-    .section-name {
-        font-size: 13px;
-    }
-
-    .tab-icon {
-        font-size: 14px;
-    }
-
     .ria-chat-panel {
         width: 320px;
-        bottom: 170px;
     }
 }
 
@@ -500,28 +577,20 @@
         width: 192px;
         /* 40% scale */
         height: 272px;
+        display: none;
     }
 
-    .ria-section-tab {
-        width: 72px;
-        height: 28px;
-        bottom: 130px;
-        left: 20px;
-    }
-
-    .section-name {
-        font-size: 10px;
-    }
-
-    .tab-icon {
-        font-size: 12px;
+    .ria-icon-button {
+        bottom: 16px;
+        right: 16px;
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
     }
 
     .ria-chat-panel {
         width: calc(100vw - 16px);
         max-width: 360px;
-        bottom: 120px;
-        right: 8px;
     }
 }
 
