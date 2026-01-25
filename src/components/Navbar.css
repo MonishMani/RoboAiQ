@@ -13,7 +13,8 @@
   -webkit-backdrop-filter: blur(var(--glass-blur-lg));
   border: none;
   border-bottom: 1px solid var(--color-border-light);
-  border-radius: 0;
+  border-radius: 0 0 3rem 3rem;
+  /* Rounded bottom */
   box-shadow: var(--shadow-blue-sm);
   z-index: var(--z-sticky);
   transition: all var(--transition-base);
@@ -42,50 +43,45 @@
   max-width: var(--container-max-width);
   height: 100%;
   padding: 0 var(--container-padding-desktop);
+  /* Ensure this matches Hero */
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between;  <- Can keep or remove if flex-grow handles it */
+  justify-content: flex-start;
+  /* Better for left alignment anchor */
+  position: relative;
   font-family: var(--font-primary);
+}
+
+.nav-links {
+  margin-left: auto;
+  /* Push links to right */
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 /* Logo */
 .logo {
-  font-size: 2rem;
-  /* Significantly enlarged */
-  font-weight: 800;
-  /* Extra Bold */
-  color: var(--color-text-primary);
-  margin-right: auto;
   display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
+  align-items: center;
+  margin-right: auto;
   transition: transform var(--transition-fast);
+  text-decoration: none;
+  /* In case it becomes a link */
 }
 
 .logo:hover {
   transform: scale(1.02);
 }
 
-.logo-text {
+.logo-image {
+  height: 220px;
+  /* Reduced slightly */
+  width: auto;
+  object-fit: contain;
   display: block;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.logo span {
-  color: var(--color-primary-700);
-}
-
-.logo-subtext {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-quaternary);
-  letter-spacing: var(--letter-spacing-wider);
-  font-weight: var(--font-weight-medium);
-  text-transform: uppercase;
-  margin-top: -4px;
 }
 
 /* Links Wrapper */

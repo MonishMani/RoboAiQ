@@ -7,28 +7,31 @@
 :root {
   /* ===== COLOR PALETTE ===== */
 
-  /* Primary - Bright Cyan (Actions & Highlights) */
-  --color-primary-900: #075985;
-  --color-primary-800: #0369A1;
-  --color-primary-700: #0284C7;
-  --color-primary-600: #0EA5E9;
-  /* Main Action Color */
-  --color-primary-500: #06B6D4;
-  --color-primary-400: #22D3EE;
-  /* Electric Cyan Glow */
-  --color-primary-300: #38BDF8;
-  --color-primary-200: #7DD3FC;
-  --color-primary-100: #BAE6FD;
-  --color-primary-50: #E0F2FE;
+  /* ===== COLOR PALETTE (Theme: Soft Education Blue) ===== */
 
-  /* Secondary - Sky Blue (Supporting) */
-  --color-secondary-700: #0369A1;
-  --color-secondary-600: #0284C7;
-  --color-secondary-500: #0EA5E9;
-  --color-secondary-400: #38BDF8;
-  --color-secondary-300: #7DD3FC;
-  --color-secondary-200: #BAE6FD;
-  --color-secondary-100: #E0F2FE;
+  /* Primary - Soft Education Blue (#7DB3E8) */
+  --color-primary-900: #1D4B7A;
+  /* Deepest Navy Blue */
+  --color-primary-800: #2A6296;
+  --color-primary-700: #3D7DB3;
+  --color-primary-600: #569BD1;
+  /* Main Action Color */
+  --color-primary-500: #7DB3E8;
+  /* REFERENCE COLOR */
+  --color-primary-400: #9AC8F0;
+  --color-primary-300: #B5DAF7;
+  --color-primary-200: #D0E9FC;
+  --color-primary-100: #E6F4FE;
+  --color-primary-50: #F5FAFF;
+
+  /* Secondary - Harmonious Soft Blue */
+  --color-secondary-700: #3D7DB3;
+  --color-secondary-600: #569BD1;
+  --color-secondary-500: #7DB3E8;
+  --color-secondary-400: #9AC8F0;
+  --color-secondary-300: #B5DAF7;
+  --color-secondary-200: #D0E9FC;
+  --color-secondary-100: #E6F4FE;
 
   /* Background - Cloud Blue Scale */
   --color-bg-primary: #F0F7FF;
@@ -45,29 +48,29 @@
   --color-bg-glass-strong: rgba(255, 255, 255, 0.92);
 
   /* Text - High Contrast Dark on Light */
-  --color-text-primary: #0A1929;
+  --color-text-primary: #0F253E;
+  /* Deep Navy Black */
+  --color-text-secondary: #1D4B7A;
   /* Deep Navy */
-  --color-text-secondary: #1E3A5F;
-  /* Rich Blue */
-  --color-text-tertiary: #0369A1;
-  /* Slate */
-  --color-text-quaternary: var(--color-text-tertiary);
-  /* Light Slate */
+  --color-text-tertiary: #3D7DB3;
+  /* Primary Medium */
+  --color-text-quaternary: #7DB3E8;
+  /* Primary Light */
   --color-text-light: #94A3B8;
   --color-text-inverse: #FFFFFF;
   /* White for dark surfaces */
 
-  /* Borders - Cyan Glow */
-  --color-border-light: rgba(14, 165, 233, 0.08);
-  --color-border-medium: rgba(14, 165, 233, 0.15);
-  --color-border-dark: rgba(14, 165, 233, 0.25);
-  --color-border-blue: #0EA5E9;
+  /* Borders - Soft Blue */
+  --color-border-light: rgba(125, 179, 232, 0.15);
+  --color-border-medium: rgba(125, 179, 232, 0.3);
+  --color-border-dark: rgba(125, 179, 232, 0.5);
+  --color-border-blue: #7DB3E8;
 
   /* Accents & States */
   --color-success: #10B981;
   --color-warning: #F59E0B;
   --color-error: #EF4444;
-  --color-info: #0EA5E9;
+  --color-info: #7DB3E8;
 
   /* Accent Color Palette - NEW */
   --color-cta-red: #FF1E1E;
@@ -75,11 +78,11 @@
   --color-accent-orange: #FFB84D;
   --color-soft-orange: #FFD966;
 
-  /* Glow Effects - Enhanced Cyan */
-  --glow-blue-sm: 0 0 12px rgba(14, 165, 233, 0.2), 0 0 24px rgba(34, 211, 238, 0.1);
-  --glow-blue-md: 0 0 20px rgba(14, 165, 233, 0.25), 0 0 40px rgba(34, 211, 238, 0.12);
-  --glow-blue-lg: 0 0 30px rgba(14, 165, 233, 0.3), 0 0 60px rgba(34, 211, 238, 0.15);
-  --glow-blue-xl: 0 0 40px rgba(14, 165, 233, 0.35), 0 0 80px rgba(34, 211, 238, 0.18);
+  /* Glow Effects - Soft Education Blue */
+  --glow-blue-sm: 0 0 12px rgba(125, 179, 232, 0.2), 0 0 24px rgba(125, 179, 232, 0.1);
+  --glow-blue-md: 0 0 20px rgba(125, 179, 232, 0.25), 0 0 40px rgba(125, 179, 232, 0.12);
+  --glow-blue-lg: 0 0 30px rgba(125, 179, 232, 0.3), 0 0 60px rgba(125, 179, 232, 0.15);
+  --glow-blue-xl: 0 0 40px rgba(125, 179, 232, 0.35), 0 0 80px rgba(125, 179, 232, 0.18);
 
   /* ===== TYPOGRAPHY ===== */
 
@@ -232,11 +235,11 @@
   /* ===== GRADIENTS ===== */
 
   /* Light Cloud Gradient */
-  --gradient-primary: linear-gradient(135deg, #0EA5E9 0%, #38BDF8 100%);
-  --gradient-secondary: linear-gradient(135deg, #7DD3FC 0%, #BAE6FD 100%);
-  --gradient-blue-subtle: linear-gradient(180deg, #F0F7FF 0%, #E3F2FD 100%);
-  --gradient-hero: radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 70%),
-    linear-gradient(180deg, #F0F7FF 0%, #FFFFFF 100%);
+  --gradient-primary: linear-gradient(135deg, #7DB3E8 0%, #569BD1 100%);
+  --gradient-secondary: linear-gradient(135deg, #B5DAF7 0%, #9AC8F0 100%);
+  --gradient-blue-subtle: linear-gradient(180deg, #F5FAFF 0%, #E6F4FE 100%);
+  --gradient-hero: radial-gradient(circle at top right, rgba(125, 179, 232, 0.15), transparent 70%),
+    linear-gradient(180deg, #F5FAFF 0%, #FFFFFF 100%);
 
   /* ===== BREAKPOINTS (for reference) ===== */
   /* Use in media queries */
@@ -314,7 +317,7 @@
   --input-border-focus: 2px solid var(--color-primary-600);
 
   /* Navigation */
-  --nav-height: 72px;
+  --nav-height: 130px;
   --nav-padding: var(--space-4) var(--space-8);
 
   /* Containers */

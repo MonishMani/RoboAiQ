@@ -49,11 +49,11 @@ function HeroSection() {
 
             <h1>
               Children, Transform <span>Your</span> Future<br />
-              With Robotics
+              With Robotics & AI
             </h1>
 
             <p className="subtitle">
-              Parents, Empower your children with world class Robotics and AI Education. Hands on experience, State of the Art Robotics Lab, to learn and play with Robots for Future Career
+              Parents, Empower your children with world class <span>Robotics and AI Education</span>. Hands on experience, State of the Art Robotics Lab, to build <span>future readiness</span>.
             </p>
 
             <div className="cta">

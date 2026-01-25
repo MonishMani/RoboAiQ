@@ -9,8 +9,7 @@ function Navbar() {
 
         {/* Logo */}
         <div className="logo" id="brand-logo-target">
-          <div className="logo-text">Robo<span>Ai</span>Q</div>
-          <div className="logo-subtext">Intelligent Robotics</div>
+          <img src="/assets/logo.png" alt="RoboAiQ Logo" className="logo-image" />
         </div>
 
         {/* Navigation */}

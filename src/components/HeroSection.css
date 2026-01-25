@@ -1,8 +1,9 @@
 /* Hero Section - Futuristic White & Blue Theme */
 
 .hero {
-  margin-top: var(--nav-height);
-  padding-top: var(--space-20);
+  margin-top: 0;
+  padding-top: calc(var(--nav-height) + var(--space-10));
+  /* Moved nearer to navbar */
   background: var(--gradient-hero);
   position: relative;
   overflow: hidden;
@@ -12,6 +13,10 @@
 }
 
 .hero-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: 0 var(--container-padding-desktop);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -111,25 +116,37 @@
 
 /* Hero Headings */
 .hero h1 {
-  font-size: 3.2rem;
-  line-height: 1.1;
+  font-size: 2.8rem;
+  /* Increased size back up */
+  line-height: 1.2;
   font-weight: 700;
+  /* Slightly thicker */
   color: var(--color-text-primary);
   margin-bottom: var(--space-6);
+  /* Kept space between */
   position: relative;
   z-index: 10;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .subtitle {
   max-width: 100%;
-  color: var(--color-text-tertiary);
-  font-size: 1.35rem;
+  color: #2F6FAF;
+  /* Deep Education Blue */
+  font-size: 1.5rem;
   line-height: 1.6;
+  font-weight: 500;
+  /* Medium weight */
   margin-bottom: var(--space-8);
-  /* Increased spacing */
   position: relative;
   z-index: 10;
+}
+
+.subtitle span {
+  color: #FFB84D;
+  /* Soft Accent Gold */
+  font-weight: 500;
+  /* Consistent weight */
 }
 
 /* CTA Buttons Container */
