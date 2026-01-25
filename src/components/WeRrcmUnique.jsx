@@ -15,74 +15,50 @@ export default function Unique() {
           What Makes RoboAIQ Unique?
         </h2>
 
-        <div className={`unique-wrapper ${sectionVisible ? 'visible' : ''}`}>
-          {/* Galaxy glow */}
-          <div className="galaxy-glow"></div>
+        <div className={`unique-layout ${sectionVisible ? 'visible' : ''}`}>
 
-          {/* Rings */}
-          <div className="ring ring-1"></div>
-          <div className="ring ring-2"></div>
-
-          {/* Center */}
-          <div className="unique-center glass-premium">
-            <h3>RoboAiQ</h3>
-            <p>Robotics Education Excellence</p>
+          {/* Video Visual */}
+          <div className="unique-video-wrapper glass-premium">
+            <video
+              src="/assets/Unique/Roboaiq_unique.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="unique-video"
+              aria-label="RoboAiQ unique features video"
+              style={{ objectFit: 'cover' }}
+            />
           </div>
 
-          {/* Orbit items */}
-          <div className={`orbit orbit-1 scroll-reveal stagger-1 ${sectionVisible ? 'visible' : ''}`}>
-            <span className="node"></span>
-            <span className="line"></span>
-            <div className="orbit-text card-premium glass-premium">
+          {/* Features Grid */}
+          <div className="unique-features-grid">
+            <div className="feature-card glass-premium scroll-reveal stagger-1">
               <h4>World-Class Team</h4>
               <p>Highly skilled professionals</p>
             </div>
-          </div>
-
-          <div className={`orbit orbit-2 scroll-reveal stagger-2 ${sectionVisible ? 'visible' : ''}`}>
-            <span className="node"></span>
-            <span className="line"></span>
-            <div className="orbit-text card-premium glass-premium">
+            <div className="feature-card glass-premium scroll-reveal stagger-2">
               <h4>Global Expertise</h4>
               <p>International billing standards</p>
             </div>
-          </div>
-
-          <div className={`orbit orbit-3 scroll-reveal stagger-3 ${sectionVisible ? 'visible' : ''}`}>
-            <span className="node"></span>
-            <span className="line"></span>
-            <div className="orbit-text card-premium glass-premium">
+            <div className="feature-card glass-premium scroll-reveal stagger-3">
               <h4>Compliance Driven</h4>
               <p>HIPAA & regulatory focus</p>
             </div>
-          </div>
-
-          <div className={`orbit orbit-4 scroll-reveal stagger-4 ${sectionVisible ? 'visible' : ''}`}>
-            <span className="node"></span>
-            <span className="line"></span>
-            <div className="orbit-text card-premium glass-premium">
+            <div className="feature-card glass-premium scroll-reveal stagger-4">
               <h4>Hands-On Support</h4>
               <p>Dedicated account managers</p>
             </div>
-          </div>
-
-          <div className={`orbit orbit-5 scroll-reveal stagger-5 ${sectionVisible ? 'visible' : ''}`}>
-            <span className="node"></span>
-            <span className="line"></span>
-            <div className="orbit-text card-premium glass-premium">
+            <div className="feature-card glass-premium scroll-reveal stagger-5">
               <h4>Small Batch Scale</h4>
               <p>Personalized attention</p>
             </div>
-          </div>
-
-          <div className={`orbit orbit-6 scroll-reveal stagger-6 ${sectionVisible ? 'visible' : ''}`}>
-            <span className="node"></span>
-            <span className="line"></span>
-            <div className="orbit-text card-premium glass-premium">
+            <div className="feature-card glass-premium scroll-reveal stagger-6">
               <h4>Industry Leaders</h4>
               <p>Years of proven results</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
