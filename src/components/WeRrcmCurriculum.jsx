@@ -1,5 +1,6 @@
 import { FaMicrochip, FaWifi, FaCode, FaCogs, FaRobot, FaTrophy, FaWaveSquare } from 'react-icons/fa';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import TextType from './TextType';
 import "./WeRrcmCurriculum.css";
 
 const curriculum = [
@@ -55,11 +56,18 @@ function WeRrcmCurriculum() {
           ref={headerRef}
           className={`curriculum-header scroll-reveal ${headerVisible ? 'visible' : ''}`}
         >
-          <h2>Robotics Programme Curriculum</h2>
-          <p>
-            A structured progression from foundational engineering concepts
-            to advanced competitive robotics systems
-          </p>
+          <h2><span>Robotics</span> Programme Curriculum</h2>
+          <TextType
+            text="A structured progression from foundational engineering concepts to advanced competitive robotics systems."
+            className="curriculum-description"
+            typingSpeed={35}
+            deletingSpeed={20}
+            pauseDuration={3000}
+            loop={true}
+            showCursor={true}
+            cursorCharacter="|"
+            cursorBlinkDuration={0.6}
+          />
         </div>
 
         <div className="curriculum-network">

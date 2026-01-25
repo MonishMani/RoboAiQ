@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import MagicBento from './MagicBento';
+import { ImageAutoSlider } from './ui/image-auto-slider';
+import SplitText from './SplitText';
+import TextType from './TextType';
 import './SuccessStories.css';
 
 function SuccessStories() {
@@ -48,38 +50,6 @@ function SuccessStories() {
     }
   ];
 
-  useEffect(() => {
-    if (!gridRef.current) return;
-
-    const cards = gridRef.current.querySelectorAll('.success-image-card');
-
-    cards.forEach((card) => {
-      const handleMouseEnter = () => {
-        gsap.to(card, {
-          y: -10,
-          duration: 0.3,
-          ease: 'power2.out'
-        });
-      };
-
-      const handleMouseLeave = () => {
-        gsap.to(card, {
-          y: 0,
-          duration: 0.3,
-          ease: 'power2.out'
-        });
-      };
-
-      card.addEventListener('mouseenter', handleMouseEnter);
-      card.addEventListener('mouseleave', handleMouseLeave);
-
-      return () => {
-        card.removeEventListener('mouseenter', handleMouseEnter);
-        card.removeEventListener('mouseleave', handleMouseLeave);
-      };
-    });
-  }, []);
-
   return (
     <section
       ref={sectionRef}
@@ -92,31 +62,33 @@ function SuccessStories() {
           className={`success-stories-header scroll-reveal ${headerVisible ? 'visible' : ''
             }`}
         >
-          <h2>Competition Success Stories</h2>
-          <p>
-            Celebrating student excellence through national and international
-            recognition
-          </p>
+          <SplitText
+            text="Competition Success Stories"
+            tag="h2"
+            delay={40}
+            duration={1.3}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 30 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.2}
+          />
+          <TextType
+            text="Celebrating student excellence through national and international recognition."
+            className="success-description"
+            typingSpeed={35}
+            deletingSpeed={20}
+            pauseDuration={3000}
+            loop={true}
+            showCursor={true}
+            cursorCharacter="|"
+            cursorBlinkDuration={0.6}
+          />
         </div>
 
         <div className="success-stories-content">
-          {/* Magic Bento */}
-          <div className="magic-bento-wrapper">
-            <MagicBento
-              textAutoHide={true}
-              enableStars={false}
-              enableSpotlight={false}
-              enableBorderGlow={true}
-              enableTilt={false}
-              enableMagnetism={false}
-              clickEffect={false}
-              spotlightRadius={50}
-              particleCount={12}
-              glowColor="132, 0, 255"
-              disableAnimations={false}
-              cardData={successImages}
-            />
-          </div>
+          {/* Image Auto Slider */}
+          <ImageAutoSlider images={successImages} />
         </div>
       </div>
     </section>

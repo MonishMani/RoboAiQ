@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import './HeroSection.css';
 import BookingModal from './BookingModal';
+import SplitText from './SplitText';
+import TextType from './TextType';
 
 function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,14 +34,40 @@ function HeroSection() {
           <div className="hero-left">
             <span className="eyebrow">NEXT GENERATION EDUCATION</span>
 
-            <h1>
-              Children, Transform <span>Your</span> Future<br />
-              With Robotics & AI
-            </h1>
+            <SplitText
+              text="Children, Transform Your Future With Robotics & AI"
+              tag="h1"
+              delay={30}
+              duration={1.2}
+              ease="power3.out"
+              splitType="words"
+              from={{ opacity: 0, y: 20 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.2}
+              textAlign="left"
+              textColors={["#000000", "#000000", "#000000", "#000000", "#000000", "#FF1E1E", "#000000", "#FF1E1E"]}
+            />
 
-            <p className="subtitle">
-              Parents, Empower your children with world class <span>Robotics and AI Education</span>. Hands on experience, State of the Art Robotics Lab, to build <span>future readiness</span>.
-            </p>
+            <TextType
+              text={[
+                "Parents, Empower your children with world class Robotics and AI Education.",
+                "Hands on experience with State of the Art Robotics Lab.",
+                "Build future readiness for tomorrow's opportunities."
+              ]}
+              as="p"
+              className="subtitle"
+              typingSpeed={40}
+              deletingSpeed={20}
+              pauseDuration={2500}
+              loop={true}
+              showCursor={true}
+              cursorCharacter="|"
+              cursorBlinkDuration={0.6}
+              textColors={[
+                "#2E7BAE",
+                "#2E7BAE"
+              ]}
+            />
 
             <div className="cta">
               <a

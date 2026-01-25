@@ -7,7 +7,7 @@
   position: relative;
   overflow: hidden;
   padding: var(--space-8) 0;
-  /* Reduced padding from space-12 to space-8 for tighter look */
+
 }
 
 /* Subtle background grid */
@@ -45,7 +45,23 @@
   max-width: var(--container-max-width);
   margin: 0 auto;
   position: relative;
+}
+
+/* Scroll Reveal Styling */
+.unique-scroll-reveal {
+  margin: var(--space-8) 0;
+  max-width: 900px;
+  text-align: center;
+}
+
+.unique-scroll-text {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.6;
+  color: #020617;
   z-index: 10;
+  padding-top: var(--space-8);
+  /* Added top padding */
 }
 
 /* Video Section - Hero Style */
@@ -60,7 +76,10 @@
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   border: 1px solid var(--color-border-medium);
-  margin: 0 auto;
+  margin: 0 auto var(--space-8);
+  /* Added margin-bottom */
+  z-index: 10;
+  /* Added z-index */
 }
 
 .unique-video {

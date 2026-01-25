@@ -1,17 +1,26 @@
 import "./RoboKitSection.css";
+import ScrollReveal from "./ScrollReveal";
+import TextType from "./TextType";
 
 export default function RoboKitSection() {
   return (
-    <section className="kit-section">
+    <section className="kit-section" id="programs">
 
       {/* HEADER */}
       <div className="kit-header">
         <span className="kit-eyebrow">HARDWARE INCLUDED</span>
-        <h2>Industry-Grade Robotics Kit  Included with Your Program</h2>
-        <p>
-          Every RoboAIQ student receives a complete, reusable robotics kit designed
-          for hands-on learning, experimentation, and long-term use.
-        </p>
+        <h2>Industry-Grade <span>Robotics Kit</span> Included with Your Program</h2>
+        <TextType
+          text="Every RoboAIQ student receives a complete, reusable robotics kit designed for hands-on learning, experimentation, and long-term use."
+          className="kit-scroll-reveal kit-scroll-text"
+          typingSpeed={35}
+          deletingSpeed={20}
+          pauseDuration={3000}
+          loop={true}
+          showCursor={true}
+          cursorCharacter="|"
+          cursorBlinkDuration={0.6}
+        />
       </div>
 
       {/* GRID */}
@@ -24,7 +33,7 @@ export default function RoboKitSection() {
 
         {/* CONTENT */}
         <div className="kit-content">
-          <h3>What’s Inside the RoboAIQ Robotics Kit</h3>
+          <h3>What's Inside the <span>RoboAIQ</span> <span>Robotics</span> Kit</h3>
 
           <ul className="kit-list">
             <li>Arduino Uno & ESP32 Microcontrollers</li>

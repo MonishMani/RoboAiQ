@@ -1,5 +1,7 @@
 import React from 'react';
 import './WeRrcmMentors.css';
+import SplitText from './SplitText';
+import TextType from './TextType';
 
 import mentorNarsing from '../assets/mentors/mentor_narsing.png';
 import mentorTamizharasan from '../assets/mentors/mentor_tamizharasan.png';
@@ -22,7 +24,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Robotics Mentor', desc: 'Competition preparation' },
         { icon: '●', title: 'Mathematics Expert', desc: 'Applied mathematics' },
-        { icon: '●', title: 'Competition Coach', desc: 'National & international' }
+       
       ]
     },
     {
@@ -36,7 +38,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Robotics Training', desc: 'Hands-on robotics projects' },
         { icon: '●', title: 'Programming Expert', desc: 'Arduino & embedded systems' },
-        { icon: '●', title: 'Project Mentor', desc: 'Innovation & design thinking' }
+   
       ]
     },
     {
@@ -50,7 +52,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Lead Robotics Instructor', desc: '15+ years in robotics education' },
         { icon: '●', title: 'Research Mentor', desc: 'Computer vision & AI systems' },
-        { icon: '●', title: 'Global Educator', desc: 'International robotics exposure' }
+       
       ]
     },
     {
@@ -64,7 +66,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Arduino Programming Expert', desc: '10+ years teaching experience' },
         { icon: '●', title: 'Competition Mentor', desc: 'International competition mentor' },
-        { icon: '●', title: 'Systems Integration', desc: 'MTech in Robotics' }
+      
       ]
     },
     {
@@ -78,7 +80,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Competition Coach', desc: 'Coached 50+ winning teams' },
         { icon: '●', title: 'Electronics Specialist', desc: '8 years competition experience' },
-        { icon: '●', title: 'Industry Expert', desc: 'B.E. in Electronics' }
+
       ]
     }
   ];
@@ -131,13 +133,30 @@ function WeRrcmMentors() {
         <span className="mentors-badge">EXPERT MENTORS</span>
 
         {/* Heading */}
-        <h2>Learn from Industry-Leading Robotics Mentors</h2>
+        <SplitText
+          text="Learn from Industry-Leading Robotics Mentors"
+          tag="h2"
+          delay={35}
+          duration={1.2}
+          ease="power3.out"
+          splitType="words"
+          from={{ opacity: 0, y: 25 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.2}
+        />
 
         {/* Subtitle */}
-        <p className="mentors-subtitle">
-          Our mentors are engineers, researchers, and educators who bring real-world
-          robotics experience into every learning session.
-        </p>
+        <TextType
+          text="Our mentors are engineers, researchers, and educators who bring real-world robotics experience into every learning session."
+          className="mentors-subtitle"
+          typingSpeed={35}
+          deletingSpeed={20}
+          pauseDuration={3000}
+          loop={true}
+          showCursor={true}
+          cursorCharacter="|"
+          cursorBlinkDuration={0.6}
+        />
 
         {/* Trust Metrics */}
         <div className="mentors-stats">
