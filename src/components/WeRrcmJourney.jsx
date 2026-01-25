@@ -1,5 +1,7 @@
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import FeatureSteps from "./FeatureSteps";
+import SplitText from "./SplitText";
+import TextType from "./TextType";
 import "./WeRrcmJourney.css";
 
 export default function WeRrcmJourney() {
@@ -11,31 +13,31 @@ export default function WeRrcmJourney() {
       step: "Step 1",
       title: "Foundations of Robotics",
       content: "Electronics basics, components, and problem-solving mindset",
-      image: "https://images.unsplash.com/photo-1531492746076-161ca9bcad58?w=800&auto=format&fit=crop&q=60"
+      image: "/assets/journey1.png"
     },
     {
       step: "Step 2",
       title: "Sensors & Coding",
       content: "Arduino programming, sensor intelligence, and logic building",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop&q=60"
+      image: "/assets/journey2.png"
     },
     {
       step: "Step 3",
       title: "Motors & Actuators",
       content: "Motion control, mechanics, and real-world movement systems",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60"
+      image: "/assets/journey3.png"
     },
     {
       step: "Step 4",
       title: "Complete Robot Build",
       content: "End-to-end robot assembly, testing, and optimization",
-      image: "https://images.unsplash.com/photo-1535746272736-4b100091cd2c?w=800&auto=format&fit=crop&q=60"
+      image: "/assets/journey4.png"
     },
     {
       step: "Step 5",
       title: "Competition Ready",
       content: "Advanced challenges, teamwork, and performance tuning",
-      image: "https://images.unsplash.com/photo-1485579149c01123123?w=800&auto=format&fit=crop&q=60"
+      image: "/assets/journey5.png"
     }
   ];
 
@@ -127,18 +129,29 @@ export default function WeRrcmJourney() {
       {/* HEADER */}
       <div className="journey-header">
         <span className="journey-eyebrow">LEARNING ROADMAP</span>
-        <h2
-          ref={titleRef}
-          className={`journey-title scroll-reveal ${
-            titleVisible ? "visible" : ""
-          }`}
-        >
-          Your <span>Robotics</span> Learning Journey
-        </h2>
-        <p>
-          A carefully designed, milestone-driven path that transforms curiosity
-          into competition-ready robotics expertise.
-        </p>
+        <SplitText
+          text="Your Robotics Learning Journey"
+          tag="h2"
+          delay={40}
+          duration={1.3}
+          ease="power3.out"
+          splitType="words"
+          from={{ opacity: 0, y: 30 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.2}
+          className="journey-title"
+        />
+        <TextType
+          text="A carefully designed, milestone-driven path that transforms curiosity into competition-ready robotics expertise."
+          className="journey-description"
+          typingSpeed={35}
+          deletingSpeed={20}
+          pauseDuration={3000}
+          loop={true}
+          showCursor={true}
+          cursorCharacter="|"
+          cursorBlinkDuration={0.6}
+        />
       </div>
 
       {/* FEATURE STEPS COMPONENT */}

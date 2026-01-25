@@ -1,5 +1,6 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { TestimonialsSection } from './blocks/testimonials-with-marquee';
+import TextType from './TextType';
 import './WeRrcmTestimonials.css';
 
 function WeRrcmTestimonials() {
@@ -48,7 +49,17 @@ function WeRrcmTestimonials() {
     <div ref={sectionRef} className={`wrrcm-testimonials-wrapper ${sectionVisible ? 'visible' : ''}`}>
       <TestimonialsSection
         title={<>What Our <span>Students</span> Say</>}
-        description={<>Hear directly from <span className="subtext">students and parents</span> who have experienced RoboAIQ's hands-on robotics education.</>}
+        description={<TextType
+          text="Hear directly from students and parents who have experienced RoboAIQ's hands-on robotics education."
+          className="testimonials-description"
+          typingSpeed={35}
+          deletingSpeed={20}
+          pauseDuration={3000}
+          loop={true}
+          showCursor={true}
+          cursorCharacter="|"
+          cursorBlinkDuration={0.6}
+        />}
         testimonials={testimonials}
       />
     </div>

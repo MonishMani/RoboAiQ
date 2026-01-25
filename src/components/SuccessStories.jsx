@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { ImageAutoSlider } from './ui/image-auto-slider';
+import SplitText from './SplitText';
+import TextType from './TextType';
 import './SuccessStories.css';
 
 function SuccessStories() {
@@ -60,11 +62,28 @@ function SuccessStories() {
           className={`success-stories-header scroll-reveal ${headerVisible ? 'visible' : ''
             }`}
         >
-          <h2>Competition <span>Success</span> <span>Stories</span></h2>
-          <p>
-            Celebrating student excellence through national and international
-            recognition
-          </p>
+          <SplitText
+            text="Competition Success Stories"
+            tag="h2"
+            delay={40}
+            duration={1.3}
+            ease="power3.out"
+            splitType="words"
+            from={{ opacity: 0, y: 30 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.2}
+          />
+          <TextType
+            text="Celebrating student excellence through national and international recognition."
+            className="success-description"
+            typingSpeed={35}
+            deletingSpeed={20}
+            pauseDuration={3000}
+            loop={true}
+            showCursor={true}
+            cursorCharacter="|"
+            cursorBlinkDuration={0.6}
+          />
         </div>
 
         <div className="success-stories-content">

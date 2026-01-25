@@ -36,6 +36,17 @@
   line-height: 1.6;
 }
 
+.kit-scroll-reveal {
+  font-size: 1.05rem;
+  color: #020617;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.kit-scroll-text {
+  font-size: 1.05rem;
+}
+
 /* Grid */
 .kit-grid {
   max-width: 1200px;

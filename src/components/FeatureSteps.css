@@ -140,7 +140,7 @@
 .feature-steps-image-container {
   position: relative;
   order: 1;
-  height: 12.5rem;
+  height: 18rem;
   border-radius: 0.5rem;
   overflow: hidden;
 }
@@ -148,13 +148,13 @@
 @media (min-width: 768px) {
   .feature-steps-image-container {
     order: 2;
-    height: 18.75rem;
+    height: 26rem;
   }
 }
 
 @media (min-width: 1024px) {
   .feature-steps-image-container {
-    height: 25rem;
+    height: 34rem;
   }
 }
 

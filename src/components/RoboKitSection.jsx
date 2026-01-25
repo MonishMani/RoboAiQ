@@ -1,4 +1,6 @@
 import "./RoboKitSection.css";
+import ScrollReveal from "./ScrollReveal";
+import TextType from "./TextType";
 
 export default function RoboKitSection() {
   return (
@@ -8,10 +10,17 @@ export default function RoboKitSection() {
       <div className="kit-header">
         <span className="kit-eyebrow">HARDWARE INCLUDED</span>
         <h2>Industry-Grade <span>Robotics Kit</span> Included with Your Program</h2>
-        <p>
-          Every <span>RoboAIQ</span> student receives a complete, reusable robotics kit designed
-          for <span className="subtext">hands-on learning, experimentation, and long-term use</span>.
-        </p>
+        <TextType
+          text="Every RoboAIQ student receives a complete, reusable robotics kit designed for hands-on learning, experimentation, and long-term use."
+          className="kit-scroll-reveal kit-scroll-text"
+          typingSpeed={35}
+          deletingSpeed={20}
+          pauseDuration={3000}
+          loop={true}
+          showCursor={true}
+          cursorCharacter="|"
+          cursorBlinkDuration={0.6}
+        />
       </div>
 
       {/* GRID */}

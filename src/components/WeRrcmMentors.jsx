@@ -1,5 +1,7 @@
 import React from 'react';
 import './WeRrcmMentors.css';
+import SplitText from './SplitText';
+import TextType from './TextType';
 
 import mentorNarsing from '../assets/mentors/mentor_narsing.png';
 import mentorTamizharasan from '../assets/mentors/mentor_tamizharasan.png';
@@ -131,13 +133,30 @@ function WeRrcmMentors() {
         <span className="mentors-badge">EXPERT MENTORS</span>
 
         {/* Heading */}
-        <h2>Learn from Industry-Leading <span>Robotics</span> Mentors</h2>
+        <SplitText
+          text="Learn from Industry-Leading Robotics Mentors"
+          tag="h2"
+          delay={35}
+          duration={1.2}
+          ease="power3.out"
+          splitType="words"
+          from={{ opacity: 0, y: 25 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.2}
+        />
 
         {/* Subtitle */}
-        <p className="mentors-subtitle">
-          Our mentors are engineers, researchers, and educators who bring real-world
-          robotics experience into every learning session.
-        </p>
+        <TextType
+          text="Our mentors are engineers, researchers, and educators who bring real-world robotics experience into every learning session."
+          className="mentors-subtitle"
+          typingSpeed={35}
+          deletingSpeed={20}
+          pauseDuration={3000}
+          loop={true}
+          showCursor={true}
+          cursorCharacter="|"
+          cursorBlinkDuration={0.6}
+        />
 
         {/* Trust Metrics */}
         <div className="mentors-stats">
