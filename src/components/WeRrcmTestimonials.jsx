@@ -11,7 +11,7 @@ function WeRrcmTestimonials() {
       author: {
         name: "Arjun Sharma",
         handle: "Winner - State Robotics Championship",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+        avatar: "/assets/testimonials/arjun.png"
       },
       text: "I built my first line-following robot in just 3 weeks! The hands-on approach made learning so much fun.",
       href: "#"
