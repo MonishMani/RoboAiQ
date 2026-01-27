@@ -13,31 +13,31 @@ export default function WeRrcmJourney() {
       step: "Step 1",
       title: "Foundations of Robotics",
       content: "Electronics basics, components, and problem-solving mindset",
-      image: "/assets/journey1.png"
+      image: "/assets/images/journey1.png"
     },
     {
       step: "Step 2",
       title: "Sensors & Coding",
       content: "Arduino programming, sensor intelligence, and logic building",
-      image: "/assets/journey2.png"
+      image: "/assets/images/journey2.png"
     },
     {
       step: "Step 3",
       title: "Motors & Actuators",
       content: "Motion control, mechanics, and real-world movement systems",
-      image: "/assets/journey3.png"
+      image: "/assets/images/journey3.png"
     },
     {
       step: "Step 4",
       title: "Complete Robot Build",
       content: "End-to-end robot assembly, testing, and optimization",
-      image: "/assets/journey4.png"
+      image: "/assets/images/journey4.png"
     },
     {
       step: "Step 5",
       title: "Competition Ready",
       content: "Advanced challenges, teamwork, and performance tuning",
-      image: "/assets/journey5_competition_3d.png"
+      image: "/assets/images/journey5-competition-3d.png"
     }
   ];
 

@@ -20,7 +20,7 @@ export default function Unique() {
           {/* Video Visual */}
           <div className="unique-video-wrapper glass-premium">
             <video
-              src="/assets/Unique/Roboaiq_unique.mp4"
+              src="/assets/unique/roboaiq-unique.mp4"
               autoPlay
               muted
               loop

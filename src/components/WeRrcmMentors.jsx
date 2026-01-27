@@ -3,12 +3,12 @@ import './WeRrcmMentors.css';
 import SplitText from './SplitText';
 import TextType from './TextType';
 
-import mentorNarsing from '../assets/mentors/mentor_narsing.png';
-import mentorTamizharasan from '../assets/mentors/mentor_tamizharasan.png';
-import mentorSarah from '../assets/mentors/mentor_sarah.png';
-import mentorMike from '../assets/mentors/mentor_mike.png';
-import mentorAlex from '../assets/mentors/mentor_alex.png';
-import mentorJordan from '../assets/mentors/mentor_jordan.png';
+const mentorNarsing = "/assets/mentors/mentor-narsing.png";
+const mentorTamizharasan = "/assets/mentors/mentor-tamizharasan.png";
+const mentorSarah = "/assets/mentors/mentor-sarah.png";
+const mentorMike = "/assets/mentors/mentor-mike.png";
+const mentorAlex = "/assets/mentors/mentor-alex.png";
+const mentorJordan = "/assets/mentors/mentor-jordan.png";
 
 function WeRrcmMentors() {
   const mentors = [
@@ -24,7 +24,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Robotics Mentor', desc: 'Competition preparation' },
         { icon: '●', title: 'Mathematics Expert', desc: 'Applied mathematics' },
-       
+
       ]
     },
     {
@@ -38,7 +38,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Robotics Training', desc: 'Hands-on robotics projects' },
         { icon: '●', title: 'Programming Expert', desc: 'Arduino & embedded systems' },
-   
+
       ]
     },
     {
@@ -52,7 +52,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Lead Robotics Instructor', desc: '15+ years in robotics education' },
         { icon: '●', title: 'Research Mentor', desc: 'Computer vision & AI systems' },
-       
+
       ]
     },
     {
@@ -66,7 +66,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Arduino Programming Expert', desc: '10+ years teaching experience' },
         { icon: '●', title: 'Competition Mentor', desc: 'International competition mentor' },
-      
+
       ]
     },
     {
@@ -107,7 +107,7 @@ function WeRrcmMentors() {
               <h3>{mentor.title}</h3>
               <p className="mentor-subtitle">{mentor.subtitle}</p>
               <p className="mentor-handle">{mentor.handle}</p>
-              
+
               <div className="mentor-expertise">
                 {mentor.expertise.map((exp, idx) => (
                   <div key={idx} className="expertise-item">

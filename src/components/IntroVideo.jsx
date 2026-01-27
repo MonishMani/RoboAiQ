@@ -73,7 +73,7 @@ function IntroVideo({ onComplete, targetPosition }) {
                 playsInline
                 onEnded={handleVideoEnd}
             >
-                <source src="/assets/videos/robo-aiq-hero-final.mp4" type="video/mp4" />
+                <source src="/assets/videos/hero-video.mp4" type="video/mp4" />
             </video>
 
             {/* Watermark Mask */}

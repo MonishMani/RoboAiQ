@@ -15,7 +15,7 @@ export default function BenefitsSection() {
                 <div className="benefit-card">
                     <div className="benefit-image">
                         <img
-                            src="/assets/benefits_kit_3d.png"
+                            src="/assets/images/benefits-kit-3d.png"
                             alt="Student building robot with mentor"
                         />
                     </div>
@@ -29,7 +29,7 @@ export default function BenefitsSection() {
                 <div className="benefit-card">
                     <div className="benefit-image">
                         <img
-                            src="/assets/benefits_live_3d.png"
+                            src="/assets/images/benefits-live-3d.png"
                             alt="Live online robotics class with mentor"
                         />
                     </div>
@@ -43,7 +43,7 @@ export default function BenefitsSection() {
                 <div className="benefit-card">
                     <div className="benefit-image">
                         <img
-                            src="/assets/benefits_skills_3d.png"
+                            src="/assets/images/benefits-skills-3d.png"
                             alt="Students presenting robot at competition"
                         />
                     </div>

@@ -9,39 +9,39 @@ function GallerySection() {
 
   const galleryItems = [
     {
-      image: '/images/students_action_01.jpg',
+      image: '/assets/images/students-action-01.jpg',
       text: 'Championship Winners'
     },
     {
-      image: '/images/students_action_02.jpg',
+      image: '/assets/images/students-action-02.jpg',
       text: 'Battle of Robots Arena'
     },
     {
-      image: '/images/students_action_03.jpg',
+      image: '/assets/images/students-action-03.jpg',
       text: 'Team Recognition'
     },
     {
-      image: '/images/students_action_04.jpg',
+      image: '/assets/images/students-action-04.jpg',
       text: 'Award Ceremony'
     },
     {
-      image: '/images/students_action_05.jpg',
+      image: '/assets/images/students-action-05.jpg',
       text: 'Young Achievers'
     },
     {
-      image: '/images/students_action_06.jpg',
+      image: '/assets/images/students-action-06.jpg',
       text: 'District Recognition'
     },
     {
-      image: '/images/students_action_07.jpg',
+      image: '/assets/images/students-action-07.jpg',
       text: 'Project Collaboration'
     },
     {
-      image: '/images/students_action_08.jpg',
+      image: '/assets/images/students-action-08.jpg',
       text: 'International Camp'
     },
     {
-      image: '/images/students_action_09.jpg',
+      image: '/assets/images/students-action-09.jpg',
       text: 'Mentorship Moments'
     }
   ];

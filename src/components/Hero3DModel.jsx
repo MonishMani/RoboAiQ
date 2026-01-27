@@ -29,7 +29,7 @@ function Robot({ scene }) {
 }
 
 export default function Hero3DModel() {
-  const { scene } = useGLTF("/assets/Model/Roboaiq_model.glb");
+  const { scene } = useGLTF("/assets/models/roboaiq-model.glb");
 
   return (
     <motion.div
@@ -40,8 +40,8 @@ export default function Hero3DModel() {
     >
       <Canvas camera={{ position: [0, 1, 4], fov: 45 }} shadows>
         <ambientLight intensity={1.4} />
-        <directionalLight 
-          position={[8, 6, 5]} 
+        <directionalLight
+          position={[8, 6, 5]}
           intensity={2.5}
           castShadow
         />
@@ -56,4 +56,4 @@ export default function Hero3DModel() {
   );
 }
 
-useGLTF.preload("/assets/Model/Roboaiq_model.glb");
+useGLTF.preload("/assets/models/roboaiq-model.glb");

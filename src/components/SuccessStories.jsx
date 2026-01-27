@@ -13,37 +13,37 @@ function SuccessStories() {
 
   const successImages = [
     {
-      src: '/assets/1.jpeg',
+      src: '/assets/images/1.jpeg',
       alt: 'Deputy CM Recognition',
       title: 'State-Level Recognition',
       description: 'Honored by the Deputy Chief Minister of Tamil Nadu'
     },
     {
-      src: '/assets/2.jpeg',
+      src: '/assets/images/2.jpeg',
       alt: 'CM Puducherry Recognition',
       title: 'National Excellence',
       description: 'Recognized by the Chief Minister of Puducherry'
     },
     {
-      src: '/assets/3.jpeg',
+      src: '/assets/images/3.jpeg',
       alt: 'District Collector Award',
       title: 'District Achievement',
       description: 'Awarded by the Dindigul District Collector'
     },
     {
-      src: '/assets/4.jpeg',
+      src: '/assets/images/4.jpeg',
       alt: 'Robotics Competition',
       title: 'Robotics Championship',
       description: 'Outstanding performance in robotics competitions'
     },
     {
-      src: '/assets/5.jpeg',
+      src: '/assets/images/5.jpeg',
       alt: 'Innovation Award',
       title: 'Innovation Award',
       description: 'Recognized for innovation and technical excellence'
     },
     {
-      src: '/assets/6.jpeg',
+      src: '/assets/images/6.jpeg',
       alt: 'Student Excellence',
       title: 'Student Excellence',
       description: 'Demonstrating leadership and technical skill'

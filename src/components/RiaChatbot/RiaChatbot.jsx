@@ -354,7 +354,7 @@ const RiaChatbot = () => {
                         onClick={toggleChat}
                         title="Ask help with Ria"
                     >
-                        <img src="/assets/chatbot/ria_face.png" alt="Ria" />
+                        <img src="/assets/chatbot/ria-face.png" alt="Ria" />
                     </button>
                 )}
 
