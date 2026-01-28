@@ -172,6 +172,7 @@ a {
 
 a:hover {
   color: var(--color-primary-200);
+  text-decoration: none;
 }
 
 a:focus {
@@ -348,6 +349,5 @@ button:focus-visible {
     height: 350px;
     max-height: 40vh;
     aspect-ratio: 1 / 1;
-    /* Maintain aspect ratio on small screens */
-  }
+     }
 }
