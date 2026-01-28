@@ -17,22 +17,30 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
 
-        {/* Logo */}
-        <div className="logo" id="brand-logo-target">
-          <img src="/assets/images/logo-robo-aiq.jpeg" alt="RoboAiQ Logo" className="logo-image" />
+        {/* Mobile Left Section - Hamburger and Logo */}
+        <div className="navbar-left-mobile">
+          {/* Hamburger Menu Button - Mobile Only */}
+          <button 
+            className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+
+          {/* Logo */}
+          <div className="logo" id="brand-logo-target">
+            <img src="/assets/images/logo-robo-aiq.jpeg" alt="RoboAiQ Logo" className="logo-image" />
+          </div>
         </div>
 
-        {/* Hamburger Menu Button - Mobile Only */}
-        <button 
-          className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}
-          onClick={toggleMenu}
-          aria-label="Toggle navigation menu"
-          aria-expanded={isMenuOpen}
-        >
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </button>
+        {/* Desktop Logo - Left Aligned */}
+        <div className="logo logo-desktop" id="brand-logo-target">
+          <img src="/assets/images/logo-robo-aiq.jpeg" alt="RoboAiQ Logo" className="logo-image" />
+        </div>
 
         {/* Navigation - Desktop */}
         <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>

@@ -5,6 +5,8 @@
   position: relative;
   overflow: hidden;
   font-family: var(--font-primary);
+  padding-top: 140px;
+  padding-bottom: var(--space-20);
 }
 
 /* ================= GLOW ================= */
@@ -25,6 +27,13 @@
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  padding: 0 var(--space-6);
+}
+
+.wrrcm-curriculum .container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
 }
 
 /* ================= HEADER ================= */
@@ -150,7 +159,8 @@
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .wrrcm-curriculum {
-    padding: var(--space-20) var(--space-8);
+    padding-top: 120px;
+    padding-bottom: var(--space-16);
   }
 
   .curriculum-header h2 {
@@ -160,7 +170,8 @@
 
 @media (max-width: 768px) {
   .wrrcm-curriculum {
-    padding: var(--space-16) var(--space-6);
+    padding-top: 100px;
+    padding-bottom: var(--space-12);
   }
 
   .curriculum-header h2 {
@@ -175,5 +186,29 @@
   .curriculum-card {
     align-items: center;
     text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrrcm-curriculum {
+    padding-top: 90px;
+    padding-bottom: var(--space-12);
+  }
+
+  .curriculum-header h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-3);
+  }
+
+  .curriculum-header {
+    margin-bottom: var(--space-12);
+  }
+
+  .curriculum-grid {
+    gap: var(--space-4);
+  }
+
+  .curriculum-card {
+    padding: var(--space-6);
   }
 }
