@@ -189,7 +189,8 @@ a:focus {
 /* ===== LAYOUT ===== */
 
 section {
-  padding: var(--section-spacing-lg) 0;
+  padding: var(--space-12) 0;
+  /* Reduced from var(--section-spacing-lg) */
   position: relative;
   width: 100%;
 }
@@ -260,7 +261,7 @@ button:focus-visible {
 
 @media (max-width: 1024px) {
   section {
-    padding: var(--space-20) var(--space-6);
+    padding: var(--space-16) var(--space-6);
   }
 
   h1 {
@@ -274,7 +275,7 @@ button:focus-visible {
 
 @media (max-width: 768px) {
   section {
-    padding: var(--space-16) var(--space-4);
+    padding: var(--space-12) var(--space-4);
   }
 
   h1 {
@@ -292,7 +293,7 @@ button:focus-visible {
 
 @media (max-width: 640px) {
   section {
-    padding: var(--space-12) var(--space-4);
+    padding: var(--space-8) var(--space-4);
   }
 
   h1 {
