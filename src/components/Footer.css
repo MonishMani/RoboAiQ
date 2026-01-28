@@ -1,4 +1,4 @@
-/* Footer - Futuristic Royal Blue Theme */
+/* Footer - Futuristic Royal Blue Theme - CENTER ALIGNED */
 .footer {
   background: linear-gradient(180deg, var(--color-primary-900) 0%, #020617 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -24,15 +24,24 @@
   pointer-events: none;
 }
 
+/* Footer Content - Centered Grid with Equal Columns */
 .footer-content {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1.2fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-16);
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--container-padding-desktop) var(--space-16);
   position: relative;
   z-index: 1;
+}
+
+/* Footer Section - Center-aligned column */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .footer-section h4 {
@@ -59,18 +68,23 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-.footer-brand p {
+/* Brand Section - Description text centered */
+.footer-brand-description {
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--space-8);
   max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* Social Icons - Center-aligned flex container */
 .social-icons {
   display: flex;
   gap: var(--space-4);
   margin-top: var(--space-6);
+  justify-content: center;
 }
 
 .social-icons a {
@@ -100,13 +114,15 @@
   height: 32px;
 }
 
-.footer-navigation ul {
+/* Navigation Links - Centered */
+.footer-nav-links {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  align-items: center;
 }
 
 .footer-navigation a {
@@ -138,11 +154,17 @@
 .footer-navigation a:hover::before {
   left: -5px;
   opacity: 0;
-  /* Hidden for clean look, or adjust padding to show it. Keeping simple slide effect. */
 }
 
+/* Contact Info Section */
 .footer-info {
   margin-bottom: var(--space-6);
+}
+
+.footer-company-name {
+  margin: 0 0 var(--space-3) 0;
+  font-size: var(--font-size-base);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-info p {
@@ -151,13 +173,17 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Contact Group Styling */
+/* Contact Group Styling - Centered */
 .footer-contact-group {
   margin-top: var(--space-6);
   background: rgba(255, 255, 255, 0.05);
   padding: var(--space-4);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .footer-contact-group p {
@@ -187,6 +213,7 @@
   letter-spacing: 0.5px;
 }
 
+/* Footer Bottom - Center-aligned */
 .footer-bottom {
   background: rgba(0, 0, 0, 0.4);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -201,8 +228,10 @@
   margin: 0 auto;
   padding: 0 var(--container-padding-desktop);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: var(--space-4);
 }
 
 .footer-bottom p {
@@ -212,9 +241,12 @@
   letter-spacing: var(--letter-spacing-wide);
 }
 
+/* Footer Links - Center-aligned horizontal layout */
 .footer-links {
   display: flex;
   gap: var(--space-8);
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -229,25 +261,20 @@
   color: #FFFFFF;
 }
 
+/* Tablet - 2 Column Grid, Centered */
 @media (max-width: 1024px) {
   .footer-content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-10);
     padding: 0 var(--space-10) var(--space-10);
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    gap: var(--space-4);
-    padding: var(--space-6) var(--space-10);
-    text-align: center;
-  }
-
-  .footer-links {
-    gap: var(--space-5);
+  .footer-bottom-container {
+    padding: 0 var(--space-10);
   }
 }
 
+/* Mobile - Single Column, Fully Centered */
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
@@ -255,11 +282,20 @@
     padding: 0 var(--space-6) var(--space-8);
   }
 
-  .footer-bottom {
-    padding: var(--space-4) var(--space-6);
+  .footer-bottom-container {
+    padding: 0 var(--space-6);
   }
 
   .footer-section h3 {
     font-size: var(--font-size-2xl);
+  }
+
+  .footer-brand-description {
+    max-width: 100%;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: var(--space-4);
   }
 }

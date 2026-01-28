@@ -6,7 +6,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: var(--space-8) 0;
+  padding: 3rem 0;
+  /* Standardized spacing (py-12) */
 
 }
 

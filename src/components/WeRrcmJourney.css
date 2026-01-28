@@ -3,9 +3,11 @@
    =============================== */
 
 .journey-curved {
-  padding: 7rem 0 11rem;
+  padding: 4rem 0 5rem;
+  /* Reduced from 7rem/11rem */
   background: linear-gradient(180deg, #f8fbff, #ffffff);
-  overflow: visible;
+  overflow: hidden;
+  /* Prevent horizontal overflow from road/checkpoints */
 }
 
 /* Header */
@@ -212,6 +214,10 @@
    =============================== */
 
 @media (max-width: 900px) {
+  .journey-curved {
+    padding: 3rem 0;
+  }
+
   .curved-road-wrapper {
     height: auto;
   }

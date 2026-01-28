@@ -7,10 +7,16 @@ function Footer() {
 
     return (
         <footer ref={footerRef} className="footer section-parallax">
+            {/* Main Footer Content - Center-aligned Grid */}
             <div className={`footer-content scroll-reveal ${footerVisible ? 'visible' : ''}`}>
+                
+                {/* Brand Section - Centered Column */}
                 <div className="footer-section footer-brand">
                     <h3><span>ROBOAIQ</span></h3>
-                    <p>Pioneering the next era of autonomous intelligence. Our hardware doesn't just work; it thinks, adapts, and evolves alongside your ambition.</p>
+                    <p className="footer-brand-description">
+                        Pioneering the next era of autonomous intelligence. Our hardware doesn't just work; it thinks, adapts, and evolves alongside your ambition.
+                    </p>
+                    {/* Social Icons - Center-aligned flex container */}
                     <div className="social-icons">
                         <a href="https://www.instagram.com/roboaiq?igsh=MWZkdHRvcHJtbHRzdw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="btn-premium">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
@@ -35,9 +41,10 @@ function Footer() {
                     </div>
                 </div>
 
+                {/* Navigation Links - Centered Column */}
                 <div className="footer-section footer-navigation">
                     <h4>NAVIGATION</h4>
-                    <ul>
+                    <ul className="footer-nav-links">
                         <li><a href="/#home" className="link-animated">Home</a></li>
                         <li><a href="/#about" className="link-animated">About Us</a></li>
                         <li><a href="/#programs" className="link-animated">Programs</a></li>
@@ -47,10 +54,11 @@ function Footer() {
                     </ul>
                 </div>
 
+                {/* Contact Info Card - Centered Column */}
                 <div className="footer-section footer-headquarters">
                     <h4>Contact Info</h4>
                     <div className="footer-info">
-                        <p><span>ROBOAIQ</span> </p>
+                        <p className="footer-company-name"><span>ROBOAIQ</span></p>
                         <div className="footer-contact-group glass-premium">
                             <p><strong>For Sales Enquires:</strong> <a href="mailto:sales@roboaiq.in" className="link-animated">sales@roboaiq.in</a></p>
                             <p><strong>For Partnerships:</strong> <a href="mailto:partnership@roboaiq.in" className="link-animated">partnership@roboaiq.in</a></p>
@@ -61,6 +69,7 @@ function Footer() {
                 </div>
             </div>
 
+            {/* Footer Bottom - Center-aligned */}
             <div className="footer-bottom">
                 <div className="footer-bottom-container">
                     <p>&copy; 2025 ROBOAIQ TECHNOLOGIES INC. ALL RIGHTS RESERVED.</p>

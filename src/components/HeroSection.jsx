@@ -18,9 +18,11 @@ function HeroSection() {
   return (
     <>
       <section className="hero" id="home">
-        <div className="container hero-container">
-          {/* Left Side - Text Content */}
-          <div className="hero-left hero-animate-text">
+        {/* Hero Content Wrapper - Center-aligned max-width container */}
+        <div className="hero-wrapper">
+          <div className="container hero-container">
+            {/* Left Side - Text Content - Centered */}
+            <div className="hero-left hero-animate-text">
             {/* Premium Enlarged Badge - Centered Above Content */}
             <span className="hero-badge">
               <span className="badge-glow"></span>
@@ -62,6 +64,7 @@ function HeroSection() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 

@@ -13,31 +13,56 @@
 html {
   width: 100%;
   height: 100%;
+  /* Mobile-safe viewport height with fallback */
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* Dynamic viewport height - excludes browser UI */
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Prevent background gaps */
+  background: var(--gradient-blue-subtle);
+  overflow-x: hidden;
 }
 
 body {
   width: 100%;
-  min-height: 100%;
   margin: 0;
+  padding: 0;
+
+  /* Mobile-safe viewport height with fallback */
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* Dynamic viewport height */
+  min-height: 100svh;
+  /* Small viewport height - includes browser UI */
+
   font-family: var(--font-primary);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-normal);
 
-  /* Light Cloud-Blue Gradient */
+  /* Light Cloud-Blue Gradient - consistent across all pages */
   background: var(--gradient-blue-subtle);
+  background-attachment: fixed;
+  /* Prevent background gaps on mobile scroll */
   color: var(--color-text-primary);
 
+  /* Prevent horizontal scroll and background bleed */
   overflow-x: hidden;
+  overflow-y: auto;
+
+  /* Fix for mobile browser chrome */
+  position: relative;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -278,38 +303,51 @@ button:focus-visible {
   }
 }
 
-/* Hero Canvas Container */
+/* Hero Canvas Container - Responsive & Contained */
 .hero-canvas {
   width: 100%;
+  max-width: 100vw;
+  /* Prevent overflow on mobile */
   height: 780px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   position: relative;
+  overflow: hidden;
+  /* Prevent canvas overflow */
 }
 
-/* Responsive Canvas Heights */
+/* Responsive Canvas Heights - Mobile Optimized */
 @media (max-width: 1440px) {
   .hero-canvas {
     height: 700px;
+    max-height: 60vh;
+    /* Constrain on smaller screens */
   }
 }
 
 @media (max-width: 1024px) {
   .hero-canvas {
     height: 600px;
+    max-height: 50vh;
   }
 }
 
 @media (max-width: 768px) {
   .hero-canvas {
-    height: 500px;
+    height: 450px;
+    max-height: 45vh;
+    max-width: 100%;
+    /* Ensure containment */
   }
 }
 
 @media (max-width: 640px) {
   .hero-canvas {
-    height: 400px;
+    height: 350px;
+    max-height: 40vh;
+    aspect-ratio: 1 / 1;
+    /* Maintain aspect ratio on small screens */
   }
 }

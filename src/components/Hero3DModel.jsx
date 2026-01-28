@@ -16,7 +16,7 @@ function Robot({ scene }) {
 
     // Mapping mouse position [-1, 1] to rotation [-Math.PI, Math.PI] for full 360 turn
     const targetY = state.mouse.x * Math.PI;
-    const targetX = (state.mouse.y * Math.PI) / 8; // Slight vertical tilt for depth
+    const targetX = (state.mouse.y * Math.PI) / 8; // Slight vertical tilt
 
     // Smooth interpolation (lerping) for a premium feel
     group.current.rotation.y += (targetY - group.current.rotation.y) * 0.1;

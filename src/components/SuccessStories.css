@@ -6,6 +6,8 @@
   background: #f8fbff;
   text-align: center;
   padding: 4rem 0;
+  overflow: hidden;
+  /* Prevent slider overflow */
 }
 
 .success-stories-header {
