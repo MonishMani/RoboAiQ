@@ -1,0 +1,21 @@
+# robots.txt
+# Rules for search engine crawlers
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /*.json
+Disallow: /*.map
+
+# Slow down aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Point to sitemap
+Sitemap: https://roboaiq.com/sitemap.xml

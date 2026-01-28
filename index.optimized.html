@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== CRITICAL META TAGS ===== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  
+  <!-- ===== SEO & OPEN GRAPH ===== -->
+  <title>RoboAiQ - Intelligent Robotics & AI Education for Kids</title>
+  <meta name="description" content="Empower your children with world-class Robotics and AI education. Hands-on learning, personalized guidance, and competition-ready programs for future innovators." />
+  <meta name="keywords" content="robotics education, AI for kids, STEM learning, coding, robotics kit, competitive robotics" />
+  
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RoboAiQ - Intelligent Robotics & AI Education" />
+  <meta property="og:description" content="Empower your children with world-class Robotics and AI education. Hands-on learning, personalized guidance, and competition-ready programs." />
+  <meta property="og:image" content="https://roboaiq.com/og-image.png" />
+  <meta property="og:url" content="https://roboaiq.com" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RoboAiQ - Intelligent Robotics & AI Education" />
+  <meta name="twitter:description" content="Empower your children with world-class Robotics and AI education." />
+  <meta name="twitter:image" content="https://roboaiq.com/twitter-image.png" />
+  
+  <!-- ===== CANONICAL & LINKS ===== -->
+  <link rel="canonical" href="https://roboaiq.com" />
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
+  
+  <!-- ===== PRELOAD CRITICAL RESOURCES ===== -->
+  <!-- Preload critical font (weights 500, 700 only) -->
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-regular.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-bold.woff2" crossorigin />
+  
+  <!-- Preload critical CSS (if split) -->
+  <link rel="preload" as="style" href="/css/critical.css" />
+  
+  <!-- Preload critical image above fold -->
+  <link rel="preload" as="image" href="/assets/images/logo-roboaiq.jpeg" type="image/jpeg" />
+  
+  <!-- ===== DNS PREFETCH & PRECONNECT ===== -->
+  <link rel="dns-prefetch" href="https://unpkg.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- ===== THIRD-PARTY SCRIPTS (DEFERRED) ===== -->
+  <!-- Spline Viewer - Deferred to prevent blocking -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.32/build/spline-viewer.js" defer></script>
+  
+  <!-- Analytics - Deferred (Replace with your analytics service) -->
+  <script async defer src="https://cdn.example.com/analytics.js"></script>
+  
+  <!-- ===== PERFORMANCE HINTS ===== -->
+  <link rel="prefetch" href="/js/vendor-3d.chunk.js" />
+  <link rel="prefetch" href="/js/vendor-animation.chunk.js" />
+  
+  <!-- ===== STRUCTURED DATA (JSON-LD) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "RoboAiQ",
+    "url": "https://roboaiq.com",
+    "logo": "https://roboaiq.com/assets/images/logo-roboaiq.jpeg",
+    "description": "Intelligent Robotics & AI Education",
+    "sameAs": [
+      "https://www.facebook.com/roboaiq",
+      "https://www.linkedin.com/company/roboaiq",
+      "https://www.instagram.com/roboaiq"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+
+  <!-- ===== THEME COLOR ===== -->
+  <meta name="theme-color" content="#dc2626" />
+  
+  <!-- ===== STYLESHEET ===== -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" crossorigin />
+</head>
+
+<body>
+  <!-- ===== MAIN APP ===== -->
+  <div id="root"></div>
+
+  <!-- ===== CRITICAL INLINE SCRIPT ===== -->
+  <!-- Prevents Flash of Wrong Theme (FROWT) -->
+  <script>
+    // Check for dark mode preference
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <!-- ===== REACT APP ===== -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
