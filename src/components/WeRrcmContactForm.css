@@ -297,6 +297,10 @@ button[type="submit"]:active,
 
   .robo-form-card {
     padding: var(--space-8);
+    max-width: 28rem;
+    /* max-w-md */
+    margin: 0 auto;
+    width: 100%;
   }
 
   .robo-contact-header h1,

@@ -605,8 +605,8 @@
 /* --- Chatbot Icon Button --- */
 .ria-icon-button {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: max(24px, env(safe-area-inset-bottom, 24px));
+    right: max(24px, env(safe-area-inset-right, 24px));
     width: 85px;
     height: 85px;
     border-radius: 50%;
@@ -739,10 +739,16 @@
     }
 
     .feedback-card {
-        width: calc(100vw - 48px);
-        max-width: 280px;
-        bottom: 90px;
-        right: 16px;
+        width: auto;
+        max-width: 90vw;
+        /* Prevent preventing constraints */
+        left: 50%;
+        transform: translateX(-50%);
+        /* Center on mobile to avoid side blocking */
+        right: auto;
+        bottom: 100px;
+        /* More clearance */
+        padding-bottom: env(safe-area-inset-bottom);
     }
 }
 
@@ -763,5 +769,8 @@
 
     .feedback-card {
         animation: none !important;
+        /* Disable complex float animations on mobile for stability */
+        transform: translateX(-50%) !important;
+        /* Force centering override */
     }
 }
