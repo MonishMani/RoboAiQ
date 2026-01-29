@@ -274,15 +274,13 @@
 
 .nav-cta:hover {
   color: #ffffff;
-  background: #0284c7;
-  border-color: #0284c7;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(14, 165, 233, 0.2), 0 4px 8px rgba(0, 0, 0, 0.08);
+  background: #0ea5e9;
+  border-color: #0ea5e9;
   text-decoration: none;
 }
 
 .nav-cta:hover::before {
-  left: 0;
+  left: -100%;
 }
 
 .nav-cta:active {
@@ -583,9 +581,7 @@
   }
 
   .nav-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
-    background: #0284c7 !important;
+    background: #0ea5e9 !important;
     color: #ffffff !important;
   }
 
