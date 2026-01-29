@@ -48,9 +48,9 @@ function Navbar() {
             <span className="text">Home</span>
           </a>
 
-          <a href="/#about" className="nav-item" onClick={closeMenu}>
+          <Link to="/about" className="nav-item" onClick={closeMenu}>
             <span className="text">About</span>
-          </a>
+          </Link>
 
           <Link to="/programs" className="nav-item" onClick={closeMenu}>
             <span className="text">Programs</span>
