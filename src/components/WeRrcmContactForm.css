@@ -3,7 +3,7 @@
 .robo-form-section,
 .robo-contact-section {
   min-height: 100vh;
-  background: var(--color-bg-secondary);
+  background: transparent;
   color: var(--color-text-primary);
 }
 
@@ -24,28 +24,28 @@
   text-align: center;
 }
 
+/* Main Header */
 .robo-contact-header h1,
 .robo-form-info h1 {
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-extrabold);
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tighter);
-  color: var(--color-text-primary);
+  color: #000000;
   margin-bottom: var(--space-4);
 }
 
 .robo-contact-header h1 span {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: var(--color-cta-red);
 }
 
 .robo-contact-header p,
 .robo-form-info p {
   margin-top: var(--space-5);
   max-width: 700px;
-  color: var(--color-text-tertiary);
+  color: #000000;
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
   margin-left: auto;
@@ -165,7 +165,7 @@
 }
 
 .robo-form-card h2 {
-  color: var(--color-text-primary);
+  color: var(--color-cta-red);
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-2);
@@ -173,7 +173,7 @@
 
 .robo-form-card .subtitle {
   font-size: var(--font-size-sm);
-  color: var(--color-text-tertiary);
+  color: #000000;
   margin-bottom: var(--space-8);
 }
 

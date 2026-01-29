@@ -31,14 +31,13 @@ function HeroSection() {
 
               {/* Main Headline */}
               <h1>
-                Children, Transform Your Future With{' '}
-                <span className="highlight">Robotics</span> &{' '}
-                <span className="highlight">AI</span>
+                Shaping Future CEOs.{' '}
+                <span className="highlight">Inspiring Young Entrepreneurs.</span>
               </h1>
 
               {/* Subtitle */}
               <p className="subtitle">
-                Parents, empower your children with world-class Robotics and AI education, hands-on automation, and personalized 1:1 guidance to prepare them for real-world innovation and future-ready careers.
+                RoboAIQ isn’t just an education program — it’s a launchpad for future CEOs, innovators, and technology leaders.
               </p>
 
               {/* Premium CTA Button - Directly under text content */}

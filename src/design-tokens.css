@@ -218,7 +218,7 @@
   --glass-blur-xl: 24px;
 
   --glass-bg-light: rgba(255, 255, 255, 0.7);
-  --glass-bg-medium: rgba(255, 255, 255, 0.8);
+  --glass-bg-medium: rgba(255, 255, 255, 0.85);
   --glass-bg-strong: rgba(255, 255, 255, 0.92);
 
   /* ===== Z-INDEX SCALE ===== */
@@ -240,6 +240,7 @@
   --gradient-blue-subtle: linear-gradient(180deg, #F5FAFF 0%, #E6F4FE 100%);
   --gradient-hero: radial-gradient(circle at top right, rgba(125, 179, 232, 0.15), transparent 70%),
     linear-gradient(180deg, #F5FAFF 0%, #FFFFFF 100%);
+  --gradient-global-theme: #FAF9F6;
 
   /* ===== BREAKPOINTS (for reference) ===== */
   /* Use in media queries */
@@ -304,7 +305,7 @@
   /* Cards */
   --card-padding: var(--space-6);
   --card-padding-lg: var(--space-8);
-  --card-radius: var(--radius-xl);
+  --card-radius: var(--radius-lg);
   --card-bg: var(--gradient-card);
   --card-shadow: var(--shadow-md), var(--shadow-blue-sm);
   --card-shadow-hover: var(--shadow-lg), var(--shadow-blue-md);

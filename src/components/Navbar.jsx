@@ -20,7 +20,7 @@ function Navbar() {
         {/* Mobile Left Section - Hamburger and Logo */}
         <div className="navbar-left-mobile">
           {/* Hamburger Menu Button - Mobile Only */}
-          <button 
+          <button
             className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
@@ -68,7 +68,7 @@ function Navbar() {
             <span className="text">Register</span>
           </a>
 
-          <a href="/#contact" className="nav-item nav-cta" onClick={closeMenu}>
+          <a href="/#contact" className="nav-item" onClick={closeMenu}>
             <span className="text">Contact</span>
           </a>
         </div>
