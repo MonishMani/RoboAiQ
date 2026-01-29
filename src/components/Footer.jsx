@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './Footer.css';
 
@@ -47,7 +48,7 @@ function Footer() {
                         <a href="/#programs">Programs</a>
                         <a href="/robotics-kit">Robotics Kit</a>
                         <a href="/#success-stories">Success Stories</a>
-                        <a href="/#privacy">Privacy Policy</a>
+                        <a href="/privacy-policy">Privacy Policy</a>
                     </nav>
                 </div>
 

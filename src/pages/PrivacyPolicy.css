@@ -1,0 +1,241 @@
+/* Privacy Policy Page Styles - Premium Ice Blue Theme */
+/* Privacy Policy - Premium Dark Mode Redesign */
+
+:root {
+    --accent-start: #FF1E1E;
+    --accent-end: #FFB84D;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-border: rgba(255, 184, 77, 0.3);
+    --text: #333333;
+}
+
+.privacy-page {
+    background: transparent;
+    color: var(--text);
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    padding-top: 80px;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+.privacy-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ambient glow behind container */
+.privacy-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 420px;
+    background: radial-gradient(circle at 50% 20%, rgba(255, 184, 77, 0.15), rgba(255, 30, 30, 0.05) 30%, transparent 60%);
+    filter: blur(60px);
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 28px;
+    opacity: 0.6;
+}
+
+/* Ensure direct children render above the glow */
+.privacy-container>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* Header Section */
+.privacy-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.privacy-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.018em;
+}
+
+.privacy-meta {
+    font-size: 0.95rem;
+    color: #666666;
+    margin-bottom: 1rem;
+}
+
+.privacy-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text);
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.privacy-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+}
+
+.policy-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 10px 30px rgba(6, 182, 212, 0.04);
+    backdrop-filter: blur(6px);
+}
+
+.policy-section:hover {
+    transform: scale(1.01);
+    border-color: rgba(255, 184, 77, 0.5);
+    box-shadow: 0 18px 50px rgba(255, 30, 30, 0.08);
+}
+
+.policy-section h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.policy-section h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444444;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Left accent: glowing dot */
+.policy-section h2::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-start), var(--accent-end));
+    box-shadow: 0 0 10px rgba(255, 30, 30, 0.3);
+}
+
+.policy-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.policy-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.policy-section li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.9rem;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.policy-section li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FF1E1E;
+    box-shadow: none;
+    border-radius: 2px;
+    width: 6px;
+    height: 6px;
+    top: 9px;
+}
+
+/* Highlight badge for key phrases */
+.policy-highlight {
+    display: inline-block;
+    color: #000000;
+    background: rgba(255, 184, 77, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 30, 30, 0.2);
+    box-shadow: 0 6px 24px rgba(255, 30, 30, 0.05);
+    font-weight: 600;
+}
+
+.contact-details {
+    margin-top: 1rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 30, 30, 0.1);
+    background: linear-gradient(180deg, rgba(255, 184, 77, 0.05), transparent);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.privacy-footer-quote {
+    text-align: center;
+    margin-top: 3.5rem;
+    padding: 2rem;
+    background: rgba(255, 184, 77, 0.1);
+    border: 1px solid rgba(255, 184, 77, 0.3);
+    border-radius: 16px;
+    font-style: italic;
+    color: #000000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+    .privacy-container {
+        padding: 2.5rem 1rem 3rem;
+    }
+
+    .privacy-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+
+    .policy-section {
+        padding: 1.25rem;
+    }
+
+    .policy-section h2 {
+        font-size: 1.15rem;
+    }
+
+    .privacy-intro {
+        font-size: 1rem;
+    }
+}
+
+/* Prevent horizontal overflow */
+html,
+body,
+.privacy-page {
+    overflow-x: hidden;
+}

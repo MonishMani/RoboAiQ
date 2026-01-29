@@ -76,13 +76,7 @@ function WeRrcmContactForm() {
               </div>
             </div>
 
-            {/* HIGHLIGHTS */}
-            <ul className="robo-highlights">
-              <li>Autonomous Robotics Programs</li>
-              <li>AI Research-Oriented Training</li>
-              <li>Hands-On Hardware Experience</li>
-              <li>Global Competition Exposure</li>
-            </ul>
+
           </div>
 
           {/* CENTER FORM */}

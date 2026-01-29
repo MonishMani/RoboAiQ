@@ -23,7 +23,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
 
   /* Prevent background gaps */
-  background: var(--gradient-blue-subtle);
+  background: var(--gradient-global-theme);
   overflow-x: hidden;
 }
 
@@ -45,7 +45,7 @@ body {
   line-height: var(--line-height-normal);
 
   /* Light Cloud-Blue Gradient - consistent across all pages */
-  background: var(--gradient-blue-subtle);
+  background: var(--gradient-global-theme);
   background-attachment: fixed;
   /* Prevent background gaps on mobile scroll */
   color: var(--color-text-primary);
@@ -360,5 +360,5 @@ button:focus-visible {
     height: 350px;
     max-height: 40vh;
     aspect-ratio: 1 / 1;
-     }
+  }
 }

@@ -3,7 +3,7 @@
 .robo-form-section,
 .robo-contact-section {
   min-height: 100vh;
-  background: var(--color-bg-secondary);
+  background: transparent;
   color: var(--color-text-primary);
 }
 

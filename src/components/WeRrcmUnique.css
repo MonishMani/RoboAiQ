@@ -1,6 +1,6 @@
 /* Unique Section - Clean Layout */
 .unique-section {
-  background: #ffffff;
+  background: transparent;
   color: var(--color-text-primary);
   font-family: var(--font-primary);
   text-align: center;
