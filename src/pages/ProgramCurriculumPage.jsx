@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/ProgramsPage.css';
 import { useState } from 'react';
+import { FaRobot, FaMicroscope, FaRocket, FaTrophy } from 'react-icons/fa';
 
 function ProgramCurriculumPage() {
   const [expandedProgram, setExpandedProgram] = useState(0);
@@ -10,7 +11,7 @@ function ProgramCurriculumPage() {
     {
       id: 1,
       title: 'Robotics & AI Program',
-      icon: 'AI',
+      icon: FaRobot,
       color: '#7DB3E8',
       description: 'Master advanced robotics and artificial intelligence with hands-on engineering experience.',
       highlights: [
@@ -23,7 +24,7 @@ function ProgramCurriculumPage() {
     {
       id: 2,
       title: 'STEM Leadership Program',
-      icon: 'STEM',
+      icon: FaMicroscope,
       color: '#569BD1',
       description: 'Develop scientific thinking combined with leadership excellence and strategic decision-making.',
       highlights: [
@@ -36,7 +37,7 @@ function ProgramCurriculumPage() {
     {
       id: 3,
       title: 'Startup & Entrepreneurship Track',
-      icon: 'STARTUP',
+      icon: FaRocket,
       color: '#3D7DB3',
       description: 'Learn to think like founders—building innovation mindset and execution excellence.',
       highlights: [
@@ -49,7 +50,7 @@ function ProgramCurriculumPage() {
     {
       id: 4,
       title: 'Competition & Championship Training',
-      icon: 'COMPETE',
+      icon: FaTrophy,
       color: '#2A6296',
       description: 'Compete at the highest levels—national and international robotics championships.',
       highlights: [
@@ -147,11 +148,10 @@ function ProgramCurriculumPage() {
                 <div
                   key={program.id}
                   className={`program-card ${expandedProgram === program.id ? 'active' : ''}`}
-                  onClick={() => setExpandedProgram(expandedProgram === program.id ? null : program.id)}
                   style={{ '--program-color': program.color }}
                 >
                   <div className="card-header">
-                    <span className="program-icon">{program.icon}</span>
+                    <span className="program-icon">{program.icon && <program.icon />}</span>
                     <h3 className="program-card-title">{program.title}</h3>
                   </div>
                   
@@ -168,7 +168,13 @@ function ProgramCurriculumPage() {
                     </div>
                   )}
                   
-                  <div className="card-cta">Learn More →</div>
+                  <button 
+                    className="card-cta" 
+                    onClick={() => setExpandedProgram(expandedProgram === program.id ? null : program.id)}
+                    type="button"
+                  >
+                    Learn More →
+                  </button>
                 </div>
               ))}
             </div>
@@ -199,9 +205,9 @@ function ProgramCurriculumPage() {
         <section className="programs-closing">
           <div className="closing-content">
             <h2 className="closing-subtitle">Our Promise</h2>
-            <h1 className="closing-title">We prepare children for leadership, not just exams.</h1>
+            <h1 className="closing-title">We prepare children for <span className="highlight">leadership</span>, not just exams.</h1>
             <p className="closing-description">
-              Every RoboAIQ program is designed with one goal: to unlock exceptional potential and prepare students to lead the future.
+              Every RoboAIQ program is designed with one goal: to <span className="highlight">unlock exceptional potential</span> and prepare students to <span className="highlight">lead the future</span>.
             </p>
           </div>
         </section>
