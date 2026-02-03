@@ -106,6 +106,10 @@
   letter-spacing: -0.02em;
 }
 
+.hero-title .keyword-red {
+  color: #FF1E1E;
+}
+
 .hero-description {
   max-width: 580px;
   font-size: 1.15rem;

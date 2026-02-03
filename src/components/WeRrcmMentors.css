@@ -32,6 +32,11 @@
   color: #020617;
 }
 
+.wrrcm-mentors h2 .keyword-red {
+  color: #FF1E1E;
+  font-weight: 800;
+}
+
 /* Subtitle */
 .mentors-subtitle {
   max-width: 720px;
@@ -322,6 +327,11 @@
   font-weight: 600;
   margin: 0;
   color: white;
+}
+
+.expertise-title .keyword-red {
+  color: #FF1E1E;
+  font-weight: 700;
 }
 
 .expertise-description {

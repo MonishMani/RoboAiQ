@@ -37,7 +37,7 @@ function WeRrcmTestimonials() {
     {
       author: {
         name: "Ananya Reddy",
-        handle: "Junior Robotics Mentor",
+        handle: <>Junior <span className="keyword-red">Robotics Mentor</span></>,
         avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
       },
       text: "I never thought I could build a Bluetooth-controlled car. Now I'm teaching my friends!",

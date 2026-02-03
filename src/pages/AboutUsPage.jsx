@@ -31,7 +31,7 @@ export default function AboutUsPage() {
           <div className="hero-left reveal">
             <span className="hero-eyebrow">About RoboAIQ</span>
             <h1 className="hero-title">
-              We Build <br /> Future Architects
+              We Build <br /> <span className="keyword-red">Future Architects</span>
             </h1>
             <p className="hero-description">
               RoboAIQ is a future-technology and leadership education platform where

@@ -22,7 +22,7 @@ function WeRrcmMentors() {
       url: 'https://github.com/',
       featured: true,
       expertise: [
-        { icon: '●', title: 'Robotics Mentor', desc: 'Competition preparation' },
+        { icon: '●', title: <>Robotics <span className="keyword-red">Mentor</span></>, desc: 'Competition preparation' },
         { icon: '●', title: 'Mathematics Expert', desc: 'Applied mathematics' },
 
       ]
@@ -133,17 +133,9 @@ function WeRrcmMentors() {
         <span className="mentors-badge">EXPERT MENTORS</span>
 
         {/* Heading */}
-        <SplitText
-          text="Learn from Industry-Leading Robotics Mentors"
-          tag="h2"
-          delay={35}
-          duration={1.2}
-          ease="power3.out"
-          splitType="words"
-          from={{ opacity: 0, y: 25 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.2}
-        />
+        <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '1rem', color: '#020617' }}>
+          Learn from Industry-Leading <span className="keyword-red">Robotics Mentors</span>
+        </h2>
 
         {/* Subtitle */}
         <TextType

@@ -173,6 +173,11 @@
   font-weight: 500;
 }
 
+.author-handle .keyword-red {
+  color: #FF1E1E;
+  font-weight: 700;
+}
+
 /* Avatar - Absolutely Positioned Right */
 .author-avatar {
   position: absolute;
