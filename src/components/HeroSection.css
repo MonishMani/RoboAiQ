@@ -124,6 +124,16 @@
   }
 }
 
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 0 rgba(255, 30, 30, 0);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 30, 30, 0.2);
+  }
+}
+
 /* ============================================
    PREMIUM BADGE - 150-200% Larger
    ============================================ */
@@ -154,6 +164,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   /* Vertical gap from navbar */
   margin-top: 12px;
+  animation: slideInUp 0.8s ease-out both, badgePulse 3s ease-in-out infinite 0.8s;
 }
 
 /* Animated glow behind badge */
@@ -185,6 +196,24 @@
   }
 }
 
+@keyframes badgePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(255, 184, 77, 0.4),
+      0 0 40px rgba(255, 184, 77, 0.2),
+      0 4px 15px rgba(255, 107, 53, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(255, 184, 77, 0.6),
+      0 0 60px rgba(255, 184, 77, 0.3),
+      0 4px 15px rgba(255, 107, 53, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+}
+
 .badge-text {
   position: relative;
   z-index: 1;
@@ -207,18 +236,52 @@
   line-height: 1.2;
   font-weight: 800;
   font-family: 'Poppins', sans-serif;
-  color: #000000;
+  color: #0F253E;
   margin-bottom: var(--space-4);
   letter-spacing: -0.01em;
   max-width: 600px;
   text-align: left;
   white-space: normal;
+  animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero h1 .highlight {
   color: #FF1E1E;
-  font-weight: 800;
   position: relative;
+  display: inline-block;
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+.hero h1 .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FF1E1E, #FFB84D);
+  border-radius: 2px;
+  animation: expandWidth 0.8s ease-out 0.6s both;
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .subtitle {
@@ -230,6 +293,7 @@
   margin-bottom: 0;
   max-width: 550px;
   text-align: left;
+  animation: slideInUp 0.8s ease-out 0.3s both;
 }
 
 /* ============================================
@@ -241,6 +305,7 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  animation: slideInUp 0.8s ease-out 0.4s both;
 }
 
 .hero-cta-btn {
@@ -272,7 +337,8 @@
   transition:
     transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.25s ease,
-    background 0.3s ease;
+    background 0.3s ease,
+    filter 0.3s ease;
 
   /* Performance Optimization */
   contain: layout paint style;
@@ -296,13 +362,14 @@
 
 /* Hover State */
 .hero-cta-btn:hover {
-  transform: scale(1.03) translateY(-2px);
+  transform: scale(1.05) translateY(-3px);
   background: linear-gradient(135deg, #FF4040 0%, #FF1E1E 50%, #E61515 100%);
   box-shadow:
     0 8px 25px rgba(255, 30, 30, 0.45),
     0 15px 45px rgba(255, 30, 30, 0.25),
     0 4px 10px rgba(0, 0, 0, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  filter: drop-shadow(0 0 12px rgba(255, 30, 30, 0.4));
 }
 
 .hero-cta-btn:hover::before {
@@ -444,6 +511,10 @@
   50% {
     transform: translateY(-10px) scale(1.01);
   }
+}
+
+.robot-container {
+  animation: floatBreath 4s ease-in-out infinite;
 }
 
 /* ============================================
