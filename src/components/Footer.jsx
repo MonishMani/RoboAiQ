@@ -43,12 +43,12 @@ function Footer() {
                 <div className="footer-col footer-col-2">
                     <h4 className="footer-col-title">NAVIGATION</h4>
                     <nav className="footer-nav">
-                        <a href="/#home">Home</a>
-                        <a href="/#about">About Us</a>
-                        <a href="/#programs">Programs</a>
-                        <a href="/robotics-kit">Robotics Kit</a>
-                        <a href="/#success-stories">Success Stories</a>
-                        <a href="/privacy-policy">Privacy Policy</a>
+                        <Link to="/#home">Home</Link>
+                        <Link to="/#about">About Us</Link>
+                        <Link to="/#programs">Programs</Link>
+                        <Link to="/robotics-kit">Robotics Kit</Link>
+                        <Link to="/#success-stories">Success Stories</Link>
+                        <Link to="/privacy-policy">Privacy Policy</Link>
                     </nav>
                 </div>
 

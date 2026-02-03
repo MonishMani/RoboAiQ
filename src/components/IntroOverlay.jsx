@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
+/**
+ * IntroOverlay Component
+ * Displays the luxury intro screen as an iframe.
+ * Listens for 'introComplete' message from the intro page.
+ */
 const IntroOverlay = ({ onComplete }) => {
     const [isFading, setIsFading] = useState(false);
 
     useEffect(() => {
         const handleMessage = (event) => {
-            // In production, you might want to check event.origin
             if (event.data && event.data.type === 'introComplete') {
                 handleIntroComplete();
             }
@@ -37,7 +41,7 @@ const IntroOverlay = ({ onComplete }) => {
                 opacity: isFading ? 0 : 1,
                 transition: 'opacity 1s ease-in-out',
                 pointerEvents: isFading ? 'none' : 'auto',
-                backgroundColor: '#FFFFF0' // Match Intro background to prevent flash
+                backgroundColor: '#eef1f5' // Match intro background
             }}
         >
             <iframe
