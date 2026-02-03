@@ -94,12 +94,12 @@
 }
 
 .hero-title {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 900;
   font-family: 'Poppins', sans-serif;
   color: #0F253E;
-  margin-bottom: 1.75rem;
-  line-height: 1.2;
+  margin-bottom: 1rem;
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
@@ -109,14 +109,15 @@
 }
 
 .hero-subtitle {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
   color: #4A5568;
   line-height: 1.75;
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem;
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
   font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 .hero-subtitle-secondary {
@@ -127,21 +128,23 @@
 }
 
 .hero-cta {
-  padding: 16px 48px;
-  background: linear-gradient(135deg, #FF1E1E 0%, #E61515 100%);
+  padding: 16px 38px;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  background: linear-gradient(135deg, #FF2D2D 0%, #E61515 100%);
   color: white;
   border: none;
   border-radius: 12px;
-  font-size: 16px;
-  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(255, 30, 30, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(255, 30, 30, 0.3), 0 8px 25px rgba(255, 30, 30, 0.2);
 }
 
 .hero-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(255, 30, 30, 0.4);
+  background: linear-gradient(135deg, #FF4040 0%, #FF1E1E 100%);
+  box-shadow: 0 8px 20px rgba(255, 30, 30, 0.4), 0 12px 30px rgba(255, 30, 30, 0.25);
 }
 
 /* ============================================

@@ -4,9 +4,9 @@
 
 .hero {
   margin-top: 0;
-  padding-top: 3rem;
-  /* Mobile-first: compact */
-  padding-bottom: 2rem;
+  padding-top: 5rem;
+  /* Professional top padding */
+  padding-bottom: 4rem;
 
   /* Premium white-to-blue gradient background */
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 50%, #F0F7FF 100%);
@@ -75,13 +75,14 @@
 .hero-container {
   width: 100%;
   max-width: var(--container-max-width);
-  padding: 0;
+  padding: 2rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
   /* Mobile-first: single column */
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
+  /* Increased gap for better spacing */
 
   /* Prevent overflow on mobile */
   /* overflow-x: hidden removed */
@@ -96,13 +97,16 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  gap: var(--space-6);
+  gap: 1.5rem;
+  /* Improved spacing between elements */
   z-index: 10;
   width: 100%;
   box-sizing: border-box;
   /* overflow-x: hidden removed */
   margin-bottom: 2rem;
   /* Space between button and robot on mobile */
+  max-width: 650px;
+  /* Content width constraint */
 }
 
 /* Text Entrance Animation */
@@ -203,14 +207,18 @@
    Hero Headings
    ============================================ */
 .hero h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  font-weight: 800;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  /* Responsive sizing */
+  line-height: 1.15;
+  /* Tighter professional line-height */
+  font-weight: 900;
+  /* Extra bold for impact */
   font-family: 'Poppins', sans-serif;
-  color: #000000;
-  margin-bottom: var(--space-4);
-  letter-spacing: -0.01em;
-  max-width: 600px;
+  color: #0F253E;
+  /* Professional navy instead of pure black */
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  max-width: 650px;
   text-align: left;
   white-space: normal;
 }
@@ -222,21 +230,26 @@
 }
 
 .subtitle {
-  font-size: 1.4rem;
-  line-height: 1.6;
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  /* Responsive subtitle size */
+  line-height: 1.7;
+  /* Better readability */
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
-  color: #333333;
-  margin-bottom: 0;
-  max-width: 550px;
+  color: #4A5568;
+  /* Professional gray-blue */
+  margin-bottom: 0.5rem;
+  max-width: 650px;
   text-align: left;
+  letter-spacing: 0.3px;
 }
 
 /* ============================================
    PREMIUM CTA BUTTON - Text Only, No Icon
    ============================================ */
 .hero-cta-wrapper {
-  margin-top: var(--space-8);
+  margin-top: 2.5rem;
+  /* More spacious margin */
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -249,29 +262,31 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
-  padding: 18px 42px;
+  padding: 16px 38px;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.2px;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
   border: none;
-  border-radius: 16px;
-  /* Soft rounded corners */
+  border-radius: 12px;
+  /* Refined rounded corners */
   position: relative;
   overflow: hidden;
 
-  /* Brand gradient background */
-  background: linear-gradient(135deg, #FF2D2D 0%, #E61515 50%, #CC1010 100%);
+  /* Professional gradient background */
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
 
-  /* Premium shadow with subtle glow */
+  /* Premium shadow with blue tint */
   box-shadow:
-    0 4px 15px rgba(255, 30, 30, 0.35),
-    0 8px 30px rgba(255, 30, 30, 0.2),
-    0 2px 6px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 4px 15px rgba(59, 130, 246, 0.3),
+    0 8px 25px rgba(59, 130, 246, 0.2),
+    0 2px 6px rgba(0, 0, 0, 0.08);
 
   /* Smooth transitions */
   transition:
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
     background 0.3s ease;
 
   /* Performance Optimization */
@@ -296,13 +311,11 @@
 
 /* Hover State */
 .hero-cta-btn:hover {
-  transform: scale(1.03) translateY(-2px);
-  background: linear-gradient(135deg, #FF4040 0%, #FF1E1E 50%, #E61515 100%);
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
   box-shadow:
-    0 8px 25px rgba(255, 30, 30, 0.45),
-    0 15px 45px rgba(255, 30, 30, 0.25),
-    0 4px 10px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 8px 20px rgba(59, 130, 246, 0.4),
+    0 12px 30px rgba(59, 130, 246, 0.25);
 }
 
 .hero-cta-btn:hover::before {
@@ -366,14 +379,18 @@
 .hero-visual {
   flex: 1;
   width: 100%;
-  height: 300px;
-  /* Mobile-first: reduced height */
+  height: 350px;
+  /* Increased height for visual impact */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   order: 2;
   /* Image below text on mobile */
+  background: linear-gradient(180deg, rgba(248, 251, 255, 0.6) 0%, rgba(240, 247, 255, 0.4) 100%);
+  border-radius: 20px;
+  box-shadow: inset 0 1px 3px rgba(125, 179, 232, 0.1);
+  overflow: hidden;
 }
 
 .hero-canvas {
@@ -408,13 +425,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: hidden;
+  /* Changed from visible to hidden for seamless blending */
 
   /* Performance & Stability */
   contain: layout paint style;
   will-change: transform;
-  aspect-ratio: 16 / 9;
-  width: 100%;
 }
 
 /* Watermark Mask Overlay */
