@@ -44,8 +44,8 @@ function WeRrcmContactForm() {
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Phone</span>
-                <p>+91 8971252285</p>
-                <p>+91 99624 99556</p>
+                <p><a href="tel:+918971252285" className="phone-link">+91 8971252285</a></p>
+                <p><a href="tel:+919962499556" className="phone-link">+91 99624 99556</a></p>
               </div>
             </div>
 

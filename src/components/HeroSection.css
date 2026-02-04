@@ -94,15 +94,14 @@
 .hero-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: var(--space-6);
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
   z-index: 10;
   width: 100%;
   box-sizing: border-box;
-  /* overflow-x: hidden removed */
-  margin-bottom: 2rem;
-  /* Space between button and robot on mobile */
+  margin-bottom: 1rem;
+  /* Reduced spacing */
 }
 
 /* Text Entrance Animation */
@@ -203,17 +202,18 @@
    Hero Headings
    ============================================ */
 .hero h1 {
-  font-size: 2.5rem;
-  /* Tighter line height for editorial feel */
-  line-height: 1.1;
-  font-weight: 800;
+  font-size: 3rem;
+  /* Larger, more impactful */
+  line-height: 1.2;
+  font-weight: 700;
+  /* Slightly lighter for elegance */
   font-family: 'Poppins', sans-serif;
   color: #000000;
-  margin-bottom: var(--space-4);
-  letter-spacing: -0.01em;
-  /* Controlled max width for optimal reading line length */
-  max-width: 560px;
-  text-align: left;
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.02em;
+  /* Tighter tracking */
+  max-width: 700px;
+  text-align: center;
   white-space: normal;
 }
 
@@ -224,15 +224,17 @@
 }
 
 .subtitle {
-  font-size: 1.4rem;
-  line-height: 1.6;
-  font-weight: 400;
+  font-size: 1.15rem;
+  /* Balanced with headline */
+  line-height: 1.7;
+  font-weight: 500;
+  /* Semi-bold for emphasis */
   font-family: 'Poppins', sans-serif;
-  color: #333333;
+  color: #555555;
+  /* Softer gray */
   margin-bottom: 0;
-  /* Align with headline width */
-  max-width: 500px;
-  text-align: left;
+  max-width: 600px;
+  text-align: center;
 }
 
 /* ============================================
@@ -362,8 +364,8 @@
   position: relative;
   z-index: 5;
   height: 100%;
-  margin-top: 1rem;
-  /* Additional space from button */
+  margin-top: 0;
+  /* Removed extra spacing */
 }
 
 .hero-visual {
@@ -581,10 +583,10 @@
   }
 
   .hero-container {
-    /* Adjusted ratio: Text (55%) - Video (45%) */
-    grid-template-columns: 1.1fr 0.9fr;
-    /* Reduced gap between text and visual (24px - 40px target) */
-    gap: 2.5rem;
+    /* Balanced ratio */
+    grid-template-columns: 1fr 1fr;
+    /* Minimal gap for tighter layout */
+    gap: 1.5rem;
     align-items: center;
   }
 

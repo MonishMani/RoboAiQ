@@ -86,7 +86,9 @@ function Footer() {
                                     jobs@roboaiq.in
                                 </ProtectedEmail>
                             </p>
-                            <p className="footer-phone">+91 8971252285 / +91 99624 99556</p>
+                            <p className="footer-phone">
+                                <a href="tel:+918971252285" className="phone-link">+91 8971252285</a> / <a href="tel:+919962499556" className="phone-link">+91 99624 99556</a>
+                            </p>
                         </div>
                     </div>
                 </div>
