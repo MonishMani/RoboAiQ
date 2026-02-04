@@ -27,7 +27,7 @@ function HeroSection() {
               <span className="hero-badge">
                 <span className="badge-glow"></span>
                 <span className="badge-text">NEXT GENERATION EDUCATION</span>
-              </span>
+              </span> 
 
               {/* Main Headline */}
               <h1>
