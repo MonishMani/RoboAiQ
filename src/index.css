@@ -330,6 +330,7 @@ video {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;
 }
 
 /* Reserve aspect ratio space for videos */
