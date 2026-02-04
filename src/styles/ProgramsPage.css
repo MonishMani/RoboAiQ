@@ -149,8 +149,9 @@
 
 .programs-showcase {
   padding: 8rem 2rem;
-  background: linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 100%);
+  background: transparent;
   position: relative;
+  overflow: hidden;
 }
 
 .programs-showcase::before {
@@ -161,11 +162,46 @@
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent 0%, rgba(15, 37, 62, 0.1) 50%, transparent 100%);
+  z-index: 1;
+}
+
+/* Blue Orb - Top Right */
+.programs-showcase::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #7DB3E8 0%, #3B82F6 100%);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+  top: -100px;
+  right: -100px;
+  z-index: 0;
 }
 
 .showcase-container {
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Red Orb - Bottom Left (using additional pseudo-element via showcase-container) */
+.showcase-container::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #FFB84D 0%, #FF1E1E 100%);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+  bottom: -50px;
+  left: -50px;
+  z-index: 0;
 }
 
 .showcase-header {
@@ -174,6 +210,8 @@
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 2;
 }
 
 .showcase-header h2 {
@@ -201,6 +239,8 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 2.5rem;
   margin-bottom: 5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .program-card {
@@ -444,18 +484,55 @@
 
 .programs-features {
   padding: 5rem 2rem;
-  background: white;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient Orbs - Decorative Background */
+.programs-features::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #FFB84D 0%, #FF1E1E 100%);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+  bottom: -50px;
+  left: -50px;
+  z-index: 0;
+}
+
+.programs-features::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #7DB3E8 0%, #3B82F6 100%);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+  top: -100px;
+  right: -100px;
+  z-index: 0;
 }
 
 .features-container {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .features-header {
   text-align: center;
   margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
 }
 
 .features-header h2 {
@@ -477,6 +554,8 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .feature-card {
