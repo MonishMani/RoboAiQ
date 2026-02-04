@@ -3,7 +3,7 @@
 .robo-form-section,
 .robo-contact-section {
   min-height: 100vh;
-  background: transparent;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
   color: var(--color-text-primary);
   position: relative;
   overflow: hidden;
@@ -133,11 +133,12 @@
   display: flex;
   gap: var(--space-4);
   padding: var(--space-6);
-  border: 2px solid var(--color-border-light);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   border-radius: var(--radius-lg);
-  background: var(--color-bg-primary);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 250, 255, 0.9) 100%);
   transition: all var(--transition-base);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.08);
+  backdrop-filter: blur(10px);
 }
 
 .contact-card:hover {
@@ -237,13 +238,13 @@
 
 /* Form Card */
 .robo-form-card {
-  background: var(--glass-bg-medium);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 250, 255, 0.95) 100%);
   backdrop-filter: blur(var(--glass-blur-lg));
   -webkit-backdrop-filter: blur(var(--glass-blur-lg));
-  border: 2px solid var(--color-border-light);
+  border: 1px solid rgba(59, 130, 246, 0.15);
   border-radius: var(--radius-2xl);
   padding: var(--space-12);
-  box-shadow: var(--shadow-blue-md);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12);
 }
 
 .robo-form-card h2 {
@@ -280,8 +281,8 @@ label {
 
 input,
 textarea {
-  background: var(--color-highlight-yellow);
-  border: 1px solid var(--color-soft-orange);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  border: 1.5px solid rgba(125, 179, 232, 0.3);
   border-radius: var(--input-radius);
   padding: var(--input-padding);
   color: var(--color-text-primary);
@@ -290,7 +291,7 @@ textarea {
   outline: none;
   transition: all var(--transition-base);
   height: var(--input-height);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(59, 130, 246, 0.05);
 }
 
 textarea {
@@ -306,9 +307,9 @@ textarea::placeholder {
 
 input:focus,
 textarea:focus {
-  border-color: var(--color-accent-orange);
-  background: #ffffff;
-  box-shadow: 0 0 0 4px rgba(255, 244, 214, 1), 0 0 10px rgba(255, 184, 77, 0.2);
+  border-color: #7DB3E8;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F0F8FF 100%);
+  box-shadow: 0 0 0 3px rgba(125, 179, 232, 0.15), 0 0 15px rgba(125, 179, 232, 0.2), inset 0 1px 2px rgba(125, 179, 232, 0.1);
 }
 
 /* Submit Button */
