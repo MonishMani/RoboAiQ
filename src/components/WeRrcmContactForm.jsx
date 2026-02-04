@@ -26,21 +26,12 @@ function WeRrcmContactForm() {
 
         <div className="robo-contact-grid">
           {/* LEFT SIDE */}
+
           <div className={`robo-left scroll-slide-left ${sectionVisible ? 'visible' : ''}`}>
             {/* CONTACT INFO */}
             <div className="contact-card card-premium glass-premium">
-              <div className="icon-box">
-                <svg viewBox="0 0 24 24">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2
-                  A19.86 19.86 0 0 1 3 5.18
-                  2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72
-                  c.12.81.32 1.6.59 2.36
-                  a2 2 0 0 1-.45 2.11L9 10
-                  a16 16 0 0 0 5 5l.81-.14
-                  a2 2 0 0 1 2.11-.45
-                  c.76.27 1.55.47 2.36.59
-                  A2 2 0 0 1 22 16.92z" />
-                </svg>
+              <div className="icon-box phone">
+                <i className="fa-solid fa-phone-volume"></i>
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Phone</span>
@@ -50,11 +41,8 @@ function WeRrcmContactForm() {
             </div>
 
             <div className="contact-card card-premium glass-premium">
-              <div className="icon-box">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 4h16v16H4z" fill="none" />
-                  <path d="M4 4l8 8 8-8" />
-                </svg>
+              <div className="icon-box email">
+                <i className="fa-solid fa-envelope-open-text"></i>
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Email</span>
@@ -70,12 +58,8 @@ function WeRrcmContactForm() {
             </div>
 
             <div className="contact-card card-premium glass-premium">
-              <div className="icon-box">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 2C8.13 2 5 5.13 5 9
-                  c0 5.25 7 13 7 13s7-7.75 7-13
-                  c0-3.87-3.13-7-7-7z" />
-                </svg>
+              <div className="icon-box location">
+                <i className="fa-solid fa-location-dot"></i>
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Location</span>
