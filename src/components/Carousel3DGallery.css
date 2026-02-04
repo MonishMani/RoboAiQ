@@ -1,0 +1,313 @@
+/* 3D Carousel Gallery - Hollow Tunnel Effect */
+.carousel-3d-container {
+  width: 100%;
+  height: 100%;
+  perspective: 2500px;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0f 50%, #000000 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+/* Tunnel depth layers */
+.carousel-3d-tunnel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tunnel-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255, 30, 30, 0.2);
+  box-shadow: inset 0 0 150px rgba(255, 30, 30, 0.1);
+  transform-style: preserve-3d;
+}
+
+.tunnel-ring-1 {
+  width: 1200px;
+  height: 1200px;
+  transform: translate(-50%, -50%) translateZ(-200px);
+  border-color: rgba(255, 30, 30, 0.15);
+  box-shadow: inset 0 0 180px rgba(255, 30, 30, 0.08);
+}
+
+.tunnel-ring-2 {
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%) translateZ(-500px);
+  border-color: rgba(255, 30, 30, 0.12);
+  box-shadow: inset 0 0 200px rgba(255, 30, 30, 0.06);
+}
+
+.tunnel-ring-3 {
+  width: 600px;
+  height: 600px;
+  transform: translate(-50%, -50%) translateZ(-800px);
+  border-color: rgba(255, 30, 30, 0.08);
+  box-shadow: inset 0 0 220px rgba(255, 30, 30, 0.04);
+}
+
+.tunnel-ring-4 {
+  width: 350px;
+  height: 350px;
+  transform: translate(-50%, -50%) translateZ(-1100px);
+  border-color: rgba(255, 30, 30, 0.05);
+  box-shadow: inset 0 0 240px rgba(255, 30, 30, 0.02);
+}
+
+/* Main carousel container */
+.carousel-3d-content {
+  position: relative;
+  z-index: 10;
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Carousel items in 3D */
+.carousel-3d-item {
+  position: absolute;
+  transform-style: preserve-3d;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.carousel-3d-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.carousel-3d-item:hover img {
+  filter: brightness(1) contrast(1.2);
+}
+
+/* Front circle ring */
+.carousel-3d-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%) translateZ(100px);
+  border: 4px solid rgba(255, 30, 30, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: 
+    0 0 100px rgba(255, 30, 30, 0.25),
+    inset 0 0 120px rgba(255, 30, 30, 0.15),
+    0 0 200px rgba(255, 30, 30, 0.15);
+}
+
+/* Animated glow effect */
+@keyframes carouselGlowPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 80px rgba(255, 30, 30, 0.2),
+      inset 0 0 100px rgba(255, 30, 30, 0.1),
+      0 0 150px rgba(255, 30, 30, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 150px rgba(255, 30, 30, 0.35),
+      inset 0 0 150px rgba(255, 30, 30, 0.15),
+      0 0 250px rgba(255, 30, 30, 0.2);
+  }
+}
+
+.carousel-3d-container::before {
+  animation: carouselGlowPulse 4s ease-in-out infinite;
+}
+
+/* Main carousel canvas/content */
+.carousel-3d-canvas {
+  width: 800px;
+  height: 800px;
+  position: relative;
+  z-index: 10;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 0 150px rgba(255, 30, 30, 0.3)) 
+          drop-shadow(0 0 80px rgba(255, 30, 30, 0.2));
+}
+
+/* Tunnel animation - creates depth motion effect */
+@keyframes tunnelDepth {
+  0% {
+    filter: drop-shadow(0 0 120px rgba(255, 30, 30, 0.25)) 
+            drop-shadow(0 0 60px rgba(255, 30, 30, 0.15));
+  }
+  50% {
+    filter: drop-shadow(0 0 180px rgba(255, 30, 30, 0.4)) 
+            drop-shadow(0 0 100px rgba(255, 30, 30, 0.25));
+  }
+  100% {
+    filter: drop-shadow(0 0 120px rgba(255, 30, 30, 0.25)) 
+            drop-shadow(0 0 60px rgba(255, 30, 30, 0.15));
+  }
+}
+
+.carousel-3d-container:hover .carousel-3d-canvas {
+  animation: tunnelDepth 5s ease-in-out infinite;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .carousel-3d-container {
+    perspective: 1800px;
+  }
+
+  .tunnel-ring-1 {
+    width: 1000px;
+    height: 1000px;
+    transform: translate(-50%, -50%) translateZ(-150px);
+  }
+
+  .tunnel-ring-2 {
+    width: 750px;
+    height: 750px;
+    transform: translate(-50%, -50%) translateZ(-400px);
+  }
+
+  .tunnel-ring-3 {
+    width: 500px;
+    height: 500px;
+    transform: translate(-50%, -50%) translateZ(-650px);
+  }
+
+  .tunnel-ring-4 {
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%) translateZ(-900px);
+  }
+
+  .carousel-3d-container::before {
+    width: 750px;
+    height: 750px;
+  }
+
+  .carousel-3d-canvas {
+    width: 650px;
+    height: 650px;
+    filter: drop-shadow(0 0 100px rgba(255, 30, 30, 0.25)) 
+            drop-shadow(0 0 50px rgba(255, 30, 30, 0.15));
+  }
+
+  .carousel-3d-item {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-3d-container {
+    perspective: 1500px;
+  }
+
+  .tunnel-ring-1 {
+    width: 800px;
+    height: 800px;
+  }
+
+  .tunnel-ring-2 {
+    width: 600px;
+    height: 600px;
+  }
+
+  .tunnel-ring-3 {
+    width: 400px;
+    height: 400px;
+  }
+
+  .tunnel-ring-4 {
+    width: 240px;
+    height: 240px;
+  }
+
+  .carousel-3d-container::before {
+    width: 600px;
+    height: 600px;
+  }
+
+  .carousel-3d-canvas {
+    width: 500px;
+    height: 500px;
+    filter: drop-shadow(0 0 80px rgba(255, 30, 30, 0.2)) 
+            drop-shadow(0 0 40px rgba(255, 30, 30, 0.12));
+  }
+
+  .carousel-3d-item {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-3d-container {
+    perspective: 1200px;
+  }
+
+  .tunnel-ring-1 {
+    width: 600px;
+    height: 600px;
+    transform: translate(-50%, -50%) translateZ(-100px);
+  }
+
+  .tunnel-ring-2 {
+    width: 450px;
+    height: 450px;
+    transform: translate(-50%, -50%) translateZ(-300px);
+  }
+
+  .tunnel-ring-3 {
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%) translateZ(-500px);
+  }
+
+  .tunnel-ring-4 {
+    width: 180px;
+    height: 180px;
+    transform: translate(-50%, -50%) translateZ(-700px);
+  }
+
+  .carousel-3d-container::before {
+    width: 450px;
+    height: 450px;
+  }
+
+  .carousel-3d-canvas {
+    width: 350px;
+    height: 350px;
+    filter: drop-shadow(0 0 60px rgba(255, 30, 30, 0.18)) 
+            drop-shadow(0 0 30px rgba(255, 30, 30, 0.1));
+  }
+
+  .carousel-3d-item {
+    width: 300px;
+    height: 300px;
+  }
+}
