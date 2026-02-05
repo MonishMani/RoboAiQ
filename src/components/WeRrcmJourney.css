@@ -3,8 +3,7 @@
    =============================== */
 
 .journey-curved {
-  padding: 4rem 0 5rem;
-  /* Reduced from 7rem/11rem */
+  padding: 1.5rem 0 1rem 0;
   background: transparent;
   overflow: hidden;
   /* Prevent horizontal overflow from road/checkpoints */
