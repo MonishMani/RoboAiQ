@@ -70,7 +70,7 @@ function Navbar() {
               Our Mentors
             </Link> */}
 
-            {/* Insights - Temporarily Removed */}
+            {/* Insights */}
             <Link to="/insights" className={`nav-item ${isActive('/insights') ? 'active' : ''}`} onClick={closeMenu}>
               Insights
             </Link>
