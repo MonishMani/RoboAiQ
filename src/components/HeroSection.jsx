@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './HeroSection.css';
 import BookingModal from './BookingModal';
 import Hero3DModel from './Hero3DModel';
@@ -14,6 +14,17 @@ function HeroSection() {
     e.preventDefault();
     setIsModalOpen(true);
   };
+
+  useEffect(() => {
+    const handleOpenBookingEvent = () => {
+      setIsModalOpen(true);
+    };
+
+    document.addEventListener('openBookingModal', handleOpenBookingEvent);
+    return () => {
+      document.removeEventListener('openBookingModal', handleOpenBookingEvent);
+    };
+  }, []);
 
   return (
     <>
@@ -31,7 +42,7 @@ function HeroSection() {
 
               {/* Main Headline */}
               <h1>
-                Shaping Future CEOs. <span className="highlight">Inspiring Young Entrepreneurs.</span>
+                Shaping Future CEos. <span className="highlight">Inspiring Young Entrepreneurs.</span>
               </h1>
 
               {/* Subtitle */}
@@ -47,7 +58,6 @@ function HeroSection() {
                   aria-label="Book your free demo"
                 >
                   <span className="cta-primary">Book Your Free Demo</span>
-                  <span className="cta-secondary">Start Building Today</span>
                 </button>
               </div>
             </div>

@@ -128,9 +128,9 @@ export default function WeRrcmJourney() {
     <section ref={sectionRef} className="journey-curved section-parallax">
       {/* HEADER */}
       <div className="journey-header">
-        <span className="journey-eyebrow">LEARNING ROADMAP</span>
+        <span className="journey-eyebrow">YOUR ROBOTICS JOURNEY</span>
         <SplitText
-          text="Your Robotics Learning Journey"
+          text="Your Robotics Journey"
           tag="h2"
           delay={40}
           duration={1.3}

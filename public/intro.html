@@ -394,12 +394,25 @@
         .tagline {
             font-family: 'Rajdhani', sans-serif;
             font-weight: 700;
-            font-size: clamp(14px, 2.1vw, 19px);
             letter-spacing: .2em;
             text-transform: uppercase;
             color: var(--tagline-clr);
             text-align: center;
             line-height: 1.7;
+        }
+
+        .tagline .line-one {
+            display: block;
+            font-size: clamp(18px, 3vw, 22px);
+        }
+
+        .tagline .line-two {
+            display: block;
+            font-size: clamp(16px, 2.5vw, 18px);
+        }
+
+        .tagline br {
+            display: none;
         }
 
         /* animated underline that grows in */
@@ -741,7 +754,7 @@
             <h1 class="brand">RoboAiQ</h1>
 
             <div class="tagline-wrap">
-                <p class="tagline">Shaping Future CEOs.<br>Inspiring Young Entrepreneurs.</p>
+                <p class="tagline"><span class="line-one">Shaping Future CEos.</span><br><span class="line-two">Inspiring Young Entrepreneurs.</span></p>
             </div>
 
             <div class="timer-panel">

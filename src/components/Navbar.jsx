@@ -85,9 +85,14 @@ function Navbar() {
               Contact
             </a>
 
-            <a href="/#contact" className="nav-btn nav-btn-primary" onClick={closeMenu}>
+            <button className="nav-btn nav-btn-primary" onClick={(e) => {
+              e.preventDefault();
+              closeMenu();
+              const event = new CustomEvent('openBookingModal');
+              document.dispatchEvent(event);
+            }}>
               Register
-            </a>
+            </button>
           </div>
         </div>
 

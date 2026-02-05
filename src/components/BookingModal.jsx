@@ -140,7 +140,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                                             onChange={handleChange}
                                             onFocus={() => setFocusedField('studentName')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="e.g. Arjun Sharma"
+                                            placeholder="Student Name"
                                         />
                                         {errors.studentName && <span className="error-msg">{errors.studentName}</span>}
                                     </div>
@@ -156,7 +156,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                                             onChange={handleChange}
                                             onFocus={() => setFocusedField('grade')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="e.g. Grade 8"
+                                            placeholder="Class/Grade"
                                         />
                                         {errors.grade && <span className="error-msg">{errors.grade}</span>}
                                     </div>
@@ -172,7 +172,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                                             onChange={handleChange}
                                             onFocus={() => setFocusedField('schoolName')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="e.g. DPS Bangalore"
+                                            placeholder="School Name"
                                         />
                                         {errors.schoolName && <span className="error-msg">{errors.schoolName}</span>}
                                     </div>
@@ -188,7 +188,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                                             onChange={handleChange}
                                             onFocus={() => setFocusedField('city')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="e.g. Bangalore"
+                                            placeholder="City"
                                         />
                                         {errors.city && <span className="error-msg">{errors.city}</span>}
                                     </div>
@@ -204,7 +204,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                                             onChange={handleChange}
                                             onFocus={() => setFocusedField('pincode')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="e.g. 560001"
+                                            placeholder="Pincode"
                                             maxLength="6"
                                         />
                                         {errors.pincode && <span className="error-msg">{errors.pincode}</span>}
@@ -222,7 +222,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                                             onChange={handleChange}
                                             onFocus={() => setFocusedField('parentName')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="e.g. Rajesh Sharma"
+                                            placeholder="Parent Name"
                                         />
                                         {errors.parentName && <span className="error-msg">{errors.parentName}</span>}
                                     </div>
@@ -238,7 +238,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                                             onChange={handleChange}
                                             onFocus={() => setFocusedField('phone')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="e.g. +91 98765 43210"
+                                            placeholder="Contact Number"
                                         />
                                         {errors.phone && <span className="error-msg">{errors.phone}</span>}
                                     </div>
@@ -254,7 +254,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                                             onChange={handleChange}
                                             onFocus={() => setFocusedField('email')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="e.g. arjun@example.in"
+                                            placeholder="Email Address"
                                         />
                                         {errors.email && <span className="error-msg">{errors.email}</span>}
                                     </div>
