@@ -45,13 +45,13 @@ function Navbar() {
 
           {/* Logo */}
           <div className="logo" id="brand-logo-target">
-            <img src="/assets/images/logo-robo-aiq.jpeg" alt="RoboAiQ Logo" className="logo-image" />
+            <img src="/assets/logo.png" alt="RoboAiQ Logo" className="logo-image" />
           </div>
         </div>
 
         {/* Desktop Logo - Left Aligned */}
         <div className="logo logo-desktop" id="brand-logo-target">
-          <img src="/assets/images/logo-robo-aiq.jpeg" alt="RoboAiQ Logo" className="logo-image" />
+          <img src="/assets/logo.png" alt="RoboAiQ Logo" className="logo-image" />
         </div>
 
         {/* Navigation - Desktop */}
@@ -70,13 +70,15 @@ function Navbar() {
               Programs
             </Link>
 
-            <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
+            {/* Our Mentors - Temporarily Removed */}
+            {/* <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
               Our Mentors
-            </Link>
+            </Link> */}
 
-            <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
+            {/* Insights - Temporarily Removed */}
+            {/* <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
               Insights
-            </Link>
+            </Link> */}
           </div>
 
           {/* Right Side - Buttons */}
@@ -85,9 +87,14 @@ function Navbar() {
               Contact
             </a>
 
-            <a href="/#contact" className="nav-btn nav-btn-primary" onClick={closeMenu}>
+            <button className="nav-btn nav-btn-primary" onClick={(e) => {
+              e.preventDefault();
+              closeMenu();
+              const event = new CustomEvent('openBookingModal');
+              document.dispatchEvent(event);
+            }}>
               Register
-            </a>
+            </button>
           </div>
         </div>
 

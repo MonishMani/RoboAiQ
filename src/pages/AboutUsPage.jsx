@@ -62,7 +62,7 @@ export default function AboutUsPage() {
       <section className="about-section light">
         <div className="content-wide about-split reveal">
           <div className="about-copy">
-            <h2 className="section-title">What We Are</h2>
+            <h2 className="section-title">Who We Are</h2>
 
             <p className="lead-text">
               RoboAIQ is engineered to cultivate visionary innovators, entrepreneurs,

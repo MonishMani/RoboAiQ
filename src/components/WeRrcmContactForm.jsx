@@ -54,6 +54,14 @@ function WeRrcmContactForm() {
                     sales@roboaiq.in
                   </ProtectedEmail>
                 </p>
+                <p>
+                  <ProtectedEmail
+                    user="info"
+                    domain={ROBOAIQ_EMAILS.sales.domain}
+                  >
+                    info@roboaiq.in
+                  </ProtectedEmail>
+                </p>
               </div>
             </div>
 
@@ -63,7 +71,7 @@ function WeRrcmContactForm() {
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Location</span>
-                <p>Bangalore<br />Hyderabad<br />Chennai</p>
+                <p>Bangalore<br />Hyderabad<br />Chennai<br />Pune</p>
               </div>
             </div>
 

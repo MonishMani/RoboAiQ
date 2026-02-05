@@ -87,7 +87,7 @@
   align-items: center;
   gap: 8px;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 /* Individual nav item */
@@ -180,6 +180,7 @@
   color: #0F253E;
   border: 1.5px solid rgba(15, 37, 62, 0.15);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
 }
 
 .nav-btn-secondary::before {
@@ -210,6 +211,7 @@
   color: #ffffff;
   border: none;
   box-shadow: 0 4px 16px rgba(255, 30, 30, 0.25);
+  overflow: hidden;
 }
 
 .nav-btn-primary::before {
@@ -221,6 +223,7 @@
   height: 100%;
   background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
   transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .nav-btn-primary:hover {
@@ -388,10 +391,16 @@
 
   .navbar-left-mobile {
     display: flex;
-    order: -1;
+    order: 1;
     align-items: center;
     gap: 0.5rem;
     height: 100%;
+    margin-left: auto;
+  }
+
+  .logo {
+    order: 2;
+    margin-left: auto;
   }
 
   .logo-desktop {
@@ -400,6 +409,7 @@
 
   .hamburger-menu {
     display: flex;
+    order: -1;
   }
 
   .nav-links {

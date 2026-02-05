@@ -8,8 +8,7 @@ export default function RoboKitSection() {
 
       {/* HEADER */}
       <div className="kit-header">
-        <span className="kit-eyebrow">HARDWARE INCLUDED</span>
-        <h2>Industry-Grade <span>Robotics Kit</span> Included with Your Program</h2>
+        <h2>Industry Grade <span>Robotics Kit</span> Included with our Program</h2>
         <TextType
           text="Every RoboAIQ student receives a complete, reusable robotics kit designed for hands-on learning, experimentation, and long-term use."
           className="kit-scroll-reveal kit-scroll-text"

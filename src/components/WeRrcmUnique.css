@@ -86,13 +86,12 @@
   width: 100%;
   max-width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 0;
+  border-radius: 100%;
   overflow: hidden;
   box-shadow: none;
   border: none;
   margin: 0 auto var(--space-6);
   z-index: 1;
-
 }
 
 .unique-video {
