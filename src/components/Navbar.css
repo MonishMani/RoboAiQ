@@ -147,8 +147,9 @@
   background: none !important;
 }
 
-.nav-item.active::before {
-  display: none;
+.nav-item.active {
+  color: #FF1E1E;
+  font-weight: 600;
 }
 
 /* ============================================
@@ -469,6 +470,13 @@
 
   .nav-item::before {
     display: none;
+  }
+
+  .nav-item.active {
+    background: rgba(255, 30, 30, 0.08);
+    color: #FF1E1E;
+    border-left: 3px solid #FF1E1E;
+    padding-left: 17px;
   }
 
   .nav-item:hover {
