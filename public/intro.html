@@ -364,8 +364,24 @@
             }
         }
 
+        .brand-logo {
+            position: relative;
+            z-index: 1;
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            width: clamp(200px, 50vw, 450px);
+            /* maintain visual prominence */
+            height: auto;
+            filter: drop-shadow(0 3px 14px rgba(26, 31, 46, .13));
+            opacity: 0;
+            animation: fadeUp .88s cubic-bezier(.22, 1, .36, 1) .18s forwards;
+        }
+
         /* ── Brand ── */
         .brand {
+            display: none;
+            /* Hide original brand class just in case, or we can just leave it unused */
             position: relative;
             z-index: 1;
             font-family: 'Orbitron', sans-serif;
@@ -751,10 +767,12 @@
     <!-- ── SPLASH ── -->
     <section class="stage">
         <div class="card">
-            <h1 class="brand">RoboAiQ</h1>
+            <!-- <h1 class="brand">RoboAiQ</h1> -->
+            <img src="/assets/logo.png" alt="RoboAiQ" class="brand-logo">
 
             <div class="tagline-wrap">
-                <p class="tagline"><span class="line-one">Shaping Future CEos.</span><br><span class="line-two">Inspiring Young Entrepreneurs.</span></p>
+                <p class="tagline"><span class="line-one">Shaping Future CEos.</span><br><span
+                        class="line-two">Inspiring Young Entrepreneurs.</span></p>
             </div>
 
             <div class="timer-panel">
@@ -765,7 +783,7 @@
             </div>
 
             <div class="btn-wrap">
-                <button class="launch-btn" id="launchBtn">Launch RoboAiQ</button>
+                <button class="launch-btn" id="launchBtn">Launch</button>
             </div>
         </div>
     </section>
@@ -782,121 +800,121 @@
 
     <!-- ═══ JS ═══ -->
     <script>
-(function(){
+        (function () {
 
-/* ─── PARTICLES + CONNECTING LINES ─── */
-const cvs = document.getElementById('particles');
-const ctx = cvs.getContext('2d');
-let W, H;
-function resize(){ W = cvs.width = innerWidth; H = cvs.height = innerHeight; }
-resize();
-addEventListener('resize', resize);
+            /* ─── PARTICLES + CONNECTING LINES ─── */
+            const cvs = document.getElementById('particles');
+            const ctx = cvs.getContext('2d');
+            let W, H;
+            function resize() { W = cvs.width = innerWidth; H = cvs.height = innerHeight; }
+            resize();
+            addEventListener('resize', resize);
 
-const LAYERS = [
-  { n:62, rLo:.35, rHi:1.1,  spd:.17, aLo:.035, aHi:.10,  col:'105,155,215' },
-  { n:38, rLo:.6,  rHi:1.55, spd:.28, aLo:.045, aHi:.12,  col:'195,140,155' },
-  { n:22, rLo:.9,  rHi:2.0,  spd:.40, aLo:.06,  aHi:.15,  col:'130,175,210' }
-];
+            const LAYERS = [
+                { n: 62, rLo: .35, rHi: 1.1, spd: .17, aLo: .035, aHi: .10, col: '105,155,215' },
+                { n: 38, rLo: .6, rHi: 1.55, spd: .28, aLo: .045, aHi: .12, col: '195,140,155' },
+                { n: 22, rLo: .9, rHi: 2.0, spd: .40, aLo: .06, aHi: .15, col: '130,175,210' }
+            ];
 
-let dots = [];
-LAYERS.forEach(L=>{
-  for(let i=0;i<L.n;i++) dots.push({
-    x:Math.random()*W, y:Math.random()*H,
-    r:L.rLo+Math.random()*(L.rHi-L.rLo),
-    vx:(Math.random()-.5)*L.spd*2,
-    vy:(Math.random()-.5)*L.spd*2,
-    a:L.aLo+Math.random()*(L.aHi-L.aLo),
-    ph:Math.random()*Math.PI*2,
-    col:L.col
-  });
-});
+            let dots = [];
+            LAYERS.forEach(L => {
+                for (let i = 0; i < L.n; i++) dots.push({
+                    x: Math.random() * W, y: Math.random() * H,
+                    r: L.rLo + Math.random() * (L.rHi - L.rLo),
+                    vx: (Math.random() - .5) * L.spd * 2,
+                    vy: (Math.random() - .5) * L.spd * 2,
+                    a: L.aLo + Math.random() * (L.aHi - L.aLo),
+                    ph: Math.random() * Math.PI * 2,
+                    col: L.col
+                });
+            });
 
-const LINK_DIST = 110; /* max px to draw a connector */
+            const LINK_DIST = 110; /* max px to draw a connector */
 
-(function loop(){
-  ctx.clearRect(0,0,W,H);
-  const t = Date.now()*.001;
+            (function loop() {
+                ctx.clearRect(0, 0, W, H);
+                const t = Date.now() * .001;
 
-  /* move */
-  dots.forEach(d=>{
-    d.x+=d.vx; d.y+=d.vy;
-    if(d.x<-8)  d.x=W+8;
-    if(d.x>W+8) d.x=-8;
-    if(d.y<-8)  d.y=H+8;
-    if(d.y>H+8) d.y=-8;
-  });
+                /* move */
+                dots.forEach(d => {
+                    d.x += d.vx; d.y += d.vy;
+                    if (d.x < -8) d.x = W + 8;
+                    if (d.x > W + 8) d.x = -8;
+                    if (d.y < -8) d.y = H + 8;
+                    if (d.y > H + 8) d.y = -8;
+                });
 
-  /* connecting lines (only between layer-0 dots for perf) */
-  const layer0 = dots.slice(0, LAYERS[0].n);
-  for(let i=0; i<layer0.length; i++){
-    for(let j=i+1; j<layer0.length; j++){
-      const dx = layer0[i].x - layer0[j].x;
-      const dy = layer0[i].y - layer0[j].y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if(dist < LINK_DIST){
-        const alpha = 0.055 * (1 - dist/LINK_DIST);
-        ctx.beginPath();
-        ctx.moveTo(layer0[i].x, layer0[i].y);
-        ctx.lineTo(layer0[j].x, layer0[j].y);
-        ctx.strokeStyle = `rgba(105,155,215,${alpha})`;
-        ctx.lineWidth = 0.7;
-        ctx.stroke();
-      }
-    }
-  }
+                /* connecting lines (only between layer-0 dots for perf) */
+                const layer0 = dots.slice(0, LAYERS[0].n);
+                for (let i = 0; i < layer0.length; i++) {
+                    for (let j = i + 1; j < layer0.length; j++) {
+                        const dx = layer0[i].x - layer0[j].x;
+                        const dy = layer0[i].y - layer0[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < LINK_DIST) {
+                            const alpha = 0.055 * (1 - dist / LINK_DIST);
+                            ctx.beginPath();
+                            ctx.moveTo(layer0[i].x, layer0[i].y);
+                            ctx.lineTo(layer0[j].x, layer0[j].y);
+                            ctx.strokeStyle = `rgba(105,155,215,${alpha})`;
+                            ctx.lineWidth = 0.7;
+                            ctx.stroke();
+                        }
+                    }
+                }
 
-  /* draw dots */
-  dots.forEach(d=>{
-    const a = d.a*(0.5+0.5*Math.sin(t*1.55+d.ph));
-    ctx.beginPath();
-    ctx.arc(d.x, d.y, d.r, 0, Math.PI*2);
-    ctx.fillStyle = `rgba(${d.col},${a})`;
-    ctx.fill();
-  });
+                /* draw dots */
+                dots.forEach(d => {
+                    const a = d.a * (0.5 + 0.5 * Math.sin(t * 1.55 + d.ph));
+                    ctx.beginPath();
+                    ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${d.col},${a})`;
+                    ctx.fill();
+                });
 
-  requestAnimationFrame(loop);
-})();
+                requestAnimationFrame(loop);
+            })();
 
-/* ─── COUNTDOWN ─── */
-const btn    = document.getElementById('launchBtn');
-const digs   = document.getElementById('timerDigits');
-const flash  = document.getElementById('flash');
-const reveal = document.getElementById('reveal');
+            /* ─── COUNTDOWN ─── */
+            const btn = document.getElementById('launchBtn');
+            const digs = document.getElementById('timerDigits');
+            const flash = document.getElementById('flash');
+            const reveal = document.getElementById('reveal');
 
-let secs=10, iv=null, on=false;
+            let secs = 10, iv = null, on = false;
 
-btn.addEventListener('click',()=>{
-  if(on) return;
-  on=true; btn.disabled=true;
+            btn.addEventListener('click', () => {
+                if (on) return;
+                on = true; btn.disabled = true;
 
-  iv = setInterval(()=>{
-    secs--;
-    if(secs<=0){
-      secs=0;
-      digs.textContent='00';
-      digs.classList.add('pulse');
-      clearInterval(iv);
-      setTimeout(()=>{
-        flash.classList.add('on');
-        setTimeout(()=>{
-          flash.classList.remove('on');
-          reveal.classList.add('visible');
-          // Notify parent (React app) that intro is complete
-          sessionStorage.setItem('hasSeenIntro', 'true');
-          if (window.parent && window.parent !== window) {
-            window.parent.postMessage({ type: 'introComplete' }, '*');
-          }
-        },320);
-      },400);
-      return;
-    }
-    digs.textContent = secs<10 ? '0'+secs : ''+secs;
-    digs.classList.add('pulse');
-    setTimeout(()=> digs.classList.remove('pulse'), 260);
-  },1000);
-});
+                iv = setInterval(() => {
+                    secs--;
+                    if (secs <= 0) {
+                        secs = 0;
+                        digs.textContent = '00';
+                        digs.classList.add('pulse');
+                        clearInterval(iv);
+                        setTimeout(() => {
+                            flash.classList.add('on');
+                            setTimeout(() => {
+                                flash.classList.remove('on');
+                                reveal.classList.add('visible');
+                                // Notify parent (React app) that intro is complete
+                                sessionStorage.setItem('hasSeenIntro', 'true');
+                                if (window.parent && window.parent !== window) {
+                                    window.parent.postMessage({ type: 'introComplete' }, '*');
+                                }
+                            }, 320);
+                        }, 400);
+                        return;
+                    }
+                    digs.textContent = secs < 10 ? '0' + secs : '' + secs;
+                    digs.classList.add('pulse');
+                    setTimeout(() => digs.classList.remove('pulse'), 260);
+                }, 1000);
+            });
 
-})();
+        })();
     </script>
 </body>
 
