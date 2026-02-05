@@ -5,7 +5,7 @@ export default function BenefitsSection() {
         <section className="benefits-section" id="benefits">
             {/* Header */}
             <div className="benefits-header">
-                <h2>What Will Your Kid Receive?</h2>
+                <h2>What Will Your Child Receive?</h2>
                 <p>Everything needed to build, learn, and succeed in robotics and AI</p>
             </div>
 
