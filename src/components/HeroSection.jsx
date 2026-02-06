@@ -42,12 +42,12 @@ function HeroSection() {
 
               {/* Main Headline */}
               <h1>
-                Shaping Future CEos. <span className="highlight">Inspiring Young Entrepreneurs.</span>
+                Shaping Future CEOs. <span className="highlight">Inspiring Young Entrepreneurs.</span>
               </h1>
 
               {/* Subtitle */}
               <p className="subtitle">
-                RoboAIQ isn’t just an education program — it’s a launchpad for future CEOs, innovators, and technology leaders.
+                RoboAiQ isn’t just an Education program — it’s a launchpad for future CEO's, Innovators, and Technology Leaders.
               </p>
 
               {/* Premium CTA Button - Directly under text content */}
