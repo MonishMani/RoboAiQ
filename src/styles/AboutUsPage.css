@@ -23,7 +23,7 @@
 
   --nav-h: 88px;
 
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-primary);
   color: var(--text-secondary);
   background: var(--surface-tertiary);
   -webkit-font-smoothing: antialiased;
@@ -99,7 +99,7 @@
 }
 
 .hero-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(3rem, 6vw, 4.5rem);
   line-height: 1.1;
   margin-bottom: 24px;
@@ -380,7 +380,7 @@
    PHILOSOPHY (3 Pillars)
    ============================================ */
 .manifesto {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
   font-size: 2.4rem;
   font-weight: 700;
   margin: 32px 0 56px;
@@ -432,7 +432,7 @@
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 12px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
 }
 
 .glass-card p {
@@ -505,7 +505,7 @@
 
 /* Content */
 .about-competitive-edge .competitive-card-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.35rem;
   /* Program card size */
   font-weight: 700;
@@ -583,6 +583,16 @@
   display: none !important;
 }
 
+/* Reduce spacing after Competitive Edge */
+.about-competitive-edge {
+  padding-bottom: 2rem;
+}
+
+/* Reduce spacing before Vision section */
+.about-vision {
+  padding-top: 2rem;
+}
+
 /* ============================================
    VISION & MISSION (Professional & Unique)
    ============================================ */
@@ -594,7 +604,7 @@
   margin: 0 auto;
 }
 
-.about-section.light .split > div {
+.about-section.light .split>div {
   padding: 48px 40px;
   border-radius: 24px;
   background: #FFFFFF;
@@ -605,7 +615,7 @@
   transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.about-section.light .split > div::before {
+.about-section.light .split>div::before {
   content: '';
   position: absolute;
   top: 0;
@@ -617,21 +627,21 @@
   transition: opacity 0.4s ease;
 }
 
-.about-section.light .split > div:nth-child(2)::before {
+.about-section.light .split>div:nth-child(2)::before {
   background: linear-gradient(90deg, #FF1E1E 0%, #FFB84D 100%);
 }
 
-.about-section.light .split > div:hover {
+.about-section.light .split>div:hover {
   transform: translateY(-12px);
   box-shadow: 0 20px 60px rgba(15, 37, 62, 0.15);
   border-color: var(--accent-color);
 }
 
-.about-section.light .split > div:nth-child(2):hover {
+.about-section.light .split>div:nth-child(2):hover {
   border-color: rgba(255, 30, 30, 0.5);
 }
 
-.about-section.light .split > div::after {
+.about-section.light .split>div::after {
   content: '';
   position: absolute;
   top: -50px;
@@ -643,12 +653,12 @@
   pointer-events: none;
 }
 
-.about-section.light .split > div:nth-child(2)::after {
+.about-section.light .split>div:nth-child(2)::after {
   background: radial-gradient(circle, rgba(255, 30, 30, 0.08) 0%, transparent 70%);
 }
 
 .block-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 800;
   color: var(--text-primary);
@@ -662,17 +672,17 @@
   z-index: 1;
 }
 
-.about-section.light .split > div:nth-child(1) .block-title::before {
+.about-section.light .split>div:nth-child(1) .block-title::before {
   content: '🎯';
   font-size: 1.55rem;
 }
 
-.about-section.light .split > div:nth-child(2) .block-title::before {
+.about-section.light .split>div:nth-child(2) .block-title::before {
   content: '🚀';
   font-size: 1.55rem;
 }
 
-.about-section.light .split > div .body-text {
+.about-section.light .split>div .body-text {
   position: relative;
   z-index: 1;
   font-size: 1.1rem;
@@ -688,7 +698,7 @@
     gap: 32px;
   }
 
-  .about-section.light .split > div {
+  .about-section.light .split>div {
     padding: 32px 24px;
   }
 
@@ -696,8 +706,8 @@
     font-size: 1.35rem;
   }
 
-  .about-section.light .split > div:nth-child(1) .block-title::before,
-  .about-section.light .split > div:nth-child(2) .block-title::before {
+  .about-section.light .split>div:nth-child(1) .block-title::before,
+  .about-section.light .split>div:nth-child(2) .block-title::before {
     font-size: 1.25rem;
   }
 }
@@ -717,9 +727,11 @@
 .closing-inner h2 {
   font-size: 1.75rem;
   font-weight: 500;
-  opacity: 0.8;
+  opacity: 1;
+  color: #3B82F6;
+  /* Tech Blue */
   margin-bottom: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-display);
 }
 
 .closing-inner h1 {

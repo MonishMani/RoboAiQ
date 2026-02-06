@@ -23,7 +23,7 @@ function InsightsPage() {
                 title: titles[index % titles.length],
                 type: types[index % types.length],
                 location: locations[index % locations.length],
-                date: `202${4 + (index % 2)}`, // 2024 or 2025
+                date: `202${5 + (index % 2)}`, // 2025 or 2026
                 impact: 'Empowering the next generation of tech leaders.'
             };
         };
@@ -35,6 +35,15 @@ function InsightsPage() {
 
         const imageData = orderedIds.map((imgId, index) => {
             const data = getCardData(index);
+
+            // Override location for specific cards based on their display order (1-based index)
+            const moscowIndices = [1, 2, 4, 13, 15, 16, 17, 18, 19, 20, 21];
+            if (moscowIndices.includes(index + 1)) {
+                data.location = 'Moscow , Russia';
+            } else if (index + 1 === 3) {
+                data.location = 'Chennai';
+            }
+
             return {
                 id: imgId, // Keep unique ID based on image number
                 src: `/assets/insights/insight-${String(imgId).padStart(2, '0')}.webp`,

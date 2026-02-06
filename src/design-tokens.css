@@ -88,7 +88,8 @@
 
   /* Font Families */
   --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Orbitron', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-subheading: 'Oxanium', 'Poppins', -apple-system, sans-serif;
   --font-mono: 'Fira Code', 'Courier New', monospace;
 
   /* Font Sizes */

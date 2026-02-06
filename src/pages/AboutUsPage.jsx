@@ -463,7 +463,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* VISION & MISSION */}
-      <section className="about-section light">
+      <section className="about-section light about-vision">
         <div className="content-wide split reveal">
           <div>
             <h3 className="block-title">Our Vision</h3>

@@ -40,13 +40,13 @@ function Navbar() {
 
           {/* Logo */}
           <div className="logo" id="brand-logo-target">
-            <img src="/assets/logo.png" alt="RoboAiQ Logo" className="logo-image" />
+            <img src="/assets/logo3.png" alt="RoboAiQ Logo" className="logo-image" />
           </div>
         </div>
 
         {/* Desktop Logo - Left Aligned */}
         <div className="logo logo-desktop" id="brand-logo-target">
-          <img src="/assets/logo.png" alt="RoboAiQ Logo" className="logo-image" />
+          <img src="/assets/logo3.png" alt="RoboAiQ Logo" className="logo-image" />
         </div>
 
         {/* Navigation - Desktop */}
