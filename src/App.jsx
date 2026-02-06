@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUsPage from './pages/AboutUsPage';
@@ -9,24 +9,11 @@ import InsightsPage from './pages/InsightsPage';
 import RobotTest from './pages/RobotTest';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import RiaChatbot from './components/RiaChatbot/RiaChatbot';
-import IntroOverlay from './components/IntroOverlay'; // Import IntroOverlay
 import './App.css';
 
 function App() {
-  const [showIntro, setShowIntro] = useState(() => {
-    // Check session storage on initialization to prevent flash
-    try {
-      return !sessionStorage.getItem('hasSeenIntro');
-    } catch (e) {
-      return false;
-    }
-  });
-
   return (
     <div className="app">
-      {/* Show IntroOverlay only if showIntro is true */}
-      {showIntro && <IntroOverlay onComplete={() => setShowIntro(false)} />}
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUsPage />} />
@@ -38,8 +25,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
 
-      {/* Hide Chatbot when intro is visible */}
-      {!showIntro && <RiaChatbot />}
+      <RiaChatbot />
     </div>
   );
 }
